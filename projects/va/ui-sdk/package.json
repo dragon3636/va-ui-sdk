@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "exports": {
     "./styles": {
-      "default": "./styles/styles.scss"
+      "default": "./assets/theme/styles.scss"
     }
   },
   "peerDependencies": {

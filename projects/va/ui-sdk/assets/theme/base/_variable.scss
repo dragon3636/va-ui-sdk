@@ -1,0 +1,48 @@
+// == Breakpoints ===
+$breakpoints: (
+  small: 480px,
+  medium: 768px,
+  wide: 960px,
+  large: 1024px,
+  largest: 1280px,
+);
+
+// === Color ===
+$color: (
+  primary: #007df9,
+  primary-hover: #0064c7,
+  secondary: #ff7500,
+  light: #ffffff,
+  light-border: #777e90,
+  light-text: #23262f,
+  transparent-button-border: #777e91,
+  dark: #141416,
+  error: #fb1b3c,
+  success: #65ae29,
+  warning: #fdc12c,
+  input-placeholder: #b1b5c3,
+  input-hover-border: #353945,
+  input-error-bg: #ffe8ec,
+  input-disabled-bg: #f4f5f6,
+  input-disabled-border: #e6e8ec,
+);
+
+// === Font-size ===
+$font-size: (
+  sm: 14px,
+  md: 16px,
+  lg: 18px,
+  xl: 20px,
+  xxl: 24px,
+  xxxl: 30px,
+);
+
+// === Font-weigh ===
+$font-weight: (
+  thin: 300,
+  normal: 400,
+  medium: 500,
+  bold: 600,
+);
+
+$font-family-default: 'Inter', 'SFText', 'SFMono', sans-serif;

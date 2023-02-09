@@ -4,8 +4,5 @@
   "lib": {
     "entryFile": "public-api.ts"
   },
-  "assets": [
-    "./styles/*.*",
-    "./assets/**/*.*"
-  ]
+  "assets": ["./styles/*.*", "./assets/**/*.*"]
 }
