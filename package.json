@@ -7,7 +7,7 @@
     "build": "run-s lib:build showcase:build",
     "test": "run-p lib:test showcase:test",
     "test-coverage": "run-p lib:test-coverage showcase:test-coverage",
-    "build:sass": "sass projects/va/ui-sdk/assets/theme/styles.scss projects/va/ui-sdk/assets/styles.css",
+    "build:sass": "sass projects/va/ui-sdk/styles/theme/styles.scss projects/va/ui-sdk/assets/theme/styles.css",
     "lib:build": "ng build @va/ui-sdk",
     "lib:watch": "ng build @va/ui-sdk --watch --configuration development",
     "lib:test": "ng test @va/ui-sdk",
