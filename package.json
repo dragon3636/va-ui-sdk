@@ -3,10 +3,22 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "npm-run-all clean --parallel lib:watch showcase:start-waiton",
+    "build": "run-s lib:build showcase:build",
+    "test": "run-p lib:test showcase:test",
+    "test-coverage": "run-p lib:test-coverage showcase:test-coverage",
+    "build:sass": "sass projects/va/ui-sdk/styles/styles.scss projects/va/ui-sdk/assets/styles.css",
+    "lib:build": "ng build @va/ui-sdk",
+    "lib:watch": "ng build @va/ui-sdk --watch --configuration development",
+    "lib:test": "ng test @va/ui-sdk",
+    "lib:test-coverage": "ng test @va/ui-sdk --no-watch --code-coverage",
+    "showcase:start-waiton": "wait-on dist/va/ui-sdk/package.json && npm run showcase:start",
+    "showcase:start": "ng serve showcase",
+    "showcase:build": "ng build showcase",
+    "showcase:watch": "ng build showcase --watch --configuration development",
+    "showcase:test": "ng test showcase",
+    "showcase:test-coverage": "ng test showcase --no-watch --code-coverage",
+    "clean": "rimraf dist"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +35,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^14.0.7",
     "@angular/cli": "~14.0.6",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
@@ -32,6 +45,11 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.7.2"
+    "ng-packagr": "^14.0.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^4.1.2",
+    "sass": "^1.58.0",
+    "typescript": "~4.7.2",
+    "wait-on": "^7.0.1"
   }
 }
