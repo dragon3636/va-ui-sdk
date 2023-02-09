@@ -2,6 +2,14 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "paths": {
+      "@va/ui-sdk/*": [
+        "dist/va/ui-sdk/*"
+      ],
+      "@va/ui-sdk": [
+        "dist/va/ui-sdk"
+      ]
+    },
     "outDir": "../../out-tsc/app",
     "types": []
   },
