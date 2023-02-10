@@ -1,4 +1,4 @@
-@import 'mixins';
+@import '../base/mixins';
 
 .txt-h1 {
   @include typography(24px, 32px, 800);
