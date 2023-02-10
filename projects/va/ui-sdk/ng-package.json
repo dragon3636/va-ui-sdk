@@ -2,7 +2,12 @@
   "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../../dist/va/ui-sdk",
   "lib": {
-    "entryFile": "public-api.ts"
+    "entryFile": "public-api.ts",
+    "styleIncludePaths": [
+      "/assets/theme/base",
+      "/assets/theme/module",
+      "/assets/theme/state"
+    ]
   },
   "assets": ["./styles/*.*", "./assets/**/*.*"]
 }
