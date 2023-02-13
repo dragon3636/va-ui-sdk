@@ -2,8 +2,11 @@
   "name": "@va/ui-sdk",
   "version": "0.0.1",
   "exports": {
-    "./styles": {
-      "default": "./styles/styles.scss"
+    ".": {
+      "sass": "./_index.scss"
+    },
+    "./styles/theme": {
+      "scss": "./styles/theme/styles.scss"
     }
   },
   "peerDependencies": {
