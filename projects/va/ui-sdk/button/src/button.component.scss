@@ -1,0 +1,135 @@
+@import './../../styles/theme/base/variable';
+@import './../../styles/theme/base/mixins';
+
+button {
+  color: map-get($color, neutral-light);
+  &.lg {
+    height: 48px;
+  }
+}
+
+.primary {
+  background-color: map-get($color, primary);
+
+  &:hover {
+    background-color: map-get($color, primary-700);
+  }
+
+  &:disabled {
+    border: unset;
+    background-color: map-get($color, primary);
+  }
+}
+
+.light {
+  color: map-get($color, neutral-dark);
+  background-color: map-get($color, neutral-light);
+  box-shadow: 0 0 1px 2px map-get($color, stroke);
+  .input-icon {
+    .icon-star {
+    }
+  }
+
+  &:hover {
+    background-color: map-get($color, neutral-dark);
+    box-shadow: 0 0 1px 2px map-get($color, neutral-dark);
+
+    .input-icon {
+      .icon-star {
+      }
+    }
+
+    span {
+      color: map-get($color, neutral-light);
+    }
+  }
+
+  &:disabled {
+    background-color: map-get($color, neutral-dark);
+    box-shadow: 0 0 1px 2px map-get($color, stroke);
+
+    .input-icon {
+      .icon-star {
+      }
+    }
+
+    span {
+      color: map-get($color, neutral-light);
+    }
+  }
+
+  span {
+    color: map-get($color, light-text);
+  }
+}
+
+.transparent {
+  background-color: transparent;
+  box-shadow: 0 0 1px 2px #777e90;
+  color: map-get($color, neutral-light);
+
+  &:hover {
+    color: map-get($color, neutral-dark);
+    background-color: map-get($color, neutral-light);
+    box-shadow: 0 0 1px 2px map-get($color, neutral-light);
+
+    .input-icon {
+      .icon-star {
+      }
+    }
+
+    span {
+      color: map-get($color, light-text);
+    }
+  }
+
+  &:disabled {
+    background-color: map-get($color, neutral-light);
+    box-shadow: 0 0 1px 2px map-get($color, neutral-light);
+
+    .input-icon {
+      .icon-star {
+      }
+    }
+
+    span {
+      color: map-get($color, neutral-dark);
+    }
+  }
+}
+
+.icon-left {
+  input {
+    padding-left: 48px;
+  }
+
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+.icon-right {
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+.input-icon {
+  width: 16px;
+  height: 16px;
+
+  .icon-star {
+  }
+}

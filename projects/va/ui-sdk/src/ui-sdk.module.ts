@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { UiSdkComponent } from './ui-sdk.component';
-
+import { I18nModule } from '@va/ui-sdk/i18n';
 
 
 @NgModule({
@@ -8,6 +8,7 @@ import { UiSdkComponent } from './ui-sdk.component';
     UiSdkComponent
   ],
   imports: [
+    I18nModule
   ],
   exports: [
     UiSdkComponent
