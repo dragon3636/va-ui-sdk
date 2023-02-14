@@ -1,2 +1,28 @@
-<button class="btn btn-success danger btn-round-2">{{ label | translate }}</button>
-<i class="icon-vnlp-icon-microphone-filled">&#xe980;</i> 
+<button
+  [ngClass]="{
+    'relative pt-3 pb-3 rounded-lg inline-flex justify-center items-center capitalize disabled:opacity-50 transition ease-in-out duration-200': true,
+    'pl-10': iconPosition === 'left',
+    'pr-4': iconPosition === 'left',
+    'pr-10': iconPosition === 'right',
+    'pl-4': iconPosition === 'right',
+    'py-3 px-4': !icon,
+    primary: type === 'primary',
+    light: type === 'light',
+    transparent: type === 'transparent',
+    sm: size === 'sm',
+    md: size === 'md',
+    lg: size === 'lg',
+    'show-icon': icon,
+    'icon-left': icon && iconPosition === 'left',
+    'icon-right': icon && iconPosition === 'right'
+  }"
+  (click)="handleClick()"
+  [disabled]="disabled"
+>
+  <span [ngClass]="['font-bold text-light', 'txt-' + size]">
+    {{ title }}
+  </span>
+  <span *ngIf="icon" class="input-icon">
+    <i class="icon icon-vnlp-icon-apple-line"></i>
+  </span>
+</button>

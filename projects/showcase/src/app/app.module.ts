@@ -12,7 +12,6 @@ import { CardComponent } from '@va/ui-sdk/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UiSdkModule,
     ButtonModule,
     CardComponent,
   ],
