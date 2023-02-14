@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ButtonModule } from '@va/ui-sdk/button';
+import { UiSdkModule } from '@va/ui-sdk';
 import { CardComponent } from '@va/ui-sdk/card';
 @NgModule({
   declarations: [AppComponent],
