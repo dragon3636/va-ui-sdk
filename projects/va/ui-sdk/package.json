@@ -7,6 +7,9 @@
     },
     "./styles/theme": {
       "scss": "./styles/theme/styles.scss"
+    },
+    "./assets/font": {
+      "default": "./styles/font/**.*"
     }
   },
   "peerDependencies": {

@@ -1,0 +1,49 @@
+@import '../base/mixins';
+
+.txt-h1 {
+  @include typography(24px, 32px, 800);
+  @include resTypAbove(large, 30px, 30px, 800);
+}
+
+.txt-h2 {
+  @include typography(20px, 28px, 600);
+}
+
+.txt-display1 {
+  @include typography(16px, 22px, 600);
+  @include resTypAbove(large, 18px, 26px, 600);
+}
+
+.txt-display3 {
+  @include typography(14px, 22px, 600);
+  @include resTypAbove(large, 16px, 22px, 600);
+}
+
+.txt-button {
+  @include typography(14px, 22px, 300);
+  @include resTypAbove(large, 16px, 24px, 300);
+}
+
+.txt-button-large {
+  @include typography(16px, 24px, 300);
+}
+
+.txt-caption1 {
+  @include typography(12px, 20px, 300);
+}
+
+.txt-caption2 {
+  @include typography(10px, 18px, 300);
+}
+
+.txt-body1 {
+  @include typography(16px, 28px, 500);
+}
+
+.txt-body2 {
+  @include typography(14px, 22px, 500);
+}
+
+.txt-body3 {
+  @include typography(20px, 28px, 500);
+}
