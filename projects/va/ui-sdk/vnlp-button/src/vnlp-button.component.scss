@@ -1,8 +1,17 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 @import '../../assets/sass/base/variable';
 @import '../../assets/sass/base/mixins';
 
+
 button {
   color: map-get($color, neutral-light);
+  &.sm {
+    height: 40px;
+  }
   &.lg {
     height: 48px;
   }
@@ -25,19 +34,10 @@ button {
   color: map-get($color, neutral-dark);
   background-color: map-get($color, neutral-light);
   box-shadow: 0 0 1px 2px map-get($color, stroke);
-  .input-icon {
-    .icon-star {
-    }
-  }
 
   &:hover {
     background-color: map-get($color, neutral-dark);
     box-shadow: 0 0 1px 2px map-get($color, neutral-dark);
-
-    .input-icon {
-      .icon-star {
-      }
-    }
 
     span {
       color: map-get($color, neutral-light);
@@ -47,11 +47,6 @@ button {
   &:disabled {
     background-color: map-get($color, neutral-dark);
     box-shadow: 0 0 1px 2px map-get($color, stroke);
-
-    .input-icon {
-      .icon-star {
-      }
-    }
 
     span {
       color: map-get($color, neutral-light);
@@ -73,11 +68,6 @@ button {
     background-color: map-get($color, neutral-light);
     box-shadow: 0 0 1px 2px map-get($color, neutral-light);
 
-    .input-icon {
-      .icon-star {
-      }
-    }
-
     span {
       color: map-get($color, light-text);
     }
@@ -87,11 +77,6 @@ button {
     background-color: map-get($color, neutral-light);
     box-shadow: 0 0 1px 2px map-get($color, neutral-light);
 
-    .input-icon {
-      .icon-star {
-      }
-    }
-
     span {
       color: map-get($color, neutral-dark);
     }
@@ -99,9 +84,7 @@ button {
 }
 
 .icon-left {
-  input {
     padding-left: 48px;
-  }
 
   .input-icon {
     position: absolute;
@@ -129,7 +112,5 @@ button {
 .input-icon {
   width: 16px;
   height: 16px;
-
-  .icon-star {
-  }
 }
+

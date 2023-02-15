@@ -6,15 +6,15 @@ type TextSize = 'sm' | 'md' | 'lg';
 
 @Component({
   selector: 'vnlp-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss'],
+  templateUrl: './vnlp-button.component.html',
+  styleUrls: ['./vnlp-button.component.scss'],
 })
-export class ButtonComponent implements OnInit {
+export class VnlpButtonComponent implements OnInit {
   @Input() type: ButtonType = 'primary';
-  @Input() title: string = 'button';
+  @Input() title = 'button';
   @Input() size: TextSize = 'sm';
-  @Input() disabled: boolean = false;
-  @Input() icon: string = '';
+  @Input() disabled = false;
+  @Input() icon = 'star-filled';
   @Input() iconPosition: IconSide = 'left';
   @Output() onClick = new EventEmitter();
   constructor() {}

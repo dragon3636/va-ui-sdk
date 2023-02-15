@@ -30,4 +30,5 @@ export function findBuildConfig(): string {
 
 const buildConfigPath = findBuildConfig();
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 export const buildConfig = require(buildConfigPath) as BuildConfig;

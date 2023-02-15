@@ -1,0 +1,44 @@
+@import '../../assets/sass/base/variable';
+@import '../../assets/sass/base/mixins';
+
+.vnlp-textarea-container {
+  textarea {
+    @include pxRem(padding, 12 18);
+    width: 100%;
+    height: 100%;
+
+    box-shadow: 0 0 4px 1px map-get($color, stroke);
+    resize: none;
+
+    &::placeholder {
+      color: map-get($color, neutral-5);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 4px 1px map-get($color, primary);
+      caret-color: map-get($color, primary);
+
+      & + .info-text {
+        color: map-get($color, primary);
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 4px 1px map-get($color, primary);
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: map-get($color, neutral-5);
+
+      &:hover {
+        box-shadow: 0 0 4px 1px map-get($color, stroke);
+      }
+    }
+  }
+
+  .counter {
+    color: map-get($color, neutral-5);
+  }
+}

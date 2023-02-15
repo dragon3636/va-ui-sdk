@@ -2,10 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "paths": {
-      "@va/ui-sdk/*": ["projects/va/ui-sdk/*"],
-      "@va/ui-sdk": ["projects/va/ui-sdk"]
-    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

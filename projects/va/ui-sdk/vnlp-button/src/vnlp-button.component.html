@@ -19,10 +19,10 @@
   (click)="handleClick()"
   [disabled]="disabled"
 >
-  <span [ngClass]="['font-bold text-light', 'txt-' + size]">
+  <span [ngClass]="['font-bold text-light pt-1', 'txt-' + size]">
     {{ title }}
   </span>
   <span *ngIf="icon" class="input-icon">
-    <i class="icon icon-vnlp-icon-apple-line"></i>
+    <i [class]="'icon icon-vnlp-icon-' + icon"></i>
   </span>
 </button>
