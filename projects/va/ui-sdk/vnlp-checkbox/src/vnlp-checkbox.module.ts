@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from './button.component';
+import { VnlpCheckboxComponent } from './vnlp-checkbox.component';
 import { I18nModule } from '@va/ui-sdk/i18n';
 
 @NgModule({
-  declarations: [ButtonComponent],
+  declarations: [VnlpCheckboxComponent],
   imports: [CommonModule, I18nModule],
-  exports: [ButtonComponent],
+  exports: [VnlpCheckboxComponent],
 })
-export class ButtonModule {}
+export class VnlpCheckboxModule {}
