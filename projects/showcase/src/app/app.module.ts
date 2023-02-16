@@ -11,6 +11,9 @@ import { CardComponent } from '@va/ui-sdk/card';
 import { VnlpLabelTagModule } from '@va/ui-sdk/vnlp-label-tag';
 import { VnlpSwitchModule } from '@va/ui-sdk/vnlp-switch';
 import { VnlpTextareaModule } from '@va/ui-sdk/vnlp-textarea';
+import { VnlpInputTextModule } from '@va/ui-sdk/vnlp-input-text';
+import { VnlpCreateVirtualAgentModule } from '@va/ui-sdk/vnlp-create-virtual-agent';
+import { VnlpTickboxModule } from '@va/ui-sdk/vnlp-tickbox/src/vnlp-tickbox.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +27,9 @@ import { VnlpTextareaModule } from '@va/ui-sdk/vnlp-textarea';
     VnlpLabelTagModule,
     VnlpSwitchModule,
     VnlpTextareaModule,
+    VnlpInputTextModule,
+    VnlpCreateVirtualAgentModule,
+    VnlpTickboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

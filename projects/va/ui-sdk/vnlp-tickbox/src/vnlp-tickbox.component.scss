@@ -1,0 +1,24 @@
+@import './../../styles/theme/base/variable';
+@import './../../styles/theme/base/mixins';
+
+.tickbox-container {
+  .tickbox-input {
+    width: 24px;
+    height: 24px;
+    border: 1px solid map-get($color, stroke);
+    background-color: map-get($color, neutral-8);
+    border-radius: 50%;
+  }
+
+  .tickbox-input--checked {
+    background-color: map-get($color, primary);
+    border: 1px solid map-get($color, primary);
+
+    i {
+      color: map-get($color, neutral-8);
+    }
+  }
+
+  .tickbox-label {
+  }
+}

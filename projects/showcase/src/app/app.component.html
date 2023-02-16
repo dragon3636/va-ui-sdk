@@ -161,3 +161,97 @@
 </div>
 
 {{ demoInputValue }}
+
+<!-- vnlp-input-text -->
+
+<div class="p-4 flex justify-between flex-wrap">
+  <vnlp-input-text
+    label="Normal input"
+    name="input1"
+    [(value)]="demoInputValue"
+    width="320"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Disabled Input"
+    name="input2"
+    [(value)]="demoInputValue"
+    iconPosition="left"
+    icon="apple-line"
+    [disabled]="true"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Normal input"
+    name="input1"
+    [(value)]="demoInputValue"
+    width="320"
+    iconPosition="left"
+    icon="apple-line"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Input with Information"
+    name="Input1"
+    [(value)]="demoInputValue"
+    icon="apple-line"
+    [success]="true"
+    iconPosition="right"
+    informationText="Information text"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Input with Information"
+    name="Input2"
+    [(value)]="demoInputValue"
+    icon="apple-line"
+    iconPosition="right"
+    informationText="Information text"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Test"
+    [(value)]="demoInputValue"
+    [disabled]="true"
+    icon="apple-line"
+    iconPosition="left"
+    informationText="Information text"
+  ></vnlp-input-text>
+</div>
+
+<!-- vnlp-create-virtual-agent -->
+<div class="p-4 flex justify-between flex-wrap gap-2">
+  <vnlp-create-virtual-agent mode="create"></vnlp-create-virtual-agent>
+  <vnlp-create-virtual-agent [disabled]="true"></vnlp-create-virtual-agent>
+  <vnlp-create-virtual-agent
+    mode="show"
+    title="Dự án bất động sản"
+    description="Hỗ trợ khách hàng mua bán bất động sản ở ven biển"
+    labelText="AI Voicebot"
+    labelType="blue"
+  ></vnlp-create-virtual-agent>
+  <vnlp-create-virtual-agent
+    mode="show"
+    title="Dự án bất động sản"
+    description="Hỗ trợ khách hàng mua bán bất động sản ở ven biển"
+    labelText="Chatbot"
+    labelType="orange"
+    type="chat"
+  ></vnlp-create-virtual-agent>
+  <vnlp-create-virtual-agent
+    mode="show"
+    title="Dự án bất động sản"
+    description="Hỗ trợ khách hàng mua bán bất động sản ở ven biển"
+    labelText="Chatbot"
+    labelType="orange"
+    [disabled]="true"
+    type="chat"
+  ></vnlp-create-virtual-agent>
+</div>
+
+<!-- vnlp-tickbox -->
+<div class="p-4 flex flex-col justify-between flex-wrap gap-2">
+  <vnlp-tickbox labelPosition="left" label="oho"></vnlp-tickbox>
+  <vnlp-tickbox label="oOo"></vnlp-tickbox>
+  <vnlp-tickbox label="Label"></vnlp-tickbox>
+</div>
