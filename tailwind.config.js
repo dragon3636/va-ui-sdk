@@ -116,9 +116,6 @@ module.exports = {
       7: '48px',
     },
     extend: {},
-    fontFamily: {
-      sans: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-    },
     spacing: {
       1: '4px',
       2: '8px',
