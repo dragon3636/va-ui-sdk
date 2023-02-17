@@ -1,18 +1,18 @@
 import { join } from 'path';
 import { task, src, dest, series } from 'gulp';
-var clean = require('gulp-clean');
 import * as sourcemaps from 'gulp-sourcemaps';
 import * as dartSass from 'sass';
 import * as gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
+const clean = require('gulp-clean');
 import { buildConfig } from '../../build-config';
 
-task('library:compile-css', () => {
-  return src(join(buildConfig.componentsDir, 'assets/sass/*.scss'))
-  .pipe(sourcemaps.init())
-  .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
-  .pipe(sourcemaps.write('./maps'))
-  .pipe(dest(join(buildConfig.componentsDir, 'assets/css/')));
+task('style:compile-css', () => {
+  return src(join(buildConfig.componentsDir, 'assets/sass/**/*.scss'))
+    .pipe(sourcemaps.init())
+    .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(sourcemaps.write('../maps', { addComment: false }))
+    .pipe(dest(join(buildConfig.componentsDir, 'assets/css/')));
 });
 
 // task('styles:copy', () => {
@@ -22,9 +22,15 @@ task('library:compile-css', () => {
 //   ]).pipe(dest(join(buildConfig.componentsDir, 'assets')));
 // });
 task('styles:clean', () => {
-  return src(join(buildConfig.componentsDir, 'styles/css/*.css'), {
-    read: false,
-  }).pipe(clean());
+  return src(
+    ['assets/css/styles.css', 'assets/maps/**'].map(url =>
+      join(buildConfig.componentsDir, url),
+    ),
+    {
+      read: false,
+      allowEmpty: true,
+    },
+  ).pipe(clean());
 });
 
-// task('styles:build', series(['styles']));
+task('styles:build', series(['styles:clean', 'style:compile-css']));

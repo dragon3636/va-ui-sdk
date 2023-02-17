@@ -5,7 +5,7 @@ import '../tasks/compile-styles';
 task(
   'library:build',
   series(
-    'library:compile-css',
+    'styles:build',
     execNodeTask('@angular/cli', 'ng', ['build', '@va/ui-sdk']),
   ),
 );

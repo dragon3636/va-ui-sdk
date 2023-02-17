@@ -9,10 +9,7 @@ import './tasks/clean';
 import './tasks/library';
 import './tasks/compile-styles';
 import './tasks/showcase';
-task('build:release', series('clean', 'library:build')); //'build:release-site'
-
-// task('build:preview', series('clean', 'init:site', 'build:site-doc-es5'));
-
-task('start', series('clean', 'library:build', 'start:site'));
+task('build:release', series('clean', 'library:build'));
+task('start', series('clean', 'library:build', 'showcase:start'));
 task('build', series('clean', 'library:build', 'showcase:build'));
 task('test', series('clean', parallel('library:test', 'showcase:test')));

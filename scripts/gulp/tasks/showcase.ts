@@ -1,6 +1,5 @@
 import { series, task } from 'gulp';
 import { execNodeTask } from '../util/task-helpers';
-task('start:site', execNodeTask('@angular/cli', 'ng', ['serve', 'showcase']));
 task(
   'showcase:start',
   execNodeTask('@angular/cli', 'ng', ['serve', 'showcase']),
