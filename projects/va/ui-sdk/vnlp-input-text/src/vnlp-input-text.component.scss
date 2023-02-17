@@ -119,6 +119,16 @@ input {
     &:hover {
       box-shadow: 0 0 1px 2px map-get($color, error);
     }
+
+    &:hover ~ .info-text,
+    &:focus ~ .info-text {
+      color: map-get($color, error);
+    }
+
+    &:hover ~ .input-icon i,
+    &:focus ~ .input-icon i {
+      color: map-get($color, error);
+    }
   }
 
   .input-icon i {
@@ -128,20 +138,6 @@ input {
   .error-msg {
     color: map-get($color, error);
     font-weight: 500;
-  }
-
-  &.information {
-    input {
-      &:hover ~ .info-text,
-      &:focus ~ .info-text {
-        color: map-get($color, error);
-      }
-
-      &:hover ~ .input-icon i,
-      &:focus ~ .input-icon i {
-        color: map-get($color, error);
-      }
-    }
   }
 }
 
@@ -157,6 +153,16 @@ input {
     }
 
     & ~ .info-text {
+      color: map-get($color, neutral-5);
+    }
+
+    &:hover ~ .info-text,
+    &:focus ~ .info-text {
+      color: map-get($color, neutral-5);
+    }
+
+    &:hover ~ .input-icon i,
+    &:focus ~ .input-icon i {
       color: map-get($color, neutral-5);
     }
   }

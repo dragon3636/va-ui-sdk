@@ -1,7 +1,10 @@
 <div
   [ngClass]="{
     'checkbox-container inline-flex justify-between items-center mb-2': true,
-    disabled: disabled
+    disabled: disabled,
+    'show-in-list': isShowInList,
+    'show-divider': isShowDivider,
+    checked: checked
   }"
   (click)="handleCheck()"
 >

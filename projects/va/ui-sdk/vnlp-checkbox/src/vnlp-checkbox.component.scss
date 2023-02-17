@@ -2,7 +2,33 @@
 @import './../../assets/sass/base/mixins';
 
 .checkbox-container {
-  height: 24px;
+  position: relative;
+  &.show-in-list {
+    border-radius: 10px;
+    padding: 10px 8px;
+
+    &:hover {
+      background-color: map-get($color, neutral-7);
+    }
+  }
+
+  &.show-divider {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: map-get($color, stroke);
+    }
+  }
+
+  &.checked {
+    label {
+      color: map-get($color, primary);
+    }
+  }
 
   &.disabled {
     opacity: 0.5;
