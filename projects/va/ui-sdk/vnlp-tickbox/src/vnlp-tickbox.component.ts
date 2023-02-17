@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'vnlp-tickbox',
@@ -10,6 +10,7 @@ export class VnlpTickboxComponent implements OnInit {
   @Input() checked: boolean = false;
   @Input() disabled: boolean = false;
   @Input() labelPosition: 'left' | 'right' = 'right';
+  @Output() checkedChange = new EventEmitter<boolean>();
   constructor() {}
 
   ngOnInit() {}
@@ -17,5 +18,6 @@ export class VnlpTickboxComponent implements OnInit {
   handleCheck() {
     if (this.disabled) return;
     this.checked = !this.checked;
+    this.checkedChange.emit(this.checked);
   }
 }

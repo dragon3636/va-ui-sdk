@@ -14,7 +14,7 @@ export class VnlpButtonComponent implements OnInit {
   @Input() title: string = 'button';
   @Input() size: TextSize = 'sm';
   @Input() disabled: boolean = false;
-  @Input() icon: string = '';
+  @Input() icon: string = 'star-filled';
   @Input() iconPosition: IconSide = 'left';
   @Output() onClick = new EventEmitter();
   constructor() {}

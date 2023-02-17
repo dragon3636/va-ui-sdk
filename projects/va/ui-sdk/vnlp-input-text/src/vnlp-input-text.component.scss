@@ -1,5 +1,5 @@
-@import './../../styles/theme/base/variable';
-@import './../../styles/theme/base/mixins';
+@import './../../assets/scss/theme/base/variable';
+@import './../../assets/scss/theme/base/mixins';
 
 .icon-left {
   input {
@@ -137,7 +137,8 @@ input {
         color: map-get($color, error);
       }
 
-      &:hover ~ .input-icon i {
+      &:hover ~ .input-icon i,
+      &:focus ~ .input-icon i {
         color: map-get($color, error);
       }
     }

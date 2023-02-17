@@ -249,9 +249,14 @@
   ></vnlp-create-virtual-agent>
 </div>
 
+{{ demoSwitch }}
 <!-- vnlp-tickbox -->
 <div class="p-4 flex flex-col justify-between flex-wrap gap-2">
-  <vnlp-tickbox labelPosition="left" label="oho"></vnlp-tickbox>
-  <vnlp-tickbox label="oOo"></vnlp-tickbox>
-  <vnlp-tickbox label="Label"></vnlp-tickbox>
+  <vnlp-tickbox label="option 1"></vnlp-tickbox>
+  <vnlp-tickbox label="option 2"></vnlp-tickbox>
+  <vnlp-tickbox
+    labelPosition="left"
+    label="option 3"
+    [(checked)]="demoSwitch"
+  ></vnlp-tickbox>
 </div>

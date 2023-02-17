@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class VnlpCheckboxListComponent implements OnInit {
   @Input() options: any = [];
+  @Input() isCheckboxInList = true;
+  @Input() showDivider = false;
 
   constructor() {}
 

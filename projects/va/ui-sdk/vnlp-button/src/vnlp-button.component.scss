@@ -1,5 +1,5 @@
-@import './../../styles/theme/base/variable';
-@import './../../styles/theme/base/mixins';
+@import './../../assets/scss/theme/base/variable';
+@import './../../assets/scss/theme/base/mixins';
 
 button {
   color: map-get($color, neutral-light);
