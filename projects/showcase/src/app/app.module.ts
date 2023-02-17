@@ -14,6 +14,7 @@ import { VnlpTextareaModule } from '@va/ui-sdk/vnlp-textarea';
 import { VnlpInputTextModule } from '@va/ui-sdk/vnlp-input-text';
 import { VnlpCreateVirtualAgentModule } from '@va/ui-sdk/vnlp-create-virtual-agent';
 import { VnlpTickboxModule } from '@va/ui-sdk/vnlp-tickbox/src/vnlp-tickbox.module';
+import { VnlpLogoModule } from '@va/ui-sdk/vnlp-logo';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { VnlpTickboxModule } from '@va/ui-sdk/vnlp-tickbox/src/vnlp-tickbox.modu
     VnlpInputTextModule,
     VnlpCreateVirtualAgentModule,
     VnlpTickboxModule,
+    VnlpLogoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

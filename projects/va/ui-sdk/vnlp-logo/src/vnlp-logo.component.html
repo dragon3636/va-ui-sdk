@@ -1,0 +1,9 @@
+<div
+  [ngClass]="{
+    'vnlp-logo-container inline-flex': true,
+    'vnlp-logo--logo-only': type === 'normal',
+    'vnlp-logo--logo-vertical': type === 'vertical',
+    'vnlp-logo--logo-horizontal': type === 'horizontal'
+  }"
+  (click)="handleClick()"
+></div>
