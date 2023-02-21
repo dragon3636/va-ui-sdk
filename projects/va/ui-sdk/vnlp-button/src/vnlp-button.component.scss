@@ -36,6 +36,10 @@ button {
     span {
       color: map-get($color, neutral-light);
     }
+
+    .icon {
+      color: map-get($color, neutral-light);
+    }
   }
 
   &:disabled {
@@ -43,6 +47,10 @@ button {
     box-shadow: 0 0 1px 2px map-get($color, stroke);
 
     span {
+      color: map-get($color, neutral-light);
+    }
+
+    .icon {
       color: map-get($color, neutral-light);
     }
   }
@@ -74,38 +82,14 @@ button {
     span {
       color: map-get($color, neutral-dark);
     }
+
+    .icon {
+      color: map-get($color, neutral-dark);
+    }
   }
 }
 
-.icon-left {
-  input {
-    padding-left: 48px;
-  }
-
-  .input-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 16px;
-
-    display: flex;
-    align-items: center;
-  }
-}
-
-.icon-right {
-  .input-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 16px;
-
-    display: flex;
-    align-items: center;
-  }
-}
-
-.input-icon {
+.button-icon {
   width: 16px;
   height: 16px;
 }

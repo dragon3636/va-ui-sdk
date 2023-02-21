@@ -1,0 +1,102 @@
+<div class="vnlp-table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Entity type</th>
+        <th>Intent</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="data.length">
+      <tr>
+        <td>ở đâu em</td>
+        <td>Hallo!</td>
+        <td>dong_y_gui_thong_tin_qua_zalo</td>
+        <td class="action-col">
+          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>không không không chị không không có nhu cầu nhé</td>
+        <td>Hallo!</td>
+        <td>dong_y_gui_thong_tin_qua_zalo</td>
+        <td class="action-col">
+          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>ở đâu em</td>
+        <td>Hallo!</td>
+        <td>dong_y_gui_thong_tin_qua_zalo</td>
+        <td class="action-col">
+          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>ờ anh anh không quan tâm nhé anh không có tiền nhá</td>
+        <td>Hallo!</td>
+        <td>dong_y_gui_thong_tin_qua_zalo</td>
+        <td class="action-col">
+          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>ở đâu em</td>
+        <td>Hallo!</td>
+        <td>dong_y_gui_thong_tin_qua_zalo</td>
+        <td class="action-col">
+          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>ở đâu em</td>
+        <td>Hallo!</td>
+        <td>dong_y_gui_thong_tin_qua_zalo</td>
+        <td class="action-col">
+          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>ở đâu em</td>
+        <td>Hallo!</td>
+        <td>dong_y_gui_thong_tin_qua_zalo</td>
+        <td class="action-col">
+          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+        </td>
+      </tr>
+      <tr>
+        <td>ở đâu em</td>
+        <td>Hallo!</td>
+        <td>dong_y_gui_thong_tin_qua_zalo</td>
+        <td class="action-col">
+          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="table-footer">
+    <p class="counter">{{ getDisplayText() }}</p>
+    <div class="paginator">
+      <button
+        [disabled]="currentPage == 1"
+        (click)="prevPage()"
+        class="paginator-prev icon icon-vnlp-icon-arrow-left-simple-line"
+      ></button>
+      <ng-container *ngFor="let page of pages">
+        <button
+          class="page-number"
+          [class.active]="currentPage == page"
+          (click)="goToPage(page)"
+        >
+          {{ page }}
+        </button>
+      </ng-container>
+      <button
+        [disabled]="currentPage == lastPage"
+        (click)="nextPage()"
+        class="paginator-next icon icon-vnlp-icon-arrow-right-simple-line"
+      ></button>
+    </div>
+  </div>
+</div>

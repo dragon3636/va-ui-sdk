@@ -1,0 +1,99 @@
+@import './../../assets/sass/base/variable';
+@import './../../assets/sass/base/mixins';
+
+.vnlp-table-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 1px 1px map-get($color, stroke);
+  background-color: map-get($color, neutral-8);
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background-color: map-get($color, neutral-8);
+
+    tbody tr {
+      max-height: 44px;
+
+      &:hover {
+        background-color: #f6f8fa;
+
+        .icon {
+          display: block;
+        }
+      }
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid map-get($color, stroke);
+      text-align: left;
+    }
+
+    th {
+      padding: 16px;
+      color: map-get($color, neutral-4);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    td {
+      padding: 10px 16px;
+
+      &.action-col {
+        padding: 0;
+        padding-left: 16px;
+      }
+
+      .icon {
+        font-size: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 20px;
+
+    .counter {
+      font-size: 14px;
+      color: map-get($color, neutral-4);
+    }
+
+    .paginator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .paginator-prev,
+      .paginator-next,
+      .page-number {
+        width: 32px;
+        height: 32px;
+        border: 1px solid map-get($color, stroke);
+        border-radius: 4px;
+        font-size: 14px;
+
+        &:hover {
+          border: 1px solid map-get($color, primary);
+        }
+
+        &:disabled {
+          cursor: default;
+        }
+      }
+
+      .page-number {
+        &.active {
+          background-color: map-get($color, primary);
+          color: map-get($color, neutral-8);
+        }
+      }
+    }
+  }
+}
