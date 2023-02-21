@@ -1,0 +1,22 @@
+<div class="switch-container inline-flex items-center">
+  <label
+    *ngIf="labelPosition === 'left'"
+    [for]="name"
+    class="txt-sm txt-600 mr-3 color-neutral-3 select-none"
+    >{{ label }}</label
+  >
+  <input
+    [id]="name"
+    [name]="name"
+    type="checkbox"
+    [checked]="checked"
+    [disabled]="disabled"
+    (click)="handleClick()"
+  />
+  <label
+    *ngIf="labelPosition === 'right'"
+    [for]="name"
+    class="txt-sm txt-600 ml-3 color-neutral-3 select-none"
+    >{{ label }}</label
+  >
+</div>

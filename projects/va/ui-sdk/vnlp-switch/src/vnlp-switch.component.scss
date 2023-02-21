@@ -1,0 +1,55 @@
+@import '../../assets/sass/base/variable';
+@import '../../assets/sass/base/mixins';
+
+.switch-container {
+  input[type='checkbox'] {
+    position: relative;
+    appearance: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: map-get($color, neutral-6);
+    border: 2px solid map-get($color, neutral-6);
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      border: 2px solid map-get($color, primary-400);
+    }
+
+    &:checked[type='checkbox'] {
+      background: map-get($color, primary);
+      border: 2px solid map-get($color, primary);
+
+      &:hover {
+        border: 2px solid map-get($color, primary-400);
+      }
+
+      &:disabled {
+        background-color: map-get($color, primary-300);
+        border: 2px solid map-get($color, primary-300);
+      }
+    }
+
+    &:disabled {
+      background-color: map-get($color, neutral-7);
+      border: 2px solid map-get($color, neutral-7);
+    }
+  }
+
+  input[type='checkbox']::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    background: map-get($color, neutral-8);
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+
+  input:checked[type='checkbox']::after {
+    left: 44%;
+  }
+}

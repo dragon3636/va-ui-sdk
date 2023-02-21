@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "@va/ui-sdk": {
+    "@em-and-ai/ui-sdk": {
       "projectType": "library",
       "root": "projects/va/ui-sdk",
       "sourceRoot": "projects/va/ui-sdk/src",
-      "prefix": "lib",
+      "prefix": "vnlp",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
