@@ -25,9 +25,9 @@
       [disabled]="disabled"
       #input="ngModel"
     />
-    <span *ngIf="icon" class="input-icon">
+    <label [for]="name" *ngIf="icon" class="input-icon">
       <i [class]="'icon icon-vnlp-icon-' + icon"></i>
-    </span>
+    </label>
     <div *ngIf="informationText" class="info-text txt-sm error-msg mt-2">
       {{ informationText }}
     </div>

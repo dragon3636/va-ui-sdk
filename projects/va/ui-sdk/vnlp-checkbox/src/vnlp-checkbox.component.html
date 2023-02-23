@@ -9,7 +9,7 @@
   (click)="handleCheck()"
 >
   <label
-    *ngIf="labelPosition === 'left'"
+    *ngIf="label && labelPosition === 'left'"
     [for]="name"
     class="txt-sm txt-600 mr-1 color-neutral-3 select-none"
     >{{ label }}</label
@@ -27,7 +27,7 @@
     </div>
   </div>
   <label
-    *ngIf="labelPosition === 'right'"
+    *ngIf="label && labelPosition === 'right'"
     [for]="name"
     class="txt-sm txt-600 ml-1 color-neutral-3 select-none"
     >{{ label }}</label

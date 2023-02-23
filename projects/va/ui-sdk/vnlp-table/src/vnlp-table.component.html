@@ -1,99 +1,69 @@
 <div class="vnlp-table-container">
+  <div class="loading"></div>
   <table>
     <thead>
       <tr>
-        <th>Value</th>
-        <th>Entity type</th>
-        <th>Intent</th>
+        <th class="check-all-record">
+          <vnlp-checkbox></vnlp-checkbox>
+        </th>
+        <th *ngFor="let col of columns" (click)="handleSort(col.key)">
+          <i
+            *ngIf="col.sortable"
+            [ngClass]="{
+              'cursor-pointer icon icon-vnlp-icon-upanddown-line transition-all ease-in-out duration-200': true,
+              'rotate-180': col.sortStatus === 'desc',
+              'icon-vnlp-icon-arrow-up-line':
+                col.sortStatus === 'asc' || col.sortStatus === 'desc'
+            }"
+          ></i>
+          <span>{{ col.title }}</span>
+        </th>
         <th>Action</th>
       </tr>
     </thead>
-    <tbody *ngIf="data.length">
-      <tr>
-        <td>ở đâu em</td>
-        <td>Hallo!</td>
-        <td>dong_y_gui_thong_tin_qua_zalo</td>
-        <td class="action-col">
-          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+    <tbody *ngIf="dataSource.length; else emptyData">
+      <tr *ngFor="let item of dataSource">
+        <td>
+          <vnlp-checkbox></vnlp-checkbox>
         </td>
-      </tr>
-      <tr>
-        <td>không không không chị không không có nhu cầu nhé</td>
-        <td>Hallo!</td>
-        <td>dong_y_gui_thong_tin_qua_zalo</td>
+        <td *ngFor="let col of columns">{{ item[col.key] }}</td>
         <td class="action-col">
-          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
-        </td>
-      </tr>
-      <tr>
-        <td>ở đâu em</td>
-        <td>Hallo!</td>
-        <td>dong_y_gui_thong_tin_qua_zalo</td>
-        <td class="action-col">
-          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
-        </td>
-      </tr>
-      <tr>
-        <td>ờ anh anh không quan tâm nhé anh không có tiền nhá</td>
-        <td>Hallo!</td>
-        <td>dong_y_gui_thong_tin_qua_zalo</td>
-        <td class="action-col">
-          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
-        </td>
-      </tr>
-      <tr>
-        <td>ở đâu em</td>
-        <td>Hallo!</td>
-        <td>dong_y_gui_thong_tin_qua_zalo</td>
-        <td class="action-col">
-          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
-        </td>
-      </tr>
-      <tr>
-        <td>ở đâu em</td>
-        <td>Hallo!</td>
-        <td>dong_y_gui_thong_tin_qua_zalo</td>
-        <td class="action-col">
-          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
-        </td>
-      </tr>
-      <tr>
-        <td>ở đâu em</td>
-        <td>Hallo!</td>
-        <td>dong_y_gui_thong_tin_qua_zalo</td>
-        <td class="action-col">
-          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
-        </td>
-      </tr>
-      <tr>
-        <td>ở đâu em</td>
-        <td>Hallo!</td>
-        <td>dong_y_gui_thong_tin_qua_zalo</td>
-        <td class="action-col">
-          <i class="icon icon-vnlp-icon-trash-bin-line hidden"></i>
+          <i class="icon icon-vnlp-icon-trashbin-filled hidden"></i>
         </td>
       </tr>
     </tbody>
+    <ng-template #emptyData>
+      <tr>
+        <td [attr.colspan]="columns.length + 1" class="empty-data">
+          <span>No data</span>
+          <p>Create first data now!</p>
+          <div class="create-button inline-flex items-center">
+            <i class="icon icon-vnlp-icon-plus-2-line"></i>
+            <span>Create</span>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
   </table>
   <div class="table-footer">
     <p class="counter">{{ getDisplayText() }}</p>
     <div class="paginator">
       <button
-        [disabled]="currentPage == 1"
+        [disabled]="page == 1"
         (click)="prevPage()"
         class="paginator-prev icon icon-vnlp-icon-arrow-left-simple-line"
       ></button>
-      <ng-container *ngFor="let page of pages">
+      <ng-container *ngFor="let pageNumber of pages">
         <button
           class="page-number"
-          [class.active]="currentPage == page"
-          (click)="goToPage(page)"
+          [class.active]="pageNumber == page"
+          (click)="goToPage(pageNumber)"
         >
-          {{ page }}
+          {{ pageNumber }}
         </button>
       </ng-container>
       <button
-        [disabled]="currentPage == lastPage"
+        [disabled]="page == lastPage"
         (click)="nextPage()"
         class="paginator-next icon icon-vnlp-icon-arrow-right-simple-line"
       ></button>

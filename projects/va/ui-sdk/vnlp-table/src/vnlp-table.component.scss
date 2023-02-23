@@ -6,6 +6,17 @@
   overflow: hidden;
   box-shadow: 0 0 1px 1px map-get($color, stroke);
   background-color: map-get($color, neutral-8);
+  position: relative;
+
+  // .loading {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background-color: rgba(0, 0, 0, 0.271);
+  //   z-index: 2;
+  // }
 
   table {
     width: 100%;
@@ -29,6 +40,31 @@
     td {
       border-bottom: 1px solid map-get($color, stroke);
       text-align: left;
+
+      &.empty-data {
+        text-align: center;
+        padding-top: 40px;
+
+        span {
+          font-size: 16px;
+          font-weight: 700;
+          color: map-get($color, neutral-2);
+        }
+
+        p {
+          font-size: 14px;
+          color: map-get($color, neutral-5);
+        }
+
+        .create-button {
+          cursor: pointer;
+
+          i,
+          span {
+            color: map-get($color, primary);
+          }
+        }
+      }
     }
 
     th {
@@ -36,6 +72,20 @@
       color: map-get($color, neutral-4);
       font-size: 14px;
       font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+
+      &:not(:first-child) {
+        padding-left: 0;
+      }
+
+      &.check-all-record {
+        width: 56px;
+      }
+
+      &:hover {
+        background-color: #f6f8fa;
+      }
     }
 
     td {

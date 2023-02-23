@@ -1,4 +1,7 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'vnlp-table',
@@ -6,29 +9,51 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./vnlp-table.component.scss'],
 })
 export class VnlpTableComponent implements OnInit {
-  @Input() currentPage: number = 1;
-  @Input() itemsPerPage: number = 10;
-  @Input() totalItems: number = 100;
-  @Input() data = [{}];
+  @Input() page: number = 1;
+  @Input() length: number = 10;
+  @Input() recordsTotal: number = 100;
+  @Input() dataSource: any = [];
+  @Input() columns: any = [];
+  @Input() sort: number = 1;
+  @Input() sortField: string = '';
   @Output() pageChange = new EventEmitter<number>();
-  lastPage: number = Math.ceil(this.totalItems / this.itemsPerPage);
+  lastPage: number = Math.ceil(this.recordsTotal / this.length);
+  pageChangeSubject = new Subject<number>();
 
-  ngOnInit(): void {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.page = +params['page'] || 1;
+      this.length = +params['length'] || 10;
+    });
+
+    this.pageChangeSubject.pipe(debounceTime(300)).subscribe(page => {
+      this.syncPaginatorWithUrl(page);
+    });
+  }
+
+  syncPaginatorWithUrl(page: number) {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { page: page },
+      queryParamsHandling: 'merge',
+    });
+  }
 
   get pages(): number[] {
-    const totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
     let start = 1;
-    let end = Math.min(totalPages, 5);
+    let end = Math.min(this.lastPage, 5);
 
-    if (totalPages > 5) {
-      if (this.currentPage <= 3) {
+    if (this.lastPage > 5) {
+      if (this.page <= 3) {
         end = 5;
-      } else if (this.currentPage >= totalPages - 2) {
-        start = totalPages - 4;
-        end = totalPages;
+      } else if (this.page >= this.lastPage - 2) {
+        start = this.lastPage - 4;
+        end = this.lastPage;
       } else {
-        start = this.currentPage - 2;
-        end = this.currentPage + 2;
+        start = this.page - 2;
+        end = this.page + 2;
       }
     }
 
@@ -40,26 +65,51 @@ export class VnlpTableComponent implements OnInit {
   }
 
   prevPage() {
-    this.goToPage(this.currentPage - 1);
+    this.goToPage(this.page - 1);
   }
 
   nextPage() {
-    this.goToPage(this.currentPage + 1);
+    this.goToPage(this.page + 1);
+  }
+
+  goToLastPage() {
+    this.goToPage(this.lastPage);
+  }
+
+  goToFirstPage() {
+    this.goToPage(1);
   }
 
   goToPage(page: number) {
-    const totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
-    if (page < 1 || page > totalPages) return;
-    if (page === this.currentPage) return;
-    this.currentPage = page;
+    if (page < 1 || page > this.lastPage) return;
+    if (page === this.page) return;
+    this.page = page;
+    this.pageChangeSubject.next(page);
     this.pageChange.emit(page);
   }
 
   getDisplayText() {
-    const start = (this.currentPage - 1) * this.itemsPerPage + 1;
-    const end = Math.min(this.currentPage * this.itemsPerPage, this.totalItems);
-    const total = this.totalItems;
+    const start = (this.page - 1) * this.length + 1;
+    const end = start - 1 + this.length;
+    const total = this.recordsTotal;
 
     return `Showing ${start} to ${end} of ${total} entries`;
+  }
+
+  handleSort(key: any) {
+    const selectedColumnIndex = this.columns.findIndex(
+      (a: any) => a.key === key,
+    );
+
+    this.columns[selectedColumnIndex].sortStatus =
+      this.columns[selectedColumnIndex].sortStatus === 'asc' ? 'desc' : 'asc';
+
+    this.columns = this.columns.map((column: any, index: number) => {
+      if (selectedColumnIndex === index) {
+        return column;
+      }
+      column.sortStatus = 'default';
+      return column;
+    });
   }
 }

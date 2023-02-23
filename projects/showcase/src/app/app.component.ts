@@ -16,4 +16,79 @@ export class AppComponent {
   ];
   demoSwitch = false;
   demoInputValue = '';
+
+  dataSource = [
+    {
+      value: 'hello',
+      entity_type: 'greeting',
+      intent: 'greet',
+      action: 'say_hello',
+    },
+    {
+      value: 'how are you',
+      entity_type: 'question',
+      intent: 'ask',
+      action: 'check_feelings',
+    },
+    {
+      value: 'goodbye',
+      entity_type: 'farewell',
+      intent: 'farewell',
+      action: 'say_goodbye',
+    },
+    {
+      value: 'buy',
+      entity_type: 'action',
+      intent: 'order',
+      action: 'place_order',
+    },
+    {
+      value: 'cancel',
+      entity_type: 'action',
+      intent: 'cancel',
+      action: 'cancel_order',
+    },
+    {
+      value: 'pizza',
+      entity_type: 'food',
+      intent: 'order',
+      action: 'place_order',
+    },
+    {
+      value: 'hamburger',
+      entity_type: 'food',
+      intent: 'order',
+      action: 'place_order',
+    },
+    {
+      value: 'water',
+      entity_type: 'drink',
+      intent: 'order',
+      action: 'place_order',
+    },
+    {
+      value: 'coke',
+      entity_type: 'drink',
+      intent: 'order',
+      action: 'place_order',
+    },
+  ];
+
+  columns = [
+    {
+      title: 'Value',
+      key: 'value',
+      sortable: true,
+    },
+    {
+      title: 'Entity type',
+      key: 'entity_type',
+      sortable: true,
+    },
+    {
+      title: 'Intent',
+      key: 'intent',
+      sortable: true,
+    },
+  ];
 }
