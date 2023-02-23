@@ -1,13 +1,11 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: [
-      './projects/va/ui-sdk/**/*.{html,ts,scss}',
-      './src/**/*.{html,ts,scss}',
-      './node_modules/@em-and-ai/ui-sdk/**/*.{html,ts,js}'
-    ],
-  },
-  darkMode: false, // or 'media' or 'class'
+
+  content: [
+    './projects/va/ui-sdk/**/**/*.{html,ts}',
+    './projects/showcase/**/*.{html,ts}',
+    './node_modules/@em-and-ai/ui-sdk/**/*.{html,ts}'
+  ],
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     colors: {
       primary: {

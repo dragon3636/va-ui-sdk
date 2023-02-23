@@ -1,26 +1,36 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { join } from 'path';
 import { task, src, dest, series } from 'gulp';
 import * as sourcemaps from 'gulp-sourcemaps';
 import * as dartSass from 'sass';
 import * as gulpSass from 'gulp-sass';
+import merge2 from 'merge2';
 const sass = gulpSass(dartSass);
 const clean = require('gulp-clean');
+const concatCss = require('gulp-concat-css');
 import { buildConfig } from '../../build-config';
-
-task('style:compile-css', () => {
-  return src(join(buildConfig.componentsDir, 'assets/sass/**/*.scss'))
-    .pipe(sourcemaps.init())
-    .pipe(sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(sourcemaps.write('../maps', { addComment: false }))
-    .pipe(dest(join(buildConfig.componentsDir, 'assets/css/')));
+import { execNodeTask } from '../util/task-helpers';
+//px tailwindcss -i ./projects/va/ui-sdk/assets/css/input.css -o ./dist/output.css --watch
+task(
+  'style:compile-tailwind',
+  execNodeTask('tailwindcss', 'tailwindcss', [
+    '-i',
+    join(buildConfig.componentsDir, 'assets/css/input.css'),
+    '-o',
+    join(buildConfig.componentsDir, 'assets/css/output.css'),
+    '--watch',
+  ]),
+);
+task('style:concat', function () {
+  return src(
+    ['styles.css', 'output.css'].map(url =>
+      join(buildConfig.componentsDir, 'assets/css', url),
+    ),
+  )
+    .pipe(concatCss('concat.css'))
+    .pipe(dest('out/'));
 });
 
-// task('styles:copy', () => {
-//   return src([
-//     join(buildConfig.componentsDir, 'styles/**/*'),
-//     `!${join(buildConfig.componentsDir, 'styles/themse/*')}`,
-//   ]).pipe(dest(join(buildConfig.componentsDir, 'assets')));
-// });
 task('styles:clean', () => {
   return src(
     ['assets/css/styles.css', 'assets/maps/**'].map(url =>
