@@ -51,17 +51,13 @@ export interface DatepickerOptions {
   locale?: object;
   minDate?: Date;
   maxDate?: Date;
-  /** Placeholder for the input field */
   placeholder?: string;
-  /** ID to assign to the input field */
   fieldId?: string;
-  /** If false, barTitleIfEmpty will be disregarded and a date will always be shown. Default: true */
   useEmptyBarTitle?: boolean;
 }
 
 export type PickerPosition = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' | 'static';
 
-// Counter for calculating the auto-incrementing field ID
 let counter = 0;
 
 /**
@@ -85,22 +81,9 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
   @ViewChild('inputElement') inputElement?: ElementRef;
 
   @Input() options?: DatepickerOptions;
-
-  /**
-   * Disable datepicker's input
-   */
   @Input() headless = false;
-
-  /**
-   * Set datepicker's visibility state
-   */
   @Input() isOpened = false;
-
-  /**
-   * Datepicker dropdown position
-   */
   @Input() position: PickerPosition = 'bottom-right';
-
   @Input() previousMonthButtonTemplate?: TemplateRef<any>;
   @Input() nextMonthButtonTemplate?: TemplateRef<any>;
 
