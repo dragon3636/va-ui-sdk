@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { I18nModule } from '@va/ui-sdk/i18n';
+import { I18nModule } from '@em-and-ai/ui-sdk/i18n';
 
 @Component({
   selector: 'lib-card',

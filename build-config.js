@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { join } = require('path');
 const packageJson = require(`${__dirname}/projects/va/ui-sdk/package.json`);
 const buildVersion = packageJson.version;

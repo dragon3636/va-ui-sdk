@@ -4,16 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { VnlpButtonModule } from '@va/ui-sdk/vnlp-button';
-import { VnlpCheckboxModule } from '@va/ui-sdk/vnlp-checkbox';
-import { VnlpCheckboxListModule } from '@va/ui-sdk/vnlp-checkbox-list';
-import { CardComponent } from '@va/ui-sdk/card';
-import { VnlpLabelTagModule } from '@va/ui-sdk/vnlp-label-tag';
-import { VnlpSwitchModule } from '@va/ui-sdk/vnlp-switch';
-import { VnlpTextareaModule } from '@va/ui-sdk/vnlp-textarea';
-import { VnlpInputTextModule } from '@va/ui-sdk/vnlp-input-text';
-import { VnlpCreateVirtualAgentModule } from '@va/ui-sdk/vnlp-create-virtual-agent';
-import { VnlpTickboxModule } from '@va/ui-sdk/vnlp-tickbox/src/vnlp-tickbox.module';
+import { VnlpButtonModule } from '@em-and-ai/ui-sdk/vnlp-button';
+import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
+import { VnlpCheckboxListModule } from '@em-and-ai/ui-sdk/vnlp-checkbox-list';
+import { CardComponent } from '@em-and-ai/ui-sdk/card';
+import { VnlpLabelTagModule } from '@em-and-ai/ui-sdk/vnlp-label-tag';
+import { VnlpSwitchModule } from '@em-and-ai/ui-sdk/vnlp-switch';
+import { VnlpTextareaModule } from '@em-and-ai/ui-sdk/vnlp-textarea';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,9 +24,9 @@ import { VnlpTickboxModule } from '@va/ui-sdk/vnlp-tickbox/src/vnlp-tickbox.modu
     VnlpLabelTagModule,
     VnlpSwitchModule,
     VnlpTextareaModule,
-    VnlpInputTextModule,
-    VnlpCreateVirtualAgentModule,
-    VnlpTickboxModule,
+    // VnlpInputTextModule,
+    // VnlpCreateVirtualAgentModule,
+    // VnlpTickboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

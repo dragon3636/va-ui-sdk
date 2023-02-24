@@ -6,15 +6,15 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./vnlp-textarea.component.scss'],
 })
 export class VnlpTextareaComponent implements OnInit {
-  @Input() label: string = 'Label';
-  @Input() name: string = '';
-  @Input() value: string = '';
-  @Input() error: boolean = false;
-  @Input() placeholder: string = 'Placeholder';
-  @Input() disabled: boolean = false;
-  @Input() cols: string = '30';
-  @Input() rows: string = '10';
-  @Input() maxLength: string = '75';
+  @Input() label = 'Label';
+  @Input() name = '';
+  @Input() value = '';
+  @Input() error = false;
+  @Input() placeholder = 'Placeholder';
+  @Input() disabled = false;
+  @Input() cols = '30';
+  @Input() rows = '10';
+  @Input() maxLength = '75';
   @Output() valueChange = new EventEmitter();
   @Output() onBlur = new EventEmitter();
 

@@ -1,13 +1,9 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: [
-      './projects/va/ui-sdk/**/*.{html,ts,scss}',
-      './projects/showcase/**/*.{html,ts,scss}',
-      './src/**/*.{html,ts,scss}',
-    ],
-  },
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './projects/va/ui-sdk/**/**/*.{html,ts}',
+    './projects/showcase/**/*.{html,ts}',
+  ],
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -89,7 +85,7 @@ module.exports = {
           300: '#fee6ab',
           400: '#feda80',
           500: '#fdcd56',
-          500: '#fdc12c',
+          600: '#fdc12c',
           700: '#ca9a23',
           800: '#98741a',
           900: '#654d12',
@@ -106,7 +102,7 @@ module.exports = {
           1: '#141416',
         },
         stroke: '#e6e8ec',
-      }
+      },
     },
     height: {
       1: '4px',
@@ -140,7 +136,7 @@ module.exports = {
   },
   variants: {},
   plugins: [
-    require('@tailwindcss/typography'),
+    // require('@tailwindcss/typography'),
     require('tailwind-scrollbar')
   ],
 };

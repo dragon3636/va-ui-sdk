@@ -6,10 +6,10 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./vnlp-checkbox.component.scss'],
 })
 export class VnlpCheckboxComponent implements OnInit {
-  @Input() label: string = 'Label';
-  @Input() name: string = '';
-  @Input() disabled: boolean = false;
-  @Input() checked: boolean = false;
+  @Input() label = 'Label';
+  @Input() name = '';
+  @Input() disabled = false;
+  @Input() checked = false;
   @Input() labelPosition: 'left' | 'right' = 'right';
   @Output() checkedChange = new EventEmitter();
 

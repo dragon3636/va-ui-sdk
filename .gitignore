@@ -40,3 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Compile output CSS
+projects/va/ui-sdk/assets/css/style-concat.css
+projects/va/ui-sdk/assets/css/tailwind-output.css
+projects/va/ui-sdk/assets/maps

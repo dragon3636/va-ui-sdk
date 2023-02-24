@@ -3,8 +3,8 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "@va/ui-sdk/*": ["projects/va/ui-sdk/*"],
-      "@va/ui-sdk": ["projects/va/ui-sdk"]
+      "@em-and-ai/ui-sdk/*": ["dist/va/ui-sdk/*"],
+      "@em-and-ai/ui-sdk": ["dist/va/ui-sdk"]
     },
     "outDir": "../../../out-tsc/lib",
     "declaration": true,

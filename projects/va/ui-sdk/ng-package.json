@@ -4,10 +4,17 @@
   "lib": {
     "entryFile": "public-api.ts",
     "styleIncludePaths": [
-      "/assets/theme/base",
-      "/assets/theme/module",
-      "/assets/theme/state"
+      "./assets/sass/base",
+      "./assets/sass/module",
+      "./assets/sass/state"
     ]
   },
-  "assets": ["./styles/*.*", "./assets/**/*.*"]
+  "assets": [
+    {
+      "input": "./assets",
+      "glob": "**/*.*",
+      "output": "assets",
+      "ignore": ["sass/**/*.*"]
+    }
+  ]
 }

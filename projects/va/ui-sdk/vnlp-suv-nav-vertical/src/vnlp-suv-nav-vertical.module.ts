@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { I18nModule } from '@va/ui-sdk/i18n';
+import { I18nModule } from '@em-and-ai/ui-sdk/i18n';
 import { VnlpSuvNavVerticalComponent } from './vnlp-suv-nav-vertical.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component'
 import { SidebarSubmenuComponent } from './sidebar-submenu/sidebar-submenu.component'
