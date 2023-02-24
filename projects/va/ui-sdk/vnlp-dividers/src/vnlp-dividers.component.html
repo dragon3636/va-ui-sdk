@@ -1,0 +1,10 @@
+<ng-container [ngTemplateOutlet]="type === 'Dividers 1x' ? normal : bold">
+</ng-container>
+
+<ng-template #normal>
+    <div class="border-[1px] border-solid border-[#E6E8EC]"></div>
+</ng-template>
+
+<ng-template #bold>
+    <div class="border-[2px] border-solid border-[#E6E8EC]"></div>
+</ng-template>

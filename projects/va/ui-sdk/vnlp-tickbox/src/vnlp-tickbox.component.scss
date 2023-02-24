@@ -1,0 +1,36 @@
+@import './../../assets/scss/theme/base/variable';
+@import './../../assets/scss/theme/base/mixins';
+
+.tickbox-container {
+  .tickbox-input {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid map-get($color, stroke);
+    background-color: map-get($color, neutral-8);
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      border: 1.5px solid map-get($color, primary-400);
+    }
+  }
+
+  .tickbox-input--checked {
+    background-color: map-get($color, primary);
+    border: 1px solid map-get($color, primary);
+
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background-color: map-get($color, neutral-8);
+      border-radius: 50%;
+    }
+  }
+}

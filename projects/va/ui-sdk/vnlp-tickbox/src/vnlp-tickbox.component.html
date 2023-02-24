@@ -1,0 +1,20 @@
+<div class="tickbox-container inline-flex items-center" (click)="handleCheck()">
+  <span
+    *ngIf="label && labelPosition === 'left'"
+    class="tickbox-label mr-3 txt-sm txt-bold"
+  >
+    {{ label }}
+  </span>
+  <div
+    [ngClass]="{
+      'tickbox-input': true,
+      'tickbox-input--checked': checked
+    }"
+  ></div>
+  <span
+    *ngIf="label && labelPosition === 'right'"
+    class="tickbox-label ml-3 txt-sm txt-bold"
+  >
+    {{ label }}
+  </span>
+</div>

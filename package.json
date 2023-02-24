@@ -8,7 +8,7 @@
     "test": "gulp test",
     "lint": "eslint . --ext .ts --fix",
     "test-coverage": "run-p lib:test-coverage showcase:test-coverage",
-    "lib:release":"gulp build:release",
+    "lib:release": "gulp build:release",
     "lib:build": "gulp library:build",
     "lib:test-coverage": "gulp library:test-coverage",
     "showcase:start": "gulp showcase:start",
@@ -28,6 +28,7 @@
     "@angular/platform-browser-dynamic": "^14.2.12",
     "@angular/router": "^14.2.12",
     "@em-and-ai/ui-sdk": "file:dist/va/ui-sdk",
+    "date-fns": "^2.29.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
