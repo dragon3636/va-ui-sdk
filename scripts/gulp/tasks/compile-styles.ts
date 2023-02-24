@@ -4,43 +4,73 @@ import { task, src, dest, series } from 'gulp';
 import * as sourcemaps from 'gulp-sourcemaps';
 import * as dartSass from 'sass';
 import * as gulpSass from 'gulp-sass';
-import merge2 from 'merge2';
+import * as cleanCSS from 'gulp-clean-css';
+import * as pump from 'pump';
 const sass = gulpSass(dartSass);
 const clean = require('gulp-clean');
 const concatCss = require('gulp-concat-css');
 import { buildConfig } from '../../build-config';
 import { execNodeTask } from '../util/task-helpers';
 //px tailwindcss -i ./projects/va/ui-sdk/assets/css/input.css -o ./dist/output.css --watch
+task('style:compile-css', () => {
+  return pump([
+    src(join(buildConfig.componentsDir, 'assets/sass/**/*.scss')),
+    sourcemaps.init(),
+    sass.sync({ outputStyle: 'compressed' }).on('error', sass.logError),
+    sourcemaps.write('../maps', { addComment: false }),
+    dest(join(buildConfig.componentsDir, 'assets/css/')),
+  ]);
+});
+
 task(
   'style:compile-tailwind',
   execNodeTask('tailwindcss', 'tailwindcss', [
     '-i',
-    join(buildConfig.componentsDir, 'assets/css/input.css'),
+    join(buildConfig.componentsDir, 'assets/css/tailwind-input.css'),
     '-o',
-    join(buildConfig.componentsDir, 'assets/css/output.css'),
-    '--watch',
+    join(buildConfig.componentsDir, 'assets/css/tailwind-output.css'),
   ]),
 );
 task('style:concat', function () {
-  return src(
-    ['styles.css', 'output.css'].map(url =>
-      join(buildConfig.componentsDir, 'assets/css', url),
+  return pump([
+    src(
+      ['tailwind-output.css', 'styles.css'].map(url =>
+        join(buildConfig.componentsDir, 'assets/css', url),
+      ),
+      { allowEmpty: true },
     ),
-  )
-    .pipe(concatCss('concat.css'))
-    .pipe(dest('out/'));
+    concatCss('style-concat.css'),
+    sourcemaps.init(),
+    cleanCSS(),
+    sourcemaps.write('../maps', { addComment: false }),
+    dest(join(buildConfig.componentsDir, 'assets/css')),
+  ]);
 });
 
-task('styles:clean', () => {
-  return src(
-    ['assets/css/styles.css', 'assets/maps/**'].map(url =>
-      join(buildConfig.componentsDir, url),
+task('style:clean', () => {
+  return pump([
+    src(
+      [
+        'css/styles.css',
+        'css/style-concat.css',
+        'css/tailwind-output.css',
+        'maps/**',
+      ].map(url => join(buildConfig.componentsDir, 'assets', url)),
+      {
+        read: false,
+        allowEmpty: true,
+      },
     ),
-    {
-      read: false,
-      allowEmpty: true,
-    },
-  ).pipe(clean());
+    clean(),
+  ]);
 });
 
-task('styles:build', series(['styles:clean', 'style:compile-css']));
+task(
+  'style:build',
+  series([
+    'style:clean',
+    'style:compile-css',
+    'style:compile-tailwind',
+    'style:concat',
+  ]),
+);

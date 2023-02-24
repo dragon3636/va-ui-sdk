@@ -1,12 +1,13 @@
 @import '../../assets/sass/base/variable';
 @import '../../assets/sass/base/mixins';
 
-
 button {
   color: map-get($color, neutral-light);
+
   &.sm {
     height: 40px;
   }
+
   &.lg {
     height: 48px;
   }
@@ -79,7 +80,7 @@ button {
 }
 
 .icon-left {
-    padding-left: 48px;
+  padding-left: 48px;
 
   .input-icon {
     position: absolute;
@@ -93,6 +94,8 @@ button {
 }
 
 .icon-right {
+  margin-right: 24px;
+
   .input-icon {
     position: absolute;
     top: 50%;
@@ -108,4 +111,3 @@ button {
   width: 16px;
   height: 16px;
 }
-

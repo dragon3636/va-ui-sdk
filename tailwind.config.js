@@ -1,9 +1,7 @@
 module.exports = {
-
   content: [
     './projects/va/ui-sdk/**/**/*.{html,ts}',
     './projects/showcase/**/*.{html,ts}',
-    './node_modules/@em-and-ai/ui-sdk/**/*.{html,ts}'
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
