@@ -1,0 +1,84 @@
+<div class="relative">
+  <div (click)="toggle()"
+    class="flex justify-between items-center w-[302px] h-[48px] rounded-[10px] py-[12px] px-[18px] border-[1.5px] border-solid border-[#E6E8EC] bg-white focus-within:border-2 focus-within:border-blue-600 cursor-pointer">
+    <input *ngIf="!headless" #inputElement type="text"
+      class="w-[100%] h-[100%] text-[16px] leading-[24px] outline-none bg-transparent cursor-pointer"
+      [(ngModel)]="displayValue" readonly [placeholder]="currentOptions.placeholder" [id]="fieldId"
+      [disabled]="disabled" />
+    <span class="text-[#007DF9] text-[20px]">
+      <i [class]="'icon-vnlp-icon-calendar-line'"></i>
+    </span>
+  </div>
+  <ng-content></ng-content>
+  <div class="absolute w-[350px] h-[371px] rounded-[8px] bg-white top-[55px] left-[0] px-[10px]" *ngIf="isOpened"
+    #container>
+    <div class="relative">
+      <div class="w-[100%] h-[50px]">
+        <div class="flex justify-between py-[10px] items-center border-b-[1px] border-solid border-[#E6E8EC]">
+          <div (click)="prevMonth()">
+            <ng-template [ngTemplateOutlet]="previousMonthButtonTemplate || defaultPreviousMonthTemplate"></ng-template>
+          </div>
+          <ng-template #defaultPreviousMonthTemplate>
+            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="10px" height="8px"
+              shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality"
+              fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 298 511.93">
+              <path fill="#777E91"
+                d="M285.77 441c16.24 16.17 16.32 42.46.15 58.7-16.16 16.24-42.45 16.32-58.69.16l-215-214.47c-16.24-16.16-16.32-42.45-.15-58.69L227.23 12.08c16.24-16.17 42.53-16.09 58.69.15 16.17 16.24 16.09 42.54-.15 58.7l-185.5 185.04L285.77 441z" />
+            </svg>
+          </ng-template>
+          <span class="text-sm text-[#23262F] font-bold cursor-pointer" (click)="toggleView()">{{ barTitle }}</span>
+          <div (click)="nextMonth()">
+            <ng-template [ngTemplateOutlet]="nextMonthButtonTemplate || defaultNextMonthTemplate"></ng-template>
+          </div>
+          <ng-template #defaultNextMonthTemplate>
+            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="10px" height="8px"
+              shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality"
+              fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 298 511.93">
+              <path fill="#777E91"
+                d="M70.77 499.85c-16.24 16.17-42.53 16.09-58.69-.15-16.17-16.25-16.09-42.54.15-58.7l185.5-185.03L12.23 70.93c-16.24-16.16-16.32-42.45-.15-58.7 16.16-16.24 42.45-16.32 58.69-.15l215.15 214.61c16.17 16.25 16.09 42.54-.15 58.7l-215 214.46z" />
+            </svg>
+          </ng-template>
+        </div>
+      </div>
+      <div class="h-[100%] w-[100%] pt-[10px] text-xs font-normal">
+        <ng-container *ngIf="view === 'days'">
+          <div class="w-[100%] flex items-center text-sm text-[#B1B5C3] font-normal">
+            <span class="day-name-unit" *ngFor="let name of dayNames">{{ name }}</span>
+          </div>
+          <div class="pt-[15px] w-[100%] inline-block">
+            <span class="day-unit" *ngFor="let day of days; let i = index;" (click)="day.isSelectable && setDate(i)">
+              <span class="day-background-upper" [ngClass]="this.getDayClasses(day)">{{ day.isVisible ? day.day : ''
+                }}</span>
+              <span class="day-background-lower" [ngClass]="this.getDayClasses(day)"></span>
+            </span>
+          </div>
+        </ng-container>
+        <div *ngIf="view === 'years'"
+          class="overflow-y-auto flex flex-wrap h-[225px] gap-[10px] text-[#777E91] font-medium scrollbar-thumb-rounded scrollbar-track-rounded overflow-auto scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-white">
+          <span *ngFor="let year of years; let i = index;" class="year-unit"
+            [ngClass]="{ 'is-selected': year.isThisYear }" (click)="setYear(i)">
+            {{ year.year }}
+          </span>
+        </div>
+        <div *ngIf="view === 'months'" class="main-calendar-months">
+          <span *ngFor="let month of months; let i = index;" class="month-unit"
+            [ngClass]="{ 'is-selected': month.isSelected}" (click)="setMonth(i)">
+            {{ month.name }}
+          </span>
+        </div>
+      </div>
+      <div class="absolute w-[100%] top-[320px]">
+        <div class="flex items-center justify-between">
+          <button (click)="cancelChange()"
+            class="py-[12px] px-[16px] text-sm leading-[16px] text-[#696F8C] rounded-[8px] font-bold bg-white border-[2px] border-solid border-[#E6E8EC] focus:outline-none focus:ring-1 focus:ring-blue-600 hover:bg-gray-100">
+            Cancel
+          </button>
+          <button (click)="applyChange()"
+            class="py-[12px] px-[16px] text-sm leading-[16px] text-white font-bold bg-blue-600 rounded-[8px] focus:outline-none focus:ring-1 focus:ring-blue-600 hover:bg-blue-700">
+            Apply
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

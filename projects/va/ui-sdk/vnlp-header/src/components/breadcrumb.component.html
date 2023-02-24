@@ -1,0 +1,19 @@
+<ul class="flex gap-[3px]">
+    <li class="flex items-center gap-[3px] text-[#141416] text-sm font-medium"
+        *ngFor="let breadcrumb of (breadcrumbs$ | async); let i = index">
+        <ng-container [ngTemplateOutlet]="i + 1 != (breadcrumbs$ | async)?.length ? element : current">
+        </ng-container>
+
+        <ng-template #element>
+            <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
+            <span>
+                <i class="text-[25px] text-[#B1B5C3] font-normal" [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
+            </span>
+            <!-- <div>></div> -->
+        </ng-template>
+
+        <ng-template #current>
+            <a class="text-[#B1B5C3]" [routerLink]="breadcrumb.url"> {{ breadcrumb.label }}</a>
+        </ng-template>
+    </li>
+</ul>
