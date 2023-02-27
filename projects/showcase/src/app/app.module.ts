@@ -13,6 +13,10 @@ import { CardComponent } from '@em-and-ai/ui-sdk/card';
 import { VnlpCreateVirtualAgentModule } from '@em-and-ai/ui-sdk/vnlp-create-virtual-agent';
 import { VnlpTableModule } from '@em-and-ai/ui-sdk/vnlp-table';
 import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
+import { VnlpTickboxModule } from '@em-and-ai/ui-sdk/vnlp-tickbox';
+import { VnlpInputTextModule } from '@em-and-ai/ui-sdk/vnlp-input-text';
+import { VnlpLogoModule } from '@em-and-ai/ui-sdk/vnlp-logo';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -27,6 +31,9 @@ import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
     VnlpTableModule,
     VnlpCreateVirtualAgentModule,
     VnlpCheckboxModule,
+    VnlpTickboxModule,
+    VnlpInputTextModule,
+    VnlpLogoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

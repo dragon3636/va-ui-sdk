@@ -2,6 +2,11 @@
   <vnlp-table
     [columns]="columns"
     [dataTable]="dataSource"
+    [pageOptions]="{
+      currentPage: 2,
+      pageSize: 10,
+      totalRecord: 200
+    }"
     [editable]="true"
     [deletable]="true"
     [selectable]="true"
@@ -175,3 +180,272 @@
 </div>
 
 {{ demoInputValue }}
+
+<!-- vnlp-button -->
+<div class="p-4">
+  <div class="flex justify-between h-[120px]">
+    <div class="flex flex-col justify-between">
+      <vnlp-button type="primary" title="button"></vnlp-button>
+      <vnlp-button
+        type="primary"
+        title="button"
+        [disabled]="true"
+      ></vnlp-button>
+    </div>
+    <div class="flex flex-col justify-between">
+      <vnlp-button
+        type="primary"
+        title="Create virtual agent"
+        icon="star-filled"
+      ></vnlp-button>
+      <vnlp-button
+        type="primary"
+        title="button"
+        icon="star-filled"
+        [disabled]="true"
+      ></vnlp-button>
+    </div>
+    <div class="flex flex-col justify-between">
+      <vnlp-button
+        type="primary"
+        title="button"
+        icon="star-filled"
+        iconPosition="right"
+      ></vnlp-button>
+      <vnlp-button
+        type="primary"
+        title="button"
+        icon="star-filled"
+        iconPosition="right"
+        [disabled]="true"
+      >
+      </vnlp-button>
+    </div>
+    <br />
+  </div>
+
+  <div class="pt-2 flex justify-between h-[120px]">
+    <div class="flex flex-col justify-between">
+      <vnlp-button type="light" title="button"></vnlp-button>
+      <vnlp-button type="light" title="button" [disabled]="true"></vnlp-button>
+    </div>
+    <div class="flex flex-col justify-between">
+      <vnlp-button type="light" title="button" icon="star-filled"></vnlp-button>
+      <vnlp-button
+        type="light"
+        title="button"
+        icon="star-filled"
+        [disabled]="true"
+      ></vnlp-button>
+    </div>
+    <div class="flex flex-col justify-between">
+      <vnlp-button
+        type="light"
+        title="button"
+        icon="star-filled"
+        iconPosition="right"
+      ></vnlp-button>
+      <vnlp-button
+        type="light"
+        title="button"
+        icon="star-filled"
+        iconPosition="right"
+        [disabled]="true"
+      ></vnlp-button>
+    </div>
+    <br />
+  </div>
+
+  <div class="pt-2 flex justify-between h-[120px]">
+    <div class="flex flex-col justify-between">
+      <vnlp-button type="transparent" title="button"></vnlp-button>
+      <vnlp-button
+        type="transparent"
+        title="button"
+        [disabled]="true"
+      ></vnlp-button>
+    </div>
+    <div class="flex flex-col justify-between">
+      <vnlp-button
+        type="transparent"
+        title="button"
+        icon="star-filled"
+      ></vnlp-button>
+      <vnlp-button
+        type="transparent"
+        title="button"
+        icon="star-filled"
+        [disabled]="true"
+      ></vnlp-button>
+    </div>
+    <div class="flex flex-col justify-between">
+      <vnlp-button
+        type="transparent"
+        title="button"
+        icon="star-filled"
+        iconPosition="right"
+      ></vnlp-button>
+      <vnlp-button
+        type="transparent"
+        title="button"
+        icon="star-filled"
+        iconPosition="right"
+        [disabled]="true"
+      >
+      </vnlp-button>
+    </div>
+    <br />
+  </div>
+</div>
+
+<!-- vnlp-checkbox -->
+<div class="p-4 flex flex-col justify-between flex-wrap">
+  <vnlp-checkbox [(checked)]="demoChecked"></vnlp-checkbox>
+  <vnlp-checkbox [disabled]="true" [checked]="true"></vnlp-checkbox>
+</div>
+
+<!-- vnlp-checkbox-list -->
+<div class="p-4 flex flex-col justify-between flex-wrap">
+  <vnlp-checkbox-list [options]="demoCheckboxData"> </vnlp-checkbox-list>
+</div>
+
+<!-- vnlp-label-tag -->
+<div class="p-4 flex justify-between flex-wrap">
+  <vnlp-label-tag text="Label Text" type="gray"></vnlp-label-tag>
+  <vnlp-label-tag text="Label Text" type="orange"></vnlp-label-tag>
+  <vnlp-label-tag text="Label Text" type="red"></vnlp-label-tag>
+  <vnlp-label-tag text="Label Text" type="blue"></vnlp-label-tag>
+  <vnlp-label-tag text="Label Text" type="green"></vnlp-label-tag>
+</div>
+
+<!-- vnlp-switch -->
+<div class="p-4 flex flex-col justify-between flex-wrap">
+  <vnlp-switch
+    [(checked)]="demoSwitch"
+    label="Switch 1"
+    labelPosition="left"
+  ></vnlp-switch>
+  <vnlp-switch
+    [(checked)]="demoSwitch"
+    [disabled]="true"
+    label="Switch 2"
+  ></vnlp-switch>
+</div>
+
+<!-- vnlp-textarea -->
+<div class="p-4 flex justify-between flex-wrap">
+  <vnlp-textarea
+    label="Normal textarea"
+    name="textarea1"
+    [(value)]="demoInputValue"
+    width="320"
+    maxLength="100"
+  ></vnlp-textarea>
+</div>
+
+{{ demoInputValue }}
+
+<!-- vnlp-input-text -->
+
+<div class="p-4 flex justify-between flex-wrap">
+  <vnlp-input-text
+    label="Normal input"
+    name="input1"
+    [(value)]="demoInputValue"
+    width="320"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Disabled Input"
+    name="input2"
+    [(value)]="demoInputValue"
+    iconPosition="left"
+    icon="apple-line"
+    [disabled]="true"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Normal input"
+    name="input1"
+    [(value)]="demoInputValue"
+    width="320"
+    iconPosition="left"
+    icon="apple-line"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Input with Information"
+    name="Input1"
+    [(value)]="demoInputValue"
+    icon="apple-line"
+    [success]="true"
+    iconPosition="right"
+    informationText="Information text"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Input with Information"
+    name="Input2"
+    [(value)]="demoInputValue"
+    icon="apple-line"
+    iconPosition="right"
+    informationText="Information text"
+  ></vnlp-input-text>
+
+  <vnlp-input-text
+    label="Test"
+    [(value)]="demoInputValue"
+    [disabled]="true"
+    icon="apple-line"
+    iconPosition="left"
+    informationText="Information text"
+  ></vnlp-input-text>
+</div>
+
+<!-- vnlp-create-virtual-agent -->
+<div class="p-4 flex justify-between flex-wrap gap-2">
+  <vnlp-create-virtual-agent mode="create"></vnlp-create-virtual-agent>
+  <vnlp-create-virtual-agent [disabled]="true"></vnlp-create-virtual-agent>
+  <vnlp-create-virtual-agent
+    mode="show"
+    title="Dự án bất động sản"
+    description="Hỗ trợ khách hàng mua bán bất động sản ở ven biển"
+    labelText="AI Voicebot"
+    labelType="blue"
+  ></vnlp-create-virtual-agent>
+  <vnlp-create-virtual-agent
+    mode="show"
+    title="Dự án bất động sản"
+    description="Hỗ trợ khách hàng mua bán bất động sản ở ven biển"
+    labelText="Chatbot"
+    labelType="orange"
+    type="chat"
+  ></vnlp-create-virtual-agent>
+  <vnlp-create-virtual-agent
+    mode="show"
+    title="Dự án bất động sản"
+    description="Hỗ trợ khách hàng mua bán bất động sản ở ven biển"
+    labelText="Chatbot"
+    labelType="orange"
+    [disabled]="true"
+    type="chat"
+  ></vnlp-create-virtual-agent>
+</div>
+
+<!-- vnlp-tickbox -->
+<div class="p-4 flex flex-col justify-between flex-wrap gap-2">
+  <vnlp-tickbox label="option 1"></vnlp-tickbox>
+  <vnlp-tickbox label="option 2"></vnlp-tickbox>
+  <vnlp-tickbox
+    labelPosition="left"
+    label="option 3"
+    [(checked)]="demoSwitch"
+  ></vnlp-tickbox>
+</div>
+
+<!-- vnlp-logo -->
+<div class="p-4 flex flex-col justify-between flex-wrap gap-2">
+  <vnlp-logo></vnlp-logo>
+  <vnlp-logo type="vertical"></vnlp-logo>
+  <vnlp-logo type="horizontal"></vnlp-logo>
+</div>
