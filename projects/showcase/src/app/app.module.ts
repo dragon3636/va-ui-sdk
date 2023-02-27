@@ -5,12 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { VnlpButtonModule } from '@em-and-ai/ui-sdk/vnlp-button';
-import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
+import { VnlpTextareaModule } from '@em-and-ai/ui-sdk/vnlp-textarea';
+import { VnlpSwitchModule } from '@em-and-ai/ui-sdk/vnlp-switch';
+import { VnlpLabelTagModule } from '@em-and-ai/ui-sdk/vnlp-label-tag';
 import { VnlpCheckboxListModule } from '@em-and-ai/ui-sdk/vnlp-checkbox-list';
 import { CardComponent } from '@em-and-ai/ui-sdk/card';
-import { VnlpLabelTagModule } from '@em-and-ai/ui-sdk/vnlp-label-tag';
-import { VnlpSwitchModule } from '@em-and-ai/ui-sdk/vnlp-switch';
-import { VnlpTextareaModule } from '@em-and-ai/ui-sdk/vnlp-textarea';
+import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
 
 @NgModule({
   declarations: [AppComponent],

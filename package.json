@@ -8,7 +8,7 @@
     "test": "gulp test",
     "lint": "eslint . --ext .ts --fix",
     "test-coverage": "run-p lib:test-coverage showcase:test-coverage",
-    "lib:release":"gulp build:release",
+    "lib:release": "gulp build:release",
     "lib:build": "gulp library:build",
     "lib:test-coverage": "gulp library:test-coverage",
     "showcase:start": "gulp showcase:start",
