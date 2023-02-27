@@ -1,0 +1,179 @@
+@import './../../assets/sass/base/variable';
+@import './../../assets/sass/base/mixins';
+
+.icon-left {
+  input {
+    padding-left: 48px;
+  }
+
+  .input-icon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+.icon-right {
+  .input-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  input {
+    padding-right: 40px;
+  }
+}
+
+.success {
+  input {
+    background-color: map-get($color, neutral-light);
+    box-shadow: 0 0 1px 2px map-get($color, success);
+    color: map-get($color, success);
+    caret-color: map-get($color, success);
+
+    &:hover {
+      box-shadow: 0 0 1px 2px map-get($color, success);
+    }
+  }
+
+  .info-text {
+    color: map-get($color, success);
+  }
+
+  .input-icon i {
+    color: map-get($color, success);
+  }
+}
+
+.information {
+  input {
+    &:hover {
+      box-shadow: 0 0 1px 2px map-get($color, primary);
+
+      & ~ .input-icon i {
+        color: map-get($color, primary);
+      }
+    }
+
+    &:focus {
+      & ~ .input-icon i {
+        color: map-get($color, primary);
+      }
+    }
+  }
+}
+
+input {
+  @include pxRem(padding, 12 18);
+  box-shadow: 0 0 1px 2px map-get($color, stroke);
+
+  &::placeholder {
+    color: map-get($color, neutral-5);
+  }
+
+  &:focus {
+    box-shadow: 0 0 1px 2px map-get($color, primary);
+    caret-color: map-get($color, primary);
+
+    & ~ .info-text {
+      color: map-get($color, primary);
+    }
+
+    & ~ .input-icon i {
+      color: map-get($color, primary);
+    }
+
+    &:hover {
+      box-shadow: 0 0 1px 2px map-get($color, primary);
+
+      & ~ .info-text {
+        color: map-get($color, primary);
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 1px 2px map-get($color, neutral-3);
+
+    & ~ .info-text {
+      color: map-get($color, primary);
+    }
+  }
+}
+
+.input-icon {
+  i {
+    font-size: 18px;
+    color: map-get($color, neutral-5);
+  }
+}
+
+.error {
+  input {
+    background-color: map-get($color, error-100);
+    box-shadow: 0 0 1px 2px map-get($color, error);
+
+    &:hover {
+      box-shadow: 0 0 1px 2px map-get($color, error);
+    }
+
+    &:hover ~ .info-text,
+    &:focus ~ .info-text {
+      color: map-get($color, error);
+    }
+
+    &:hover ~ .input-icon i,
+    &:focus ~ .input-icon i {
+      color: map-get($color, error);
+    }
+  }
+
+  .input-icon i {
+    color: map-get($color, error);
+  }
+
+  .error-msg {
+    color: map-get($color, error);
+    font-weight: 500;
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+
+  input {
+    color: map-get($color, neutral-5);
+    cursor: not-allowed;
+
+    &:hover {
+      box-shadow: 0 0 1px 2px map-get($color, stroke);
+    }
+
+    & ~ .info-text {
+      color: map-get($color, neutral-5);
+    }
+
+    &:hover ~ .info-text,
+    &:focus ~ .info-text {
+      color: map-get($color, neutral-5);
+    }
+
+    &:hover ~ .input-icon i,
+    &:focus ~ .input-icon i {
+      color: map-get($color, neutral-5);
+    }
+  }
+
+  .input-icon {
+    i {
+      color: map-get($color, neutral-5);
+    }
+  }
+}

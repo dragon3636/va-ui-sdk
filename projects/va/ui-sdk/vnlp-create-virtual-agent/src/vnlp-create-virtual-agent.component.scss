@@ -1,0 +1,85 @@
+@import './../../assets/sass/base/variable';
+@import './../../assets/sass/base/mixins';
+
+.create-virtual-agent {
+  background-color: map-get($color, neutral-8);
+  box-sizing: border-box;
+
+  &:disabled {
+    &.create-mode {
+      &:hover {
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23E6E8ECFF' stroke-width='4' stroke-dasharray='4%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+      }
+    }
+
+    &.show-mode {
+      &:hover {
+        box-shadow: none;
+      }
+
+      .popover-options {
+        &:hover {
+          background-color: inherit;
+        }
+      }
+    }
+  }
+
+  &.create-mode {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23E6E8ECFF' stroke-width='4' stroke-dasharray='4%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+
+    &:hover {
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23007DF9FF' stroke-width='4' stroke-dasharray='4%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    }
+  }
+
+  &.show-mode {
+    .icon-voice {
+      height: 24px;
+      width: 24px;
+      background-image: url('../../assets/icon/voice.svg');
+    }
+
+    .icon-chat {
+      height: 24px;
+      width: 24px;
+      background-image: url('../../assets/icon/robot.svg');
+    }
+
+    .divider {
+      border-bottom: 1px solid map-get($color, stroke);
+      margin-left: -14px;
+      margin-right: -14px;
+    }
+
+    &:hover {
+      box-shadow: 0 0 4px 1px map-get($color, primary);
+    }
+
+    .options {
+      background-color: map-get($color, neutral-8);
+      overflow: hidden;
+
+      li {
+        &:hover {
+          background-color: map-get($color, primary-100);
+        }
+      }
+    }
+
+    .popover-options {
+      &:hover {
+        background-color: map-get($color, primary-100);
+      }
+
+      &.opened {
+        background-color: map-get($color, primary-100);
+      }
+
+      .options {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
+        z-index: 1;
+      }
+    }
+  }
+}

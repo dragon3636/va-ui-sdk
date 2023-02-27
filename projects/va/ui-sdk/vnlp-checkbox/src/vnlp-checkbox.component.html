@@ -1,17 +1,22 @@
 <div
   [ngClass]="{
     'checkbox-container inline-flex justify-between items-center mb-2': true,
-    disabled: disabled
+    disabled: disabled,
+    'show-in-list': isShowInList,
+    'show-divider': isShowDivider,
+    checked: checked
   }"
   (click)="handleCheck()"
 >
   <label
-    *ngIf="labelPosition === 'left'"
     [for]="name"
-    class="txt-sm txt-600 mr-1 color-neutral-3 select-none"
+    [ngClass]="{
+      'txt-sm mx-1 txt-600 color-neutral-3 select-none': true,
+      'order-2': labelPosition === 'right'
+    }"
     >{{ label }}</label
   >
-  <div class="inline-block">
+  <div class="inline-block mx-1">
     <div
       *ngIf="!checked"
       class="default-check-box transition-all ease-in-out duration-200"
@@ -23,10 +28,4 @@
       <i class="icon icon-vnlp-icon-check-line"></i>
     </div>
   </div>
-  <label
-    *ngIf="labelPosition === 'right'"
-    [for]="name"
-    class="txt-sm txt-600 ml-1 color-neutral-3 select-none"
-    >{{ label }}</label
-  >
 </div>
