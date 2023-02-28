@@ -9,8 +9,9 @@ export class VnlpSwitchComponent implements OnInit {
   @Input() checked: boolean = false;
   @Input() disabled: boolean = false;
   @Input() label: string = 'Label';
-  @Input() name: string = 'Label';
+  @Input() name: string = 'name';
   @Input() labelPosition: 'left' | 'right' = 'right';
+  @Input() size: 'sm' | 'md' = 'sm';
   @Output() checkedChange = new EventEmitter();
 
   constructor() {}

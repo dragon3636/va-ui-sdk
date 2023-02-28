@@ -5,7 +5,7 @@
 }
 
 @each $name, $type in $color {
-  .bg-#{'' + $name} {
+  .bgc-#{'' + $name} {
     background-color: $type;
   }
 }
