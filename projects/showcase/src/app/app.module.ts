@@ -6,16 +6,17 @@ import { AppComponent } from './app.component';
 
 import { VnlpButtonModule } from '@em-and-ai/ui-sdk/vnlp-button';
 import { VnlpTextareaModule } from '@em-and-ai/ui-sdk/vnlp-textarea';
-import { VnlpSwitchModule } from '../../../va/ui-sdk/vnlp-switch/public-api';
+import { VnlpSwitchModule } from '@em-and-ai/ui-sdk/vnlp-switch';
 import { VnlpLabelTagModule } from '@em-and-ai/ui-sdk/vnlp-label-tag';
 import { VnlpCheckboxListModule } from '@em-and-ai/ui-sdk/vnlp-checkbox-list';
 import { CardComponent } from '@em-and-ai/ui-sdk/card';
 import { VnlpCreateVirtualAgentModule } from '@em-and-ai/ui-sdk/vnlp-create-virtual-agent';
 import { VnlpTableModule } from '@em-and-ai/ui-sdk/vnlp-table';
 import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
-import { VnlpTickboxModule } from '../../../va/ui-sdk/vnlp-tickbox/public-api';
+import { VnlpTickboxModule } from '@em-and-ai/ui-sdk/vnlp-tickbox';
 import { VnlpInputTextModule } from '@em-and-ai/ui-sdk/vnlp-input-text';
 import { VnlpLogoModule } from '@em-and-ai/ui-sdk/vnlp-logo';
+import { VnlpSwitcherModule } from '../../../va/ui-sdk/vnlp-switcher';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,6 +35,7 @@ import { VnlpLogoModule } from '@em-and-ai/ui-sdk/vnlp-logo';
     VnlpTickboxModule,
     VnlpInputTextModule,
     VnlpLogoModule,
+    VnlpSwitcherModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,29 @@
+<div class="sth">
+  <ul class="vnlp-switcher-container">
+    <div
+      class="slider"
+      [ngStyle]="{
+        width: 'calc(' + 100 / switcherList.length + '% - 9px)',
+        left:
+          selectedIndex === 0
+            ? '4px'
+            : 'calc(' + selectedIndex * (100 / switcherList.length) + '% + 4px)'
+      }"
+      [attr.data-index]="selectedIndex"
+    ></div>
+    <li
+      *ngFor="let section of switcherList; index as i"
+      [class.active]="section?.title === selected"
+      (click)="handleSwitch(i)"
+      [style.width.%]="100 / switcherList.length"
+      [class.selected]="selectedIndex === i"
+    >
+      <i
+        *ngIf="section?.icon"
+        [class]="'mr-1 icon icon-vnlp-icon-' + section?.icon"
+      ></i>
+
+      <span *ngIf="section?.title">{{ section?.title }}</span>
+    </li>
+  </ul>
+</div>

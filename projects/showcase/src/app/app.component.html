@@ -286,3 +286,11 @@
   <vnlp-logo type="vertical"></vnlp-logo>
   <vnlp-logo type="horizontal"></vnlp-logo>
 </div>
+
+<div class="p-4">
+  <vnlp-switcher
+    [switcherList]="switcherList"
+    selected="key4"
+    (onSwitcherChange)="testSwitcherChang($event)"
+  ></vnlp-switcher>
+</div>
