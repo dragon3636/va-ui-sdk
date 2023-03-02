@@ -134,7 +134,7 @@
         }
 
         &:disabled {
-          cursor: default;
+          cursor: not-allowed;
           border: 1px solid map-get($color, stroke);
         }
       }

@@ -1,7 +1,15 @@
-<div class="tickbox-container inline-flex items-center" (click)="handleCheck()">
+<div
+  [ngClass]="{
+    'tickbox-container inline-flex justify-between items-center': true,
+    disabled: disabled
+  }"
+  (click)="handleCheck()"
+>
   <span
-    *ngIf="label && labelPosition === 'left'"
-    class="tickbox-label mr-3 txt-sm txt-bold"
+    [ngClass]="{
+      'tickbox-label mx-2 txt-sm txt-sm select-none': true,
+      'order-1': labelPosition === 'left'
+    }"
   >
     {{ label }}
   </span>
@@ -11,10 +19,4 @@
       'tickbox-input--checked': checked
     }"
   ></div>
-  <span
-    *ngIf="label && labelPosition === 'right'"
-    class="tickbox-label ml-3 txt-sm txt-bold select-none"
-  >
-    {{ label }}
-  </span>
 </div>

@@ -9,6 +9,7 @@
 
     box-shadow: 0 0 4px 1px map-get($color, stroke);
     resize: none;
+    transition: all 0.2s ease-in-out;
 
     &::placeholder {
       color: map-get($color, neutral-5);
@@ -19,17 +20,22 @@
       box-shadow: 0 0 4px 1px map-get($color, primary);
       caret-color: map-get($color, primary);
 
+      &:hover {
+        box-shadow: 0 0 4px 1px map-get($color, primary);
+      }
+
       & + .info-text {
         color: map-get($color, primary);
       }
     }
 
     &:hover {
-      box-shadow: 0 0 4px 1px map-get($color, primary);
+      box-shadow: 0 0 4px 1px map-get($color, primary-300);
       outline: none;
     }
 
     &:disabled {
+      cursor: default;
       background-color: map-get($color, neutral-7);
       box-shadow: 0 0 4px 1px map-get($color, stroke);
     }
@@ -37,5 +43,6 @@
 
   .counter {
     color: map-get($color, neutral-5);
+    font-size: 14px;
   }
 }

@@ -90,7 +90,7 @@ export class AppComponent {
     { title: 'Section 4', icon: 'doughnut-filled', key: 'key4' },
   ];
 
-  testSwitcherChang(data: any) {
+  handleBindingDataChange(data: any) {
     console.log(data);
   }
 }

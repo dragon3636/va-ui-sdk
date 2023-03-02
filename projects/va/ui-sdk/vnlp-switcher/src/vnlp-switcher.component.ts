@@ -16,8 +16,9 @@ export class VnlpSwitcherComponent implements OnInit {
     { title: 'Section 3', icon: 'pie-04-line', key: 'key3' },
     { title: 'Section 4', icon: 'doughnut-filled', key: 'key4' },
   ];
+  @Input() name: string = '';
   @Input() selected = 'key1';
-  @Output() onSwitcherChange = new EventEmitter();
+  @Output() onChange = new EventEmitter();
 
   selectedIndex = 0;
   constructor() {}
@@ -29,6 +30,8 @@ export class VnlpSwitcherComponent implements OnInit {
 
   handleSwitch(index: number) {
     this.selectedIndex = index;
-    this.onSwitcherChange.emit(this.switcherList[index].key);
+    this.onChange.emit({
+      [this.name]: this.switcherList[index],
+    });
   }
 }

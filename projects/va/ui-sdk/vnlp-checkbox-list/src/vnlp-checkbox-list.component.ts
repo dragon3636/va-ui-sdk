@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'vnlp-checkbox-list',
@@ -7,8 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class VnlpCheckboxListComponent implements OnInit {
   @Input() options: any = [];
+  @Output() optionsChange = new EventEmitter();
+  @Input() name: string = '';
+
+  @Output() onChange = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  handleCheckboxChange(data: any) {
+    this.onChange.emit({
+      [this.name]: this.options,
+    });
+  }
 }
