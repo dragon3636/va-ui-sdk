@@ -15,6 +15,7 @@
   .slider {
     position: absolute;
     top: 4px;
+    z-index: 2;
     bottom: 4px;
     left: 0;
     background-color: map-get($color, neutral-8);
@@ -40,7 +41,6 @@
     &:not(:last-child)::after {
       content: '';
       position: absolute;
-      z-index: 1;
       top: 50%;
       transform: translateY(-50%);
       right: 0px;
@@ -51,6 +51,11 @@
 
     &.selected {
       color: map-get($color, neutral-1);
+    }
+
+    i,
+    span {
+      z-index: 2;
     }
   }
 }
