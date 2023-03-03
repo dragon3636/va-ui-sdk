@@ -14,12 +14,17 @@
 </div>
 
 <!-- vnlp-checkbox -->
-<div class="p-4 flex flex-col justify-between flex-wrap">
+<div class="p-4 flex flex-col justify-between flex-wrap h-[120px]">
   <vnlp-checkbox
     [(checked)]="demoChecked"
+    label="ASV"
     (onChange)="handleBindingDataChange($event)"
   ></vnlp-checkbox>
-  <vnlp-checkbox [disabled]="true" [checked]="true"></vnlp-checkbox>
+  <vnlp-checkbox
+    label="ASV"
+    [disabled]="true"
+    [(checked)]="demoChecked"
+  ></vnlp-checkbox>
 </div>
 
 <!-- vnlp-checkbox-list -->
@@ -319,4 +324,25 @@
     selected="key4"
     (onChange)="handleBindingDataChange($event)"
   ></vnlp-switcher>
+</div>
+
+<div class="p-4 flex justify-between">
+  <vnlp-radio-card
+    description="Build, prototype and customize any design"
+    labelPosition="left"
+    [checked]="true"
+  ></vnlp-radio-card>
+  <vnlp-radio-card
+    [disabled]="true"
+    [checked]="false"
+    labelPosition="left"
+    type="checkbox"
+  ></vnlp-radio-card>
+  <vnlp-radio-card
+    description="Build, prototype and customize any design"
+    labelPosition="left"
+    type="checkbox"
+    [checked]="true"
+    (onChange)="handleBindingDataChange($event)"
+  ></vnlp-radio-card>
 </div>
