@@ -12,8 +12,12 @@
     <label [for]="name" *ngIf="icon" class="input-icon">
       <i [class]="'icon icon-vnlp-icon-' + icon"></i>
     </label>
-
-    <label [for]="name" class="close-icon" (click)="clearInput()">
+    <label
+      *ngIf="value.length > 0"
+      [for]="name"
+      class="close-icon"
+      (click)="clearInput()"
+    >
       <i class="icon icon-vnlp-icon-close-line"></i>
     </label>
 

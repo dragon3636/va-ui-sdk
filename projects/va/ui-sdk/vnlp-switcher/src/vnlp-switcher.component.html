@@ -1,14 +1,15 @@
 <div class="sth">
   <ul class="vnlp-switcher-container">
     <div
-      [ngClass]="{
-        slider: true,
-        first: selectedIndex === 1,
-        last: selectedIndex === switcherList.length
-      }"
+      class="slider"
       [ngStyle]="{
-        width: 'calc(' + 100 / switcherList.length + '% + 1px)',
-        left: 'calc(' + selectedIndex * (100 / switcherList.length) + '% - 1px)'
+        width: 'calc(' + 100 / switcherList.length + '% + 2px)',
+        left:
+          selectedIndex === 0
+            ? '4px'
+            : selectedIndex === switcherList.length - 1
+            ? 'calc(' + selectedIndex * (100 / switcherList.length) + '% - 6px)'
+            : 'calc(' + selectedIndex * (100 / switcherList.length) + '% - 2px)'
       }"
       [attr.data-index]="selectedIndex"
     ></div>

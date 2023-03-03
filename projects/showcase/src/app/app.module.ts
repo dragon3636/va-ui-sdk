@@ -1,3 +1,4 @@
+import { VnlpInputTextModule } from './../../../va/ui-sdk/vnlp-input-text/src/vnlp-input-text.module';
 import { VnlpSwitcherModule } from './../../../va/ui-sdk/vnlp-switcher/src/vnlp-switcher.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +12,6 @@ import { VnlpCreateVirtualAgentModule } from '@em-and-ai/ui-sdk/vnlp-create-virt
 import { VnlpTableModule } from '@em-and-ai/ui-sdk/vnlp-table';
 import { VnlpLogoModule } from '@em-and-ai/ui-sdk/vnlp-logo';
 import { VnlpSwitchModule } from '@em-and-ai/ui-sdk/vnlp-switch';
-import { VnlpInputTextModule } from '@em-and-ai/ui-sdk/vnlp-input-text';
 import { VnlpCheckboxListModule } from '@em-and-ai/ui-sdk/vnlp-checkbox-list';
 import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
 import { VnlpTextareaModule } from '@em-and-ai/ui-sdk/vnlp-textarea';
