@@ -2,11 +2,15 @@
   <!-- Header -->
   <!-- <app-dashboard-header></app-dashboard-header> -->
   <!-- end Header -->
+  <div class="h-[450px] pt-[100px]">
+    <vnlp-dividers [width]="'300px'"></vnlp-dividers>
+    <vnlp-step-bar [currentStep]=3></vnlp-step-bar>
+  </div>
 
   <div class="h-[450px]">
     <vnlp-calendar [(ngModel)]="dateRange" [options]="optionsRange"></vnlp-calendar>
   </div>
-  <div class="h-[450px]">
+  <!-- <div class="h-[450px]">
     <vnlp-calendar [(ngModel)]="date" [options]="options"></vnlp-calendar>
-  </div>
+  </div> -->
 </div>

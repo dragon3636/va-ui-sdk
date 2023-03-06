@@ -18,7 +18,8 @@ export class SidebarMenuComponent implements OnInit {
     this.pagesMenu$ = this.menuService.pagesMenu$;
   }
 
-  public toggleMenu(subMenu: any) {
+  //Toggle sub menu items
+  public toggleMenu(subMenu: SubMenuItem) {
     this.menuService.toggleMenu(subMenu);
   }
 
@@ -26,5 +27,5 @@ export class SidebarMenuComponent implements OnInit {
     this.menuService.toggleSidebar();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

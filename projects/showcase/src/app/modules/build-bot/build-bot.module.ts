@@ -5,11 +5,14 @@ import { BuildBotRoutingModule } from './build-bot-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BuildBotComponent } from './build-bot.component';
 import { FormsModule } from '@angular/forms';
-import { VnlpStepBarModule } from '@em-and-ai/ui-sdk/vnlp-step-bar';
+// import { VnlpStepBarModule } from '@em-and-ai/ui-sdk/vnlp-step-bar';
 import { InitializationsComponent } from './pages/Initializations/initializations.component';
 import { DateRangeComponent } from './pages/datepicker/datepicker.component';
-import { VnlpCalendarModule } from '@em-and-ai/ui-sdk/vnlp-calendar';
+// import { VnlpCalendarModule } from '@em-and-ai/ui-sdk/vnlp-calendar';
 import { VnlpSearchModule } from '@em-and-ai/ui-sdk/vnlp-search';
+import { VnlpDividersModule } from '@em-and-ai/ui-sdk/vnlp-dividers'
+import { VnlpStepBarModule } from 'projects/va/ui-sdk/vnlp-step-bar';
+import { VnlpCalendarModule } from 'projects/va/ui-sdk/vnlp-calendar';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { VnlpSearchModule } from '@em-and-ai/ui-sdk/vnlp-search';
     VnlpStepBarModule,
     VnlpCalendarModule,
     VnlpSearchModule,
+    VnlpDividersModule,
     CommonModule,
     BuildBotRoutingModule,
     HttpClientModule,

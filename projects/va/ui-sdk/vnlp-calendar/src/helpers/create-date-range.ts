@@ -1,4 +1,4 @@
-import { DateRange } from '../models';
+import { DateRange } from '../models/vnlp-calendar.model';
 
 export const createDateRange = (start: Date, end: Date): DateRange => ({
   start: new Date(start.getTime()),

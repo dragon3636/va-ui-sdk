@@ -18,14 +18,9 @@ export class SidebarSubmenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public toggleMenu(menu: any) {
+  //Toggle sub menu items
+  public toggleMenu(menu: SubMenuItem) {
     this.menuService.toggleSubMenu(menu);
   }
 
-  private collapse(items: Array<any>) {
-    items.forEach((item) => {
-      item.expanded = false;
-      if (item.children) this.collapse(item.children);
-    });
-  }
 }

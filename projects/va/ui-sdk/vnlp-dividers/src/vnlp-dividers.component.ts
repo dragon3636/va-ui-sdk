@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class VnlpDividersComponent implements OnInit {
 
   @Input() type: string = "";
+  @Input() width: string = "200px";
 
   constructor() { }
 

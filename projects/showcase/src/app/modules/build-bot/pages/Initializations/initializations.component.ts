@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import locale from 'date-fns/locale/en-US';
-import { DatepickerOptions } from '@em-and-ai/ui-sdk/vnlp-calendar/src/vnlp-calendar.component';
+import locale from 'date-fns/locale/vi';
+// import { DatepickerOptions } from 'projects/va/ui-sdk/vnlp-calendar/src/models';
+import { DatepickerOptions } from '@em-and-ai/ui-sdk/vnlp-calendar/src/models/vnlp-calendar.model';
 
 @Component({
   selector: 'app-Initializations',

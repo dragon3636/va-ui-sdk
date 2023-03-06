@@ -13,12 +13,13 @@ export class MenuService implements OnDestroy {
   private subscription = new Subscription();
 
   constructor(private router: Router) {
-    /** Set dynamic menu */
+    //Set dynamic menu
     this._pagesMenu$.next(Menu.pages);
 
+    //Check router is currently active, handle expand and set to view
     let sub = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        /** Expand menu base on active route */
+        //Expand menu base on active route
         this._pagesMenu$.forEach((menuItem) => {
           menuItem.forEach((menu) => {
             let activeGroup = false;
@@ -56,30 +57,35 @@ export class MenuService implements OnDestroy {
     this._showSidebar$.next(!this._showSidebar$.value);
   }
 
-  public toggleMenu(menu: any) {
+  //Handle toggle menu
+  public toggleMenu(menu: SubMenuItem) {
     this.showSideBar = true;
+    //Handle close menu expanding when another menu is expanded
     this._pagesMenu$.forEach((menuItems) => {
       menuItems.forEach((menuItem) => {
         menuItem.items.forEach((subMenu) => {
-          if(menu.label !== subMenu.label) subMenu.expanded =false 
+          if (menu.label !== subMenu.label) subMenu.expanded = false
         });
       });
     });
     menu.expanded = !menu.expanded;
   }
 
+  //Handle toggle sub menu
   public toggleSubMenu(submenu: SubMenuItem) {
     submenu.expanded = !submenu.expanded;
   }
 
-  private expand(items: Array<any>) {
+  //Handle set expand menu
+  private expand(items: Array<SubMenuItem>) {
     items.forEach((item) => {
       item.expanded = this.isActive(item.route);
       if (item.children) this.expand(item.children);
     });
   }
 
-  private isActive(instruction: any): boolean {
+  //Check router is currently active
+  private isActive(instruction: string | null | undefined): boolean {
     return this.router.isActive(this.router.createUrlTree([instruction]), {
       paths: 'subset',
       queryParams: 'subset',

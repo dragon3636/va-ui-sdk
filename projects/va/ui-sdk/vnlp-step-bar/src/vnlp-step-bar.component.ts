@@ -1,14 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+export interface StepList {
+  step: number;
+  name: string;
+}
 @Component({
   selector: 'vnlp-step-bar',
   templateUrl: './vnlp-step-bar.component.html',
   styleUrls: ['./vnlp-step-bar.component.scss']
 })
+
 export class VnlpStepBarComponent implements OnInit {
 
   @Input() currentStep: number = 1;
-  stepList = [
+  @Input() stepList: StepList[] = [
     {
       step: 1,
       name: "Initialization"
@@ -20,6 +25,10 @@ export class VnlpStepBarComponent implements OnInit {
     {
       step: 3,
       name: "Information setting"
+    },
+    {
+      step: 4,
+      name: "abcxyz"
     }
   ];
 

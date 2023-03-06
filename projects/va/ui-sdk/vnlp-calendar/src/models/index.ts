@@ -1,2 +1,1 @@
-export * from './date-range';
-export * from './day';
+export * from './vnlp-calendar.model';

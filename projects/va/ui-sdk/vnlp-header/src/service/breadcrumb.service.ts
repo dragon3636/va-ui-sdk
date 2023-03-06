@@ -10,11 +10,6 @@ import { Breadcrumb } from '../models/breadcrumb.model';
 })
 export class BreadcrumbService {
 
-  firstBreadcrumb: Breadcrumb = {
-    label: 'Home',
-    url: ''
-  };
-
   // Subject emitting the breadcrumb hierarchy
   private readonly _breadcrumbs$ = new BehaviorSubject<Breadcrumb[]>([]);
 
@@ -30,8 +25,6 @@ export class BreadcrumbService {
       const root = this.router.routerState.snapshot.root;
       let breadcrumbs: Breadcrumb[] = [];
       this.addBreadcrumb(root, [], breadcrumbs);
-
-      // breadcrumbs = [this.firstBreadcrumb, ...breadcrumbs]
 
       // Emit the new hierarchy
       this._breadcrumbs$.next(breadcrumbs);

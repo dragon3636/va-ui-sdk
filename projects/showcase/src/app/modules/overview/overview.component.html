@@ -1,3 +1,4 @@
 <div class="relative bg-gray-200 h-[100vh]">
-  Overview Page
+  <vnlp-dropdown [placeholder]="'placeholder'" [dropDownSettings]="dropdownSettings" [data]="listData"
+  [dropdownWidth]="'321px'" (valueChange)="getDropdownValue($event)"></vnlp-dropdown>
 </div>
