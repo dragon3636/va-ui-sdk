@@ -18,6 +18,7 @@ export class VnlpCreateVirtualAgentComponent implements OnInit {
   @Input() labelType: LabelType = 'gray';
   @Input() type: string = 'voice';
   @Output() onClick = new EventEmitter();
+  @Output() onOptionClick = new EventEmitter();
 
   showOptions: boolean = false;
 
@@ -29,7 +30,7 @@ export class VnlpCreateVirtualAgentComponent implements OnInit {
     this.onClick.emit();
   }
 
-  handleBindingDataChange(data: any) {
-    console.log(data);
+  onClickOption(data: any) {
+    this.onOptionClick.emit(data);
   }
 }

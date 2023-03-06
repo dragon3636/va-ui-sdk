@@ -33,7 +33,7 @@
     <div class="pt-[12px] flex justify-between items-center">
       <vnlp-label-tag [type]="labelType" [text]="labelText"></vnlp-label-tag>
       <vnlp-popover
-        (onOptionClick)="handleBindingDataChange($event)"
+        (onOptionClick)="onClickOption($event)"
         [options]="[
           {
             label: 'option 1',
