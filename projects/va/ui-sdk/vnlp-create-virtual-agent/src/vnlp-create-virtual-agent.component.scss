@@ -1,8 +1,9 @@
 @import './../../assets/sass/base/variable';
 @import './../../assets/sass/base/mixins';
 
-.create-virtual-agent {
+.create-virtual-agent-container {
   background-color: map-get($color, neutral-8);
+  min-height: 150px;
   box-sizing: border-box;
 
   &:disabled {

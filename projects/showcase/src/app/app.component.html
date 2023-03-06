@@ -294,6 +294,28 @@
   ></vnlp-create-virtual-agent>
 </div>
 
+<!-- vnlp-popover -->
+<div class="p-4 flex justify-between">
+  <vnlp-popover
+    (onOptionClick)="handleBindingDataChange($event)"
+    [options]="[
+      {
+        label: 'option 1',
+        key: 'option 1'
+      },
+      {
+        label: 'option 2',
+        key: 'option 2'
+      },
+      {
+        label: 'option 3',
+        key: 'option 3'
+      }
+    ]"
+    position="bottom right"
+  ></vnlp-popover>
+</div>
+
 <!-- vnlp-tickbox -->
 <div class="p-4 flex flex-col justify-between flex-wrap gap-2">
   <vnlp-tickbox
@@ -345,8 +367,4 @@
     [checked]="true"
     (onChange)="handleBindingDataChange($event)"
   ></vnlp-radio-card>
-</div>
-
-<div class="p-4 flex justify-between">
-  <vnlp-popover></vnlp-popover>
 </div>

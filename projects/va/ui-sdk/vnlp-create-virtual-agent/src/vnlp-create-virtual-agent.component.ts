@@ -1,12 +1,4 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  Output,
-  EventEmitter,
-  HostListener,
-  ElementRef,
-} from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 type Mode = 'create' | 'show';
 type LabelType = 'gray' | 'orange' | 'red' | 'blue' | 'green';
@@ -26,47 +18,18 @@ export class VnlpCreateVirtualAgentComponent implements OnInit {
   @Input() labelType: LabelType = 'gray';
   @Input() type: string = 'voice';
   @Output() onClick = new EventEmitter();
-  @Output() onClickUpdateVirtualAgent = new EventEmitter();
-  @Output() onClickAddSubVirtualAgent = new EventEmitter();
-  @Output() onClickDeleteVirtualAgent = new EventEmitter();
 
   showOptions: boolean = false;
 
-  constructor(private eRef: ElementRef) {}
+  constructor() {}
 
   ngOnInit() {}
 
-  handleClick() {
+  handleCreate() {
     this.onClick.emit();
   }
 
-  onShowOptions() {
-    if (this.disabled) return;
-    this.showOptions = !this.showOptions;
-  }
-
-  handleClickUpdateVirtualAgent(e: any) {
-    this.onClickUpdateVirtualAgent.emit();
-    this.showOptions = false;
-    e.stopPropagation();
-  }
-
-  handleClickAddSubVirtualAgent(e: any) {
-    this.onClickAddSubVirtualAgent.emit();
-    this.showOptions = false;
-    e.stopPropagation();
-  }
-
-  handleClickDeleteVirtualAgent(e: any) {
-    this.onClickDeleteVirtualAgent.emit();
-    this.showOptions = false;
-    e.stopPropagation();
-  }
-
-  @HostListener('document:click', ['$event'])
-  clickout(event: any) {
-    if (!this.eRef.nativeElement.contains(event.target)) {
-      this.showOptions = false;
-    }
+  handleBindingDataChange(data: any) {
+    console.log(data);
   }
 }

@@ -87,6 +87,7 @@
 
     &:hover {
       background-color: map-get($color, primary-500);
+      border: none;
     }
 
     &:active {

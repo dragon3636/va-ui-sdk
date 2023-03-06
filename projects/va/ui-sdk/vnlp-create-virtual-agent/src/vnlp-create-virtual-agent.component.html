@@ -1,10 +1,10 @@
 <button
   [ngClass]="{
-    'create-virtual-agent h-[150px] w-[260px] rounded-xl transition-all ease-in-out duration-200 cursor-pointer': true,
+    'create-virtual-agent-container w-[260px] rounded-xl transition-all ease-in-out duration-200 cursor-pointer': true,
     'create-mode': mode === 'create',
     'show-mode': mode === 'show'
   }"
-  (click)="handleClick()"
+  (click)="mode === 'create' && handleCreate()"
   [disabled]="disabled"
 >
   <div
@@ -32,6 +32,24 @@
     <div class="divider"></div>
     <div class="pt-[12px] flex justify-between items-center">
       <vnlp-label-tag [type]="labelType" [text]="labelText"></vnlp-label-tag>
+      <vnlp-popover
+        (onOptionClick)="handleBindingDataChange($event)"
+        [options]="[
+          {
+            label: 'option 1',
+            key: 'option 1'
+          },
+          {
+            label: 'option 2',
+            key: 'option 2'
+          },
+          {
+            label: 'option 3',
+            key: 'option 3'
+          }
+        ]"
+        position="bottom left"
+      ></vnlp-popover>
     </div>
   </div>
 </button>
