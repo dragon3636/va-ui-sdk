@@ -1,0 +1,28 @@
+<div
+  [ngClass]="{
+    'popover-options flex items-center rounded-md relative h-[24px]': true,
+    opened: showOptions
+  }"
+>
+  <span class="more-options-icon" (click)="onShowOptions()">
+    <i class="icon icon-vnlp-icon-more-line txt-xxl"></i>
+  </span>
+
+  <ul
+    *ngIf="showOptions"
+    class="options rounded-[10px] absolute left-[50%] top-[50%] w-[218px]"
+  >
+    <li class="txt-sm txt-left p-2">
+      <i class="icon icon-vnlp-icon-twitter-line"></i>
+      <span> Update</span>
+    </li>
+    <li class="txt-sm txt-left p-2">
+      <i class="icon icon-vnlp-icon-twitter-line"></i>
+      <span> Add sub Virtual Agent</span>
+    </li>
+    <li class="txt-left txt-sm p-2">
+      <i class="icon icon-vnlp-icon-twitter-line"></i>
+      <span> Delete</span>
+    </li>
+  </ul>
+</div>

@@ -32,43 +32,6 @@
     <div class="divider"></div>
     <div class="pt-[12px] flex justify-between items-center">
       <vnlp-label-tag [type]="labelType" [text]="labelText"></vnlp-label-tag>
-      <div
-        [ngClass]="{
-          'popover-options flex items-center rounded-md relative h-[24px]': true,
-          opened: showOptions
-        }"
-      >
-        <span class="more-options-icon" (click)="onShowOptions()">
-          <i class="icon icon-vnlp-icon-more-line txt-xxl"></i>
-        </span>
-
-        <ul
-          *ngIf="showOptions"
-          class="options rounded-[10px] absolute right-[50%] top-[50%] w-[218px]"
-        >
-          <li
-            class="txt-sm txt-left p-2"
-            (click)="handleClickUpdateVirtualAgent($event)"
-          >
-            <i class="icon icon-vnlp-icon-twitter-line"></i>
-            <span> Update</span>
-          </li>
-          <li
-            class="txt-sm txt-left p-2"
-            (click)="handleClickAddSubVirtualAgent($event)"
-          >
-            <i class="icon icon-vnlp-icon-twitter-line"></i>
-            <span> Add sub Virtual Agent</span>
-          </li>
-          <li
-            class="txt-left txt-sm p-2"
-            (click)="handleClickDeleteVirtualAgent($event)"
-          >
-            <i class="icon icon-vnlp-icon-twitter-line"></i>
-            <span> Delete</span>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </button>
