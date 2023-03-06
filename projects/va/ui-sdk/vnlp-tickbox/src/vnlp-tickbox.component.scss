@@ -1,17 +1,21 @@
-@import './../../assets/scss/theme/base/variable';
-@import './../../assets/scss/theme/base/mixins';
+@import './../../assets/sass/base/variable';
+@import './../../assets/sass/base/mixins';
 
 .tickbox-container {
   .tickbox-input {
-    width: 24px;
-    height: 24px;
-    border: 1.5px solid map-get($color, stroke);
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid map-get($color, neutral-5);
     background-color: map-get($color, neutral-8);
     border-radius: 50%;
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      border: 1.5px solid map-get($color, primary-400);
+      border: 1.5px solid map-get($color, neutral-4);
+    }
+
+    &:active {
+      box-shadow: 0 0 1px 4px map-get($color, neutral-6);
     }
   }
 
@@ -27,10 +31,49 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 12px;
-      height: 12px;
+      width: 10px;
+      height: 10px;
       background-color: map-get($color, neutral-8);
       border-radius: 50%;
+    }
+
+    &:hover {
+      border: 1.5px solid map-get($color, primary-500);
+    }
+
+    &:active {
+      box-shadow: 0 0 1px 4px map-get($color, primary-100);
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    .tickbox-label {
+      color: map-get($color, neutral-5);
+    }
+
+    .tickbox-input {
+      background-color: map-get($color, neutral-7);
+      color: map-get($color, neutral-6);
+
+      box-shadow: none;
+
+      &:hover {
+        border: 1.5px solid map-get($color, neutral-5);
+      }
+    }
+
+    .tickbox-input--checked {
+      border: 1.5px solid map-get($color, neutral-6);
+
+      &::after {
+        background-color: map-get($color, neutral-5);
+      }
+
+      &:hover {
+        border: 1.5px solid map-get($color, neutral-6);
+      }
     }
   }
 }

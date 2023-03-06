@@ -3,14 +3,19 @@ $sizeList: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
 
 // Padding
 @each $size in $sizeList {
+  .p-#{$size} {
+    padding: $value * $size + px;
+  }
   .pd-#{$size} {
     padding: $value * $size + px;
   }
   .px-#{$size} {
-    padding: 0 $value * $size + px;
+    padding-left: $value * $size + px;
+    padding-right: $value * $size + px;
   }
   .py-#{$size} {
-    padding: $value * $size + px 0;
+    padding-top: $value * $size + px;
+    padding-bottom: $value * $size + px;
   }
   .pl-#{$size} {
     padding-left: $value * $size + px;

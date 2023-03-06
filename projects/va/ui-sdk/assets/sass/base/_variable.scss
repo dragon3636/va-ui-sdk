@@ -1,12 +1,3 @@
-// == Breakpoints ===
-$breakpoints: (
-  small: 480px,
-  medium: 768px,
-  wide: 960px,
-  large: 1024px,
-  largest: 1280px,
-);
-
 // === Color ===
 $color: (
   // === Primary - Blue Darknut ===
@@ -198,6 +189,7 @@ $font-weight: (
   normal: 400,
   medium: 500,
   bold: 600,
+  extra: 700,
 );
 
 $font-family-default: 'Inter', 'SFText', 'SFMono', sans-serif;

@@ -1,8 +1,9 @@
-@import './../../assets/scss/theme/base/variable';
-@import './../../assets/scss/theme/base/mixins';
+@import './../../assets/sass/base/variable';
+@import './../../assets/sass/base/mixins';
 
-.create-virtual-agent {
+.create-virtual-agent-container {
   background-color: map-get($color, neutral-8);
+  min-height: 150px;
   box-sizing: border-box;
 
   &:disabled {
@@ -74,6 +75,11 @@
 
       &.opened {
         background-color: map-get($color, primary-100);
+      }
+
+      .options {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);
+        z-index: 1;
       }
     }
   }

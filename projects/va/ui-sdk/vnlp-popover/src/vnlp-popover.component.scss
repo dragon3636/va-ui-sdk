@@ -1,0 +1,65 @@
+@import './../../assets/sass/base/variable';
+@import './../../assets/sass/base/mixins';
+
+.popover-options-container {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+
+  .more-options-icon {
+    color: map-get($color, neutral-4);
+    box-shadow: 0 0 1px 1px map-get($color, stroke);
+    background-color: map-get($color, neutral-8);
+    border-radius: 10px;
+  }
+
+  .options {
+    position: absolute;
+    min-width: 200px;
+    background-color: map-get($color, neutral-8);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24);
+    z-index: 1;
+    border-radius: 6px;
+    overflow: hidden;
+
+    &.top {
+      bottom: 110%;
+    }
+
+    &.left {
+      right: 0;
+    }
+
+    &.right {
+      left: 0;
+    }
+
+    &.bottom {
+      top: 110%;
+    }
+
+    &.center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    li {
+      white-space: nowrap;
+
+      &.empty-option {
+        &:hover {
+          background-color: unset;
+        }
+      }
+
+      &:hover {
+        background-color: map-get($color, primary-100);
+      }
+
+      &.opened {
+        background-color: map-get($color, primary-100);
+      }
+    }
+  }
+}

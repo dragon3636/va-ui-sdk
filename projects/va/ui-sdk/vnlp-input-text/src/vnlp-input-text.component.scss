@@ -1,81 +1,22 @@
-@import './../../assets/scss/theme/base/variable';
-@import './../../assets/scss/theme/base/mixins';
+@import './../../assets/sass/base/variable';
+@import './../../assets/sass/base/mixins';
 
-.icon-left {
+.show-icon {
   input {
-    padding-left: 48px;
-  }
-
-  .input-icon {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-
-    display: flex;
-    align-items: center;
-  }
-}
-
-.icon-right {
-  .input-icon {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-
-    display: flex;
-    align-items: center;
-  }
-}
-
-.success {
-  input {
-    background-color: map-get($color, neutral-light);
-    box-shadow: 0 0 1px 2px map-get($color, success);
-    color: map-get($color, success);
-    caret-color: map-get($color, success);
-
-    &:hover {
-      box-shadow: 0 0 1px 2px map-get($color, success);
-    }
-  }
-
-  .info-text {
-    color: map-get($color, success);
-  }
-
-  .input-icon i {
-    color: map-get($color, success);
-  }
-}
-
-.information {
-  input {
-    &:hover {
-      box-shadow: 0 0 1px 2px map-get($color, primary);
-
-      & ~ .input-icon i {
-        color: map-get($color, primary);
-      }
-    }
-
-    &:focus {
-      & ~ .input-icon i {
-        color: map-get($color, primary);
-      }
-    }
+    padding-left: 50px;
   }
 }
 
 input {
-  @include pxRem(padding, 12 18);
-  box-shadow: 0 0 1px 2px map-get($color, stroke);
+  padding: 12px 18px;
+  box-shadow: 0 0 1px 1.5px map-get($color, stroke);
 
   &::placeholder {
     color: map-get($color, neutral-5);
   }
 
   &:focus {
-    box-shadow: 0 0 1px 2px map-get($color, primary);
+    box-shadow: 0 0 1px 1.5px map-get($color, primary);
     caret-color: map-get($color, primary);
 
     & ~ .info-text {
@@ -87,7 +28,7 @@ input {
     }
 
     &:hover {
-      box-shadow: 0 0 1px 2px map-get($color, primary);
+      box-shadow: 0 0 1px 1.5px map-get($color, primary);
 
       & ~ .info-text {
         color: map-get($color, primary);
@@ -96,7 +37,7 @@ input {
   }
 
   &:hover {
-    box-shadow: 0 0 1px 2px map-get($color, neutral-3);
+    box-shadow: 0 0 1px 1.5px map-get($color, primary-300);
 
     & ~ .info-text {
       color: map-get($color, primary);
@@ -105,19 +46,41 @@ input {
 }
 
 .input-icon {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+
   i {
     font-size: 18px;
     color: map-get($color, neutral-5);
   }
 }
 
+.close-icon {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 .error {
   input {
     background-color: map-get($color, error-100);
-    box-shadow: 0 0 1px 2px map-get($color, error);
+    box-shadow: 0 0 1px 1.5px map-get($color, error);
 
     &:hover {
-      box-shadow: 0 0 1px 2px map-get($color, error);
+      box-shadow: 0 0 1px 1.5px map-get($color, error);
+    }
+
+    &:hover ~ .info-text,
+    &:focus ~ .info-text {
+      color: map-get($color, error);
+    }
+
+    &:hover ~ .input-icon i,
+    &:focus ~ .input-icon i {
+      color: map-get($color, error);
     }
   }
 
@@ -129,20 +92,6 @@ input {
     color: map-get($color, error);
     font-weight: 500;
   }
-
-  &.information {
-    input {
-      &:hover ~ .info-text,
-      &:focus ~ .info-text {
-        color: map-get($color, error);
-      }
-
-      &:hover ~ .input-icon i,
-      &:focus ~ .input-icon i {
-        color: map-get($color, error);
-      }
-    }
-  }
 }
 
 .disabled {
@@ -153,10 +102,16 @@ input {
     cursor: not-allowed;
 
     &:hover {
-      box-shadow: 0 0 1px 2px map-get($color, stroke);
+      box-shadow: 0 0 1px 1.5px map-get($color, stroke);
     }
 
-    & ~ .info-text {
+    &:hover ~ .info-text,
+    &:focus ~ .info-text {
+      color: map-get($color, neutral-5);
+    }
+
+    &:hover ~ .input-icon i,
+    &:focus ~ .input-icon i {
       color: map-get($color, neutral-5);
     }
   }

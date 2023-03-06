@@ -1,0 +1,46 @@
+<div
+  [ngClass]="{
+    'vnlp-radio-card-container': true,
+    checked: checked,
+    disabled: disabled
+  }"
+  (click)="handleCheck()"
+>
+  <div
+    [ngClass]="{
+      'inline-flex justify-start items-center': true,
+      'justify-between': labelPosition === 'left'
+    }"
+  >
+    <vnlp-tickbox
+      *ngIf="type === 'radiobox'"
+      [ngClass]="{
+        'inline-flex justify-start items-center': true,
+        'mr-2': labelPosition === 'right'
+      }"
+      [(checked)]="checked"
+      [disabled]="disabled"
+      (onChange)="handleCheck()"
+    ></vnlp-tickbox>
+    <vnlp-checkbox
+      *ngIf="type === 'checkbox'"
+      [(checked)]="checked"
+      [disabled]="disabled"
+      (onChange)="handleCheck()"
+      [ngClass]="{
+        'mr-2': labelPosition === 'right'
+      }"
+    ></vnlp-checkbox>
+    <div
+      [ngClass]="{
+        label: true,
+        'inline-flex -order-1': labelPosition === 'left'
+      }"
+    >
+      {{ label }}
+    </div>
+  </div>
+  <p *ngIf="description" class="description mt-2">
+    {{ description }}
+  </p>
+</div>

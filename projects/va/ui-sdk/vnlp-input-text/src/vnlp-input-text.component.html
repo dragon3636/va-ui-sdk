@@ -4,21 +4,27 @@
     error: input.touched && input.dirty && !input.value,
     disabled: disabled,
     'show-icon': icon,
-    'icon-left': icon && iconPosition === 'left',
-    'icon-right': icon && iconPosition === 'right',
-    success: !!success,
     information: informationText
   }"
 >
-  <label [for]="name" class="inline-block txt-sm mb-3">{{ label }}</label>
+  <label [for]="name" class="inline-block txt-sm mb-2">{{ label }}</label>
   <div ngClass="relative inline-block w-full">
+    <label [for]="name" *ngIf="icon" class="input-icon">
+      <i [class]="'icon icon-vnlp-icon-' + icon"></i>
+    </label>
+    <label
+      *ngIf="value.length > 0"
+      [for]="name"
+      class="close-icon"
+      (click)="clearInput()"
+    >
+      <i class="icon icon-vnlp-icon-close-line"></i>
+    </label>
+
     <input
       [name]="name"
       [id]="name"
-      [ngClass]="{
-        'w-full h-[48px] rounded-[10px] transition-all ease-in-out duration-200': true,
-        'pl-10': iconPosition === 'left'
-      }"
+      class="w-full h-[48px] rounded-[10px] transition-all ease-in-out duration-200"
       [(ngModel)]="value"
       (ngModelChange)="handleChange($event)"
       (blur)="handleBlur($event)"
@@ -28,9 +34,6 @@
       [disabled]="disabled"
       #input="ngModel"
     />
-    <span *ngIf="icon" class="input-icon">
-      <i [class]="'icon icon-vnlp-icon-' + icon"></i>
-    </span>
     <div *ngIf="informationText" class="info-text txt-sm error-msg mt-2">
       {{ informationText }}
     </div>

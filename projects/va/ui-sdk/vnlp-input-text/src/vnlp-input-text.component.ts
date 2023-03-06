@@ -1,7 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
-type IconSide = 'left' | 'right';
-
 @Component({
   selector: 'vnlp-input-text',
   templateUrl: './vnlp-input-text.component.html',
@@ -14,10 +12,10 @@ export class VnlpInputTextComponent implements OnInit {
   @Input() error: boolean = false;
   @Input() placeholder: string = 'Placeholder';
   @Input() disabled: boolean = false;
-  @Input() icon: string = 'apple-line';
-  @Input() iconPosition: IconSide = 'right';
+  @Input() icon: string = '';
   @Input() success: boolean = false;
   @Input() informationText: string = '';
+
   @Output() onChange = new EventEmitter();
   @Output() onEnter = new EventEmitter();
   @Output() onBlur = new EventEmitter();
@@ -28,11 +26,19 @@ export class VnlpInputTextComponent implements OnInit {
   ngOnInit(): void {}
 
   handleChange(newValue: any) {
-    this.valueChange.emit(newValue);
+    this.valueChange.emit(this.value);
+    this.onChange.emit({
+      [this.name]: this.value,
+    });
   }
 
   handleBlur(event: any) {
     this.onBlur.emit();
     event.target.blur();
+  }
+
+  clearInput() {
+    this.value = '';
+    this.handleChange('');
   }
 }

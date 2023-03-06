@@ -16,4 +16,81 @@ export class AppComponent {
   ];
   demoSwitch = false;
   demoInputValue = '';
+
+  dataSource = [
+    {
+      value: 'hello',
+      entity_type: 'greeting',
+      intent: 'greet',
+    },
+    {
+      value: 'how are you',
+      entity_type: 'question',
+      intent: 'ask',
+    },
+    {
+      value: 'goodbye',
+      entity_type: 'farewell',
+      intent: 'farewell',
+    },
+    {
+      value: 'buy',
+      entity_type: 'action',
+      intent: 'order',
+    },
+    {
+      value: 'cancel',
+      entity_type: 'action',
+      intent: 'cancel',
+    },
+    {
+      value: 'pizza',
+      entity_type: 'food',
+      intent: 'order',
+    },
+    {
+      value: 'hamburger',
+      entity_type: 'food',
+      intent: 'order',
+    },
+    {
+      value: 'water',
+      entity_type: 'drink',
+      intent: 'order',
+    },
+    {
+      value: 'coke',
+      entity_type: 'drink',
+      intent: 'order',
+    },
+  ];
+
+  columns = [
+    {
+      title: 'Name',
+      key: 'value',
+      sortable: true,
+    },
+    {
+      title: 'Entity type',
+      key: 'entity_type',
+      sortable: false,
+    },
+    {
+      title: 'Intent',
+      key: 'intent',
+      sortable: false,
+    },
+  ];
+
+  switcherList = [
+    { title: 'Section 1', icon: 'design-grid-filled', key: 'key1' },
+    { title: 'Section 2', icon: 'pen-line', key: 'key2' },
+    { title: 'Section 3', icon: 'pie-04-line', key: 'key3' },
+    { title: 'Section 4', icon: 'doughnut-filled', key: 'key4' },
+  ];
+
+  handleBindingDataChange(data: any) {
+    console.log(data);
+  }
 }

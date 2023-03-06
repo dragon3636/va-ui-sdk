@@ -1,8 +1,9 @@
-<ul class="vnlp-checkbox-simple">
-  <li *ngFor="let option of options" class="mb-2 h-[24px]">
+<ul class="vnlp-checkbox-list-container">
+  <li *ngFor="let option of options" class="mb-2">
     <vnlp-checkbox
       [(checked)]="option.checked"
       [label]="option.title"
+      (onChange)="handleCheckboxChange($event)"
     ></vnlp-checkbox>
   </li>
 </ul>

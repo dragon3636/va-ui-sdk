@@ -2,7 +2,6 @@
 
 .txt-h1 {
   @include typography(24px, 32px, 800);
-  @include resTypAbove(large, 30px, 30px, 800);
 }
 
 .txt-h2 {
@@ -11,17 +10,14 @@
 
 .txt-display1 {
   @include typography(16px, 22px, 600);
-  @include resTypAbove(large, 18px, 26px, 600);
 }
 
 .txt-display3 {
   @include typography(14px, 22px, 600);
-  @include resTypAbove(large, 16px, 22px, 600);
 }
 
 .txt-button {
   @include typography(14px, 22px, 300);
-  @include resTypAbove(large, 16px, 24px, 300);
 }
 
 .txt-button-large {

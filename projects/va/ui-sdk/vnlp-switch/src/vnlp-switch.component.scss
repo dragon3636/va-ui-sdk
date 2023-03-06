@@ -5,45 +5,48 @@
   input[type='checkbox'] {
     position: relative;
     appearance: none;
-    width: 50px;
-    height: 30px;
+    width: 38px;
+    height: 24px;
     border-radius: 50px;
     background-color: map-get($color, neutral-6);
-    border: 2px solid map-get($color, neutral-6);
     cursor: pointer;
     transition: 0.2s;
 
+    &.md {
+      width: 56px;
+      height: 32px;
+
+      &:after {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
     &:hover {
-      border: 2px solid map-get($color, primary-400);
+      box-shadow: 0 0 1px 3px map-get($color, primary-200);
     }
 
     &:checked[type='checkbox'] {
       background: map-get($color, primary);
-      border: 2px solid map-get($color, primary);
-
-      &:hover {
-        border: 2px solid map-get($color, primary-400);
-      }
 
       &:disabled {
-        background-color: map-get($color, primary-300);
-        border: 2px solid map-get($color, primary-300);
+        background-color: map-get($color, primary-100);
       }
     }
 
     &:disabled {
       background-color: map-get($color, neutral-7);
-      border: 2px solid map-get($color, neutral-7);
+      box-shadow: none;
     }
   }
 
   input[type='checkbox']::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 26px;
-    height: 26px;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 16px;
     background: map-get($color, neutral-8);
     border-radius: 50%;
     transition: 0.2s;
