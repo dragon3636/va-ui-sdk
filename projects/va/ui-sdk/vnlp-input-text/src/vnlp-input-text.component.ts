@@ -9,23 +9,21 @@ export class VnlpInputTextComponent implements OnInit {
   @Input() label: string = 'Label';
   @Input() name: string = '';
   @Input() value: string = '';
+  @Output() valueChange = new EventEmitter();
   @Input() error: boolean = false;
   @Input() placeholder: string = 'Placeholder';
   @Input() disabled: boolean = false;
   @Input() icon: string = '';
-  @Input() success: boolean = false;
   @Input() informationText: string = '';
 
   @Output() onChange = new EventEmitter();
-  @Output() onEnter = new EventEmitter();
   @Output() onBlur = new EventEmitter();
-  @Output() valueChange = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  handleChange(newValue: any) {
+  handleChange() {
     this.valueChange.emit(this.value);
     this.onChange.emit({
       [this.name]: this.value,
@@ -39,6 +37,6 @@ export class VnlpInputTextComponent implements OnInit {
 
   clearInput() {
     this.value = '';
-    this.handleChange('');
+    this.handleChange();
   }
 }

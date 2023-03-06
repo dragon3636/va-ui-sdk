@@ -12,6 +12,7 @@ export class VnlpCheckboxComponent implements OnInit {
   @Input() checked: boolean = false;
   @Output() checkedChange = new EventEmitter();
   @Input() labelPosition: 'left' | 'right' = 'right';
+
   @Input() isShowInList: boolean = false;
   @Input() isShowDivider: boolean = false;
 
