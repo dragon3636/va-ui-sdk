@@ -1,4 +1,3 @@
-import { VnlpPopoverModule } from './../../../va/ui-sdk/vnlp-popover/src/vnlp-popover.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -18,6 +17,8 @@ import { VnlpTickboxModule } from '@em-and-ai/ui-sdk/vnlp-tickbox';
 import { VnlpSwitcherModule } from '@em-and-ai/ui-sdk/vnlp-switcher';
 import { VnlpInputTextModule } from '@em-and-ai/ui-sdk/vnlp-input-text';
 import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
+import { VnlpPopoverModule } from '@em-and-ai/ui-sdk/vnlp-popover';
+import { VnlpFileUploaderModule } from '@em-and-ai/ui-sdk/vnlp-file-uploader';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,6 +39,7 @@ import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
     VnlpSwitcherModule,
     VnlpRadioCardModule,
     VnlpPopoverModule,
+    VnlpFileUploaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

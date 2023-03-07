@@ -342,7 +342,7 @@
 <div class="p-4">
   <vnlp-switcher
     [switcherList]="switcherList"
-    selected="key4"
+    selected="key1"
     (onChange)="handleBindingDataChange($event)"
   ></vnlp-switcher>
 </div>
@@ -366,4 +366,8 @@
     [checked]="true"
     (onChange)="handleBindingDataChange($event)"
   ></vnlp-radio-card>
+</div>
+
+<div class="p-4 flex justify-between">
+  <vnlp-file-uploader></vnlp-file-uploader>
 </div>
