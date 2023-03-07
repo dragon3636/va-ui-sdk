@@ -1,0 +1,49 @@
+.file-uploader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ccc;
+  height: 300px;
+  width: 400px;
+}
+
+.file-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.file-label-text {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.file-list {
+  margin-top: 10px;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 100px;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0;
+}
+
+.file-name {
+  flex: 1;
+}
+
+.file-size {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #999;
+}

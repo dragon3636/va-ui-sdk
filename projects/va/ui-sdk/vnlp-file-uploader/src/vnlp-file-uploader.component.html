@@ -1,1 +1,24 @@
-<p>vnlp-file-uploader works!</p>
+<div
+  class="file-uploader"
+  (drop)="handleDrop($event)"
+  (dragover)="handleDragOver($event)"
+  (dragleave)="handleDragLeave($event)"
+>
+  <label for="fileInput" class="file-label">
+    <div class="file-label-text">
+      Drag and drop files here or click to select
+    </div>
+    <input
+      type="file"
+      id="fileInput"
+      multiple
+      (change)="handleFileInput($event.target)"
+    />
+  </label>
+  <div class="file-list">
+    <div *ngFor="let file of fileList" class="file-item">
+      <div class="file-name">{{ file.name }}</div>
+      <div class="file-size">{{ formatSize(file.size) }}</div>
+    </div>
+  </div>
+</div>
