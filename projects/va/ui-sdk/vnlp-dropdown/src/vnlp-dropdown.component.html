@@ -1,5 +1,5 @@
 <div class="background-dropdown-container">
-  <div tabindex="-1" class="main-dropdown-container" (click)="toggleDataPanel()" [ngStyle]="{'width' : dropdownWidth}" #inputDropdown>
+  <div tabindex="-1" class="main-dropdown-container" (click)="toggleDataPanel()" [ngStyle]="{'width' : dropDownSettings.dropdownWidth}" #inputDropdown>
     <div *ngIf="!dropDownSettings.singleSelection" class="element-selected">
       <div *ngFor="let sel of selectedOptions;let i = index" class="item">
         <span>
@@ -8,14 +8,14 @@
         <span (click)="removefromselected(sel.value,i)" class="cursor-pointer">x</span>
       </div>
       <div *ngIf="selectedOptions.length < 1"><span
-          class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">{{placeholder}}</span></div>
+          class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">{{dropDownSettings.placeholder}}</span></div>
     </div>
     <div *ngIf="dropDownSettings.singleSelection" class="element-selected">
         <span *ngIf="selectedOptions.length > 0">
           {{selectedOptions[0].value}}
         </span>
       <div *ngIf="selectedOptions.length < 1"><span
-          class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">{{placeholder}}</span></div>
+          class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">{{dropDownSettings.placeholder}}</span></div>
     </div>
     <div class="flex">
       <div [ngClass]="{'rotate-180' : !isShowdataPanel}" class="transition-all duration-500">
@@ -27,7 +27,7 @@
     </div>
   </div>
   <!---data list panel-->
-  <div *ngIf="isShowdataPanel" class="selected-item-container" [ngStyle]="{'width' : dropdownWidth}" #dropdownContainer>
+  <div *ngIf="isShowdataPanel" class="selected-item-container" [ngStyle]="{'width' : dropDownSettings.dropdownWidth}" #dropdownContainer>
     <div *ngIf="empty" class="flex justify-center items-center p-[20px]">
       <span>No Record Found</span>
     </div>

@@ -25,16 +25,16 @@ export class VnlpDropdownComponent implements OnInit {
   listData: ItemSelected[] = [];
   @Input() dropDownSettings: DropDownSetting = {
     allowSearchFilter: true,
-    singleSelection: true
+    singleSelection: true,
+    placeholder: 'select option',
+    dropdownWidth: '400px'
   };
-  @Input() placeholder: string = 'select option';
   @Input() set data(val: ItemSelected[]) {
     if (val && val.length > 0) {
       this.listData = val.map(x => { x.isSelected = false; return x });
       this.tempListData = val.map(x => { x.isSelected = false; return x });
     }
   }
-  @Input() dropdownWidth: string = '400px'
 
   get userData() {
     return this.listData

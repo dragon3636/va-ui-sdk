@@ -24,6 +24,8 @@ export class OverviewComponent implements OnInit {
   dropdownSettings = {
     singleSelection: false,
     allowSearchFilter: true,
+    placeholder: 'select option',
+    dropdownWidth: '321px'
   };
 
   constructor() {}
@@ -31,6 +33,10 @@ export class OverviewComponent implements OnInit {
   ngOnInit(): void {}
 
   getDropdownValue(selectedItems : any) {
+    console.log(selectedItems)
+  }
+
+  getMultiselectValue(selectedItems : any) {
     console.log(selectedItems)
   }
 

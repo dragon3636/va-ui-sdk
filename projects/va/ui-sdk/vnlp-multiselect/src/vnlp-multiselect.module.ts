@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VnlpMultiselectComponent } from './vnlp-multiselect.component';
-import { I18nModule } from '@em-and-ai/ui-sdk/i18n';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [VnlpMultiselectComponent],
-  imports: [CommonModule, I18nModule],
+  imports: [CommonModule, FormsModule],
   exports: [VnlpMultiselectComponent],
 })
-export class VnlpDividersModule {}
+export class VnlpMultiselectModule {}

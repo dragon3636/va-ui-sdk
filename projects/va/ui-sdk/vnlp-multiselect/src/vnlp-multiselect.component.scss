@@ -1,0 +1,65 @@
+.main-multiselect-container {
+  display: flex;
+  flex-wrap: wrap;
+  // flex: auto;
+  gap: 5px;
+  border: 1.5px solid #e6e8ec;
+  padding: 12px 14px;
+  font-weight: 400;
+  line-height: 24px;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  // height: 52px;
+  border-radius: 10px;
+
+  &.is-invalid {
+    border: 1.5px solid #fb1b3c !important;
+  }
+
+  .item {
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    // width: 96px;
+    height: 34px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 8px;
+    background-color: #e6e8ec;
+    color: #141416;
+  }
+
+  &:hover {
+    border: 1.5px solid #99cbfd;
+  }
+
+  &:focus {
+    border: 1.5px solid blue;
+  }
+}
+
+.label-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.004em;
+  color: #141416;
+}
+
+.helper-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.004em;
+  color: #777e91;
+
+  &.is-invalid {
+    color: #fb1b3c !important;
+  }
+}

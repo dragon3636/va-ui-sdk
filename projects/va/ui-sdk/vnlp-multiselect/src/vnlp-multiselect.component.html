@@ -1,10 +1,31 @@
-<ng-container [ngTemplateOutlet]="type === 'Dividers 1x' ? normal : bold">
-</ng-container>
-
-<ng-template #normal>
-    <div class="border-[1px] border-solid border-[#E6E8EC]" [ngStyle]="{'width' : width}"></div>
-</ng-template>
-
-<ng-template #bold>
-    <div class="border-[2px] border-solid border-[#E6E8EC]" [ngStyle]="{'width' : width}"></div>
-</ng-template>
+<div>
+  <div class="label-text">{{label}}</div>
+  <div
+    [ngClass]="{ 'is-invalid': invalidEmail }"
+    class="main-multiselect-container"
+    [ngStyle]="{
+      width: multiselectWidth
+    }"
+  >
+    <div *ngFor="let data of listData; let i = index" class="item">
+      <span>
+        {{ data }}
+      </span>
+      <span (click)="removeDate(data)" class="cursor-pointer">x</span>
+    </div>
+    <input
+      (keydown.enter)="addData()"
+      [(ngModel)]="data"
+      class="h-full flex-auto w-max outline-none text-sm font-normal bg-transparent text-gray-700"
+      name="email"
+      type="email"
+    />
+  </div>
+  <div
+    *ngIf="invalidEmail"
+    [ngClass]="{ 'is-invalid': invalidEmail }"
+    class="helper-text"
+  >
+    This is not a valid Email!!!
+  </div>
+</div>
