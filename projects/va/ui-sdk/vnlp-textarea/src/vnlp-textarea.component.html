@@ -1,7 +1,7 @@
 <div class="vnlp-textarea-container inline-block">
-  <label [for]="name" class="inline-block txt-sm mb-2 font-[500]">{{
-    label
-  }}</label>
+  <label [for]="name" class="inline-block txt-sm mb-2 font-[500]">
+    {{ label }}
+  </label>
   <div class="relative" [style.width.px]="width">
     <textarea
       [name]="name"
@@ -14,10 +14,9 @@
       [placeholder]="placeholder"
       [disabled]="disabled"
       [maxlength]="maxLength"
-    >
-    </textarea>
+    ></textarea>
   </div>
-  <span class="counter flex justify-end"
-    >{{ value.length }} / {{ maxLength }}</span
-  >
+  <span class="counter flex justify-end">
+    {{ value.length }} / {{ maxLength }}
+  </span>
 </div>

@@ -2,11 +2,11 @@ import { series, task } from 'gulp';
 import { execNodeTask } from '../util/task-helpers';
 task(
   'showcase:start',
-  execNodeTask('@angular/cli', 'ng', ['serve', 'showcase']),
+  execNodeTask('@angular/cli', 'ng', ['serve', 'showcase'])
 );
 task(
   'showcase:build',
-  execNodeTask('@angular/cli', 'ng', ['build', 'showcase']),
+  execNodeTask('@angular/cli', 'ng', ['build', 'showcase'])
 );
 task(
   'showcase:watch',
@@ -16,7 +16,7 @@ task(
     '--watch',
     '--configuration',
     'development',
-  ]),
+  ])
 );
 task('showcase:test', execNodeTask('@angular/cli', 'ng', ['test', 'showcase']));
 task(
@@ -26,5 +26,5 @@ task(
     'showcase',
     ' --no-watch',
     ' --code-coverage',
-  ]),
+  ])
 );

@@ -6,8 +6,8 @@ task(
   'library:build',
   series(
     'style:build',
-    execNodeTask('@angular/cli', 'ng', ['build', '@em-and-ai/ui-sdk']),
-  ),
+    execNodeTask('@angular/cli', 'ng', ['build', '@em-and-ai/ui-sdk'])
+  )
 );
 task(
   'library:watch',
@@ -17,12 +17,12 @@ task(
     '--watch',
     '--configuration',
     'development',
-  ]),
+  ])
 );
 
 task(
   'library:test',
-  execNodeTask('@angular/cli', 'ng', ['test', '@em-and-ai/ui-sdk']),
+  execNodeTask('@angular/cli', 'ng', ['test', '@em-and-ai/ui-sdk'])
 );
 
 task(
@@ -32,5 +32,5 @@ task(
     '@em-and-ai/ui-sdk',
     '--no-watch',
     '--code-coverage',
-  ]),
+  ])
 );

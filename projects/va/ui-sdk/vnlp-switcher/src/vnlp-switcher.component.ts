@@ -25,7 +25,7 @@ export class VnlpSwitcherComponent implements OnInit {
 
   ngOnInit() {
     this.selectedIndex =
-      this.switcherList.findIndex(f => f.key === this.selected) | 0;
+      this.switcherList.findIndex((f) => f.key === this.selected) | 0;
   }
 
   handleSwitch(index: number) {
