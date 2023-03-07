@@ -11,10 +11,10 @@ type TextSize = 'sm' | 'md' | 'lg';
 })
 export class VnlpButtonComponent implements OnInit {
   @Input() type: ButtonType = 'primary';
-  @Input() title = 'button';
+  @Input() title: string = 'button';
   @Input() size: TextSize = 'sm';
-  @Input() disabled = false;
-  @Input() icon = 'star-filled';
+  @Input() disabled: boolean = false;
+  @Input() icon: string = 'star-filled';
   @Input() iconPosition: IconSide = 'left';
   @Output() onClick = new EventEmitter();
   constructor() {}

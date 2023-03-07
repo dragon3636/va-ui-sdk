@@ -15,10 +15,7 @@
     <input
       [name]="name"
       [id]="name"
-      [ngClass]="{
-        'w-full h-[48px] rounded-[10px] transition-all ease-in-out duration-200': true,
-        'pl-10': iconPosition === 'left'
-      }"
+      class="w-full h-[48px] rounded-[10px] transition-all ease-in-out duration-200"
       [(ngModel)]="value"
       (ngModelChange)="handleChange($event)"
       (blur)="handleBlur($event)"
@@ -28,9 +25,9 @@
       [disabled]="disabled"
       #input="ngModel"
     />
-    <span *ngIf="icon" class="input-icon">
+    <label [for]="name" *ngIf="icon" class="input-icon">
       <i [class]="'icon icon-vnlp-icon-' + icon"></i>
-    </span>
+    </label>
     <div *ngIf="informationText" class="info-text txt-sm error-msg mt-2">
       {{ informationText }}
     </div>

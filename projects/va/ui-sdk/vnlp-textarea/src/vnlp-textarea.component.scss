@@ -30,11 +30,8 @@
     }
 
     &:disabled {
-      background-color: map-get($color, neutral-5);
-
-      &:hover {
-        box-shadow: 0 0 4px 1px map-get($color, stroke);
-      }
+      background-color: map-get($color, neutral-7);
+      box-shadow: 0 0 4px 1px map-get($color, stroke);
     }
   }
 

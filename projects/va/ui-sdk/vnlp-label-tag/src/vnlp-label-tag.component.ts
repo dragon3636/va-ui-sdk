@@ -8,7 +8,7 @@ type LabelType = 'gray' | 'orange' | 'red' | 'blue' | 'green';
   styleUrls: ['./vnlp-label-tag.component.scss'],
 })
 export class VnlpLabelTagComponent implements OnInit {
-  @Input() text = 'Label';
+  @Input() text: string = 'Label';
   @Input() type: LabelType = 'gray';
 
   typeList = {

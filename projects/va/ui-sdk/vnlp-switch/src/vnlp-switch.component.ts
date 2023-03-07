@@ -6,10 +6,10 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./vnlp-switch.component.scss'],
 })
 export class VnlpSwitchComponent implements OnInit {
-  @Input() checked = false;
-  @Input() disabled = false;
-  @Input() label = 'Label';
-  @Input() name = 'Label';
+  @Input() checked: boolean = false;
+  @Input() disabled: boolean = false;
+  @Input() label: string = 'Label';
+  @Input() name: string = 'Label';
   @Input() labelPosition: 'left' | 'right' = 'right';
   @Output() checkedChange = new EventEmitter();
 

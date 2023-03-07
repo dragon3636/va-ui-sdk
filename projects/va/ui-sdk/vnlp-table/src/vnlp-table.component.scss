@@ -1,0 +1,150 @@
+@import './../../assets/sass/base/variable';
+@import './../../assets/sass/base/mixins';
+
+.vnlp-table-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 1px 1px map-get($color, stroke);
+  background-color: map-get($color, neutral-8);
+  position: relative;
+
+  // .loading {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background-color: rgba(0, 0, 0, 0.271);
+  //   z-index: 2;
+  // }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background-color: map-get($color, neutral-8);
+
+    tbody tr {
+      max-height: 44px;
+
+      &:hover {
+        background-color: #f6f8fa;
+
+        .icon {
+          display: block;
+        }
+      }
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid map-get($color, stroke);
+      text-align: left;
+
+      &.empty-data {
+        text-align: center;
+        padding-top: 40px;
+
+        span {
+          font-size: 16px;
+          font-weight: 700;
+          color: map-get($color, neutral-2);
+        }
+
+        p {
+          font-size: 14px;
+          color: map-get($color, neutral-5);
+        }
+
+        .create-button {
+          cursor: pointer;
+
+          i,
+          span {
+            color: map-get($color, primary);
+          }
+        }
+      }
+    }
+
+    th {
+      padding: 16px;
+      color: map-get($color, neutral-4);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+
+      &.action-header {
+        text-align: end;
+      }
+
+      &.check-all-record {
+        width: 56px;
+      }
+
+      &:hover {
+        background-color: #f6f8fa;
+      }
+    }
+
+    td {
+      padding: 10px 16px;
+
+      &.action-col {
+        width: 100px;
+        padding: 0 16px;
+      }
+
+      .icon {
+        font-size: 18px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 20px;
+
+    .counter {
+      font-size: 14px;
+      color: map-get($color, neutral-4);
+    }
+
+    .paginator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .paginator-prev,
+      .paginator-next,
+      .page-number {
+        width: 32px;
+        height: 32px;
+        border: 1px solid map-get($color, stroke);
+        border-radius: 4px;
+        font-size: 14px;
+
+        &:hover {
+          border: 1px solid map-get($color, primary);
+        }
+
+        &:disabled {
+          cursor: default;
+          border: 1px solid map-get($color, stroke);
+        }
+      }
+
+      .page-number {
+        &.active {
+          background-color: map-get($color, primary);
+          color: map-get($color, neutral-8);
+        }
+      }
+    }
+  }
+}
