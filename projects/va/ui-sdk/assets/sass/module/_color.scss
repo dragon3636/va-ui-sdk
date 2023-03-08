@@ -1,11 +1,11 @@
-@each $name, $type in $color {
-  .color-#{'' + $name} {
-    color: $type;
-  }
-}
+// @each $name, $type in $color {
+//   .color-#{'' + $name} {
+//     color: $type;
+//   }
+// }
 
-@each $name, $type in $color {
-  .bgc-#{'' + $name} {
-    background-color: $type;
-  }
-}
+// @each $name, $type in $color {
+//   .bgc-#{'' + $name} {
+//     background-color: $type;
+//   }
+// }

@@ -1,17 +1,6 @@
 // === Color ===
 $color: (
   // === Primary - Blue Darknut ===
-  blue-darknut-100: #e6f2fe,
-  blue-darknut-200: #cce5fe,
-  blue-darknut-300: #99cbfd,
-  blue-darknut-400: #66b1fb,
-  blue-darknut-500: #3397fa,
-  blue-darknut: #007df9,
-  blue-darknut-700: #0064c7,
-  blue-darknut-800: #004b95,
-  blue-darknut-900: #003264,
-  blue-darknut-1000: #001932,
-
   primary-100: #e6f2fe,
   primary-200: #cce5fe,
   primary-300: #99cbfd,
@@ -24,17 +13,6 @@ $color: (
   primary-1000: #001932,
 
   // === Secondary - Lucky Orange ===
-  lucky-orange-100: #fff1e6,
-  lucky-orange-200: #ffe3cc,
-  lucky-orange-300: #ffc899,
-  lucky-orange-400: #ffac66,
-  lucky-orange-500: #ff9133,
-  lucky-orange: #ff7500,
-  lucky-orange-700: #cc5e00,
-  lucky-orange-800: #994600,
-  lucky-orange-900: #662f00,
-  lucky-orange-1000: #331700,
-
   secondary-100: #fff1e6,
   secondary-200: #ffe3cc,
   secondary-300: #ffc899,
@@ -58,17 +36,6 @@ $color: (
   neutral-light-900: #666666,
   neutral-light-1000: #333333,
 
-  white-100: #ffffff,
-  white-200: #ffffff,
-  white-300: #ffffff,
-  white-400: #ffffff,
-  white-500: #ffffff,
-  white: #ffffff,
-  white-700: #cccccc,
-  white-800: #999999,
-  white-900: #666666,
-  white-1000: #333333,
-
   //  === Black - Neutral Dark ===
   neutral-dark-100: #e8e8e8,
   neutral-dark-200: #d0d0d0,
@@ -81,29 +48,7 @@ $color: (
   neutral-dark-900: #080809,
   neutral-dark-1000: #040404,
 
-  black-100: #e8e8e8,
-  black-200: #d0d0d0,
-  black-300: #a1a1a2,
-  black-400: #727273,
-  black-500: #5e6678,
-  black: #141416,
-  black-700: #101012,
-  black-800: #0c0c0d,
-  black-900: #080809,
-  black-1000: #040404,
-
   // === System - Error ===
-  system-error-100: #ffe8ec,
-  system-error-200: #fed1d8,
-  system-error-300: #fda4b1,
-  system-error-400: #fd768a,
-  system-error-500: #fc4963,
-  system-error: #fb1b3c,
-  system-error-700: #c91630,
-  system-error-800: #971024,
-  system-error-900: #640b18,
-  system-error-1000: #32050c,
-
   error-100: #ffe8ec,
   error-200: #fed1d8,
   error-300: #fda4b1,
@@ -116,17 +61,6 @@ $color: (
   error-1000: #32050c,
 
   // === System - Warning ===
-  system-success-100: #f0f7ea,
-  system-success-200: #e0efd4,
-  system-success-300: #c1dfa9,
-  system-success-400: #a3ce7f,
-  system-success-500: #84be54,
-  system-success: #65ae29,
-  system-success-700: #65ae29,
-  system-success-800: #518b21,
-  system-success-900: #284610,
-  system-success-1000: #142308,
-
   success-100: #f0f7ea,
   success-200: #e0efd4,
   success-300: #c1dfa9,
@@ -139,17 +73,6 @@ $color: (
   success-1000: #142308,
 
   // === System - Warning ===
-  system-warning-100: #fff9ea,
-  system-warning-200: #fff3d5,
-  system-warning-300: #fee6ab,
-  system-warning-400: #feda80,
-  system-warning-500: #fdcd56,
-  system-warning: #fdc12c,
-  system-warning-700: #ca9a23,
-  system-warning-800: #98741a,
-  system-warning-900: #654d12,
-  system-warning-1000: #332709,
-
   warning-100: #fff9ea,
   warning-200: #fff3d5,
   warning-300: #fee6ab,
@@ -179,8 +102,10 @@ $font-size: (
   md: 16px,
   lg: 18px,
   xl: 20px,
-  xxl: 24px,
-  xxxl: 30px,
+  2xl: 22px,
+  3xl: 24px,
+  4xl: 26px,
+  5xl: 28px,
 );
 
 // === Font-weigh ===

@@ -24,26 +24,31 @@ export class VnlpFileUploaderComponent {
     this.highlightDropzone = false;
   }
 
-  handleDragOver(event: DragEvent) {
+  handleDragOver(event: any) {
+    event.target.classList.add('on-drag');
     event.preventDefault();
   }
 
-  handleDragLeave(event: DragEvent) {
+  handleDragLeave(event: any) {
+    event.target.classList.remove('on-drag');
     event.preventDefault();
   }
 
   formatSize(bytes: number): string {
     const kb = bytes / 1024;
-    const mb = kb / 1024;
+    const mb = bytes / 1024 / 1024;
     const gb = mb / 1024;
-    if (gb >= 1) {
-      return gb.toFixed(2) + ' GB';
-    } else if (mb >= 1) {
-      return mb.toFixed(2) + ' MB';
-    } else if (kb >= 1) {
-      return kb.toFixed(2) + ' KB';
+    console.log(bytes / 1024);
+    if (kb < 100) {
+      return kb.toFixed(0) + ' Kb';
+    } else if (gb >= 1) {
+      return gb.toFixed(1) + ' Gb';
     } else {
-      return bytes + ' bytes';
+      return mb.toFixed(1) + ' Mb';
     }
+  }
+
+  deleteFile(file: any) {
+    this.fileList = this.fileList.filter((f) => f.name !== file.name);
   }
 }

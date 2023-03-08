@@ -12,11 +12,11 @@
     class="w-full min-h-full flex flex-col justify-center items-center"
   >
     <i class="icon icon-vnlp-icon-plus-02-line txt-xxl"></i>
-    <span class="mt-2 color-neutral-3 txt-sm font-[500]">{{ label }}</span>
+    <span class="mt-2 text-neutral-3 txt-sm font-[500]">{{ label }}</span>
   </div>
   <div *ngIf="mode === 'show'" class="w-full min-h-full flex flex-col p-[14px]">
     <div class="flex justify-between">
-      <span class="txt-sm txt-bold color-neutral-2">{{ title }}</span>
+      <span class="txt-sm txt-bold text-neutral-2">{{ title }}</span>
       <i
         [ngClass]="{
           'icon icon-voice': type === 'voice',
@@ -25,7 +25,7 @@
       ></i>
     </div>
     <div
-      class="description mb-3 color-neutral-4 txt-sm w-[190px] h-[50px] txt-left"
+      class="description mb-3 text-neutral-4 txt-sm w-[190px] h-[50px] txt-left"
     >
       {{ description }}
     </div>

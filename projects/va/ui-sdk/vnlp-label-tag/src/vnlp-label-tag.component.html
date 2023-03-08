@@ -1,8 +1,12 @@
 <span
+  class="hidden text-neutral-7 bg-neutral-4 text-secondary bg-secondary-100 text-error bg-error-100 text-primary bg-primary-100 text-success bg-success-100"
+></span>
+
+<span
   [ngClass]="[
     'text-[12px] h-[24px] inline-flex items-center rounded-md px-[6px] py-[8px]',
-    'bgc-' + typeList[type].bgc,
-    'color-' + typeList[type].textColor
+    'bg-' + typeList[type].bgc,
+    'text-' + typeList[type].textColor
   ]"
 >
   {{ text }}

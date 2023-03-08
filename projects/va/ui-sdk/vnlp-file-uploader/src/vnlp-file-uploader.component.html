@@ -1,24 +1,30 @@
-<div
-  class="file-uploader"
+<label
+  for="fileInput"
+  class="file-uploader-container"
   (drop)="handleDrop($event)"
   (dragover)="handleDragOver($event)"
   (dragleave)="handleDragLeave($event)"
 >
-  <label for="fileInput" class="file-label">
-    <div class="file-label-text">
-      Drag and drop files here or click to select
-    </div>
-    <input
-      type="file"
-      id="fileInput"
-      multiple
-      (change)="handleFileInput($event.target)"
-    />
-  </label>
-  <div class="file-list">
-    <div *ngFor="let file of fileList" class="file-item">
-      <div class="file-name">{{ file.name }}</div>
-      <div class="file-size">{{ formatSize(file.size) }}</div>
-    </div>
+  <i class="icon-upload-cloud"></i>
+  <p class="file-label-text">Drop file here or</p>
+  <span class="file-label">Browse</span>
+  <input
+    type="file"
+    id="fileInput"
+    multiple
+    (change)="handleFileInput($event.target)"
+    class="hidden"
+  />
+</label>
+<div class="file-list">
+  <div *ngFor="let file of fileList" class="file-item">
+    <span class="file-icon">
+      <i class="icon-vnlp-icon-file-erase-line"></i>
+    </span>
+    <span class="file-name">{{ file.name }}</span>
+    <span class="file-size">{{ formatSize(file.size) }}</span>
+    <span (click)="deleteFile(file)">
+      <i class="icon icon-vnlp-icon-close-line"></i>
+    </span>
   </div>
 </div>
