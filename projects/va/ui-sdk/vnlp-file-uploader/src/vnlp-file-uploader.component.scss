@@ -80,5 +80,10 @@
       color: map-get($color, neutral-4);
       margin-left: auto;
     }
+
+    .delete-icon {
+      cursor: pointer;
+      color: map-get($color, neutral-4);
+    }
   }
 }

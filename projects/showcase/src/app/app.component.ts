@@ -91,4 +91,8 @@ export class AppComponent {
   handleBindingDataChange(data: any) {
     console.log(data);
   }
+
+  handleBindingDataTableChange(data: any) {
+    console.log(data);
+  }
 }

@@ -1,4 +1,3 @@
-import { VnlpFileUploaderModule } from './../../../va/ui-sdk/vnlp-file-uploader/src/vnlp-file-uploader.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -19,6 +18,7 @@ import { VnlpSwitcherModule } from '@em-and-ai/ui-sdk/vnlp-switcher';
 import { VnlpInputTextModule } from '@em-and-ai/ui-sdk/vnlp-input-text';
 import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
 import { VnlpPopoverModule } from '@em-and-ai/ui-sdk/vnlp-popover';
+import { VnlpFileUploaderModule } from '@em-and-ai/ui-sdk/vnlp-file-uploader';
 
 @NgModule({
   declarations: [AppComponent],

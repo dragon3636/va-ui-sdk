@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'vnlp-file-uploader',
@@ -6,13 +6,16 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./vnlp-file-uploader.component.scss'],
 })
 export class VnlpFileUploaderComponent {
-  @Output() filesSelected = new EventEmitter<File[]>();
+  @Input() multiple: boolean = true;
+  @Output() onChange = new EventEmitter();
   highlightDropzone = false;
   fileList: File[] = [];
 
   handleFileInput({ files }: any) {
     this.fileList = Array.from(files);
-    this.filesSelected.emit(this.fileList);
+    const exportFile =
+      this.fileList.length === 1 ? this.fileList[0] : this.fileList;
+    this.onChange.emit(exportFile);
   }
 
   handleDrop(event: DragEvent) {
@@ -38,7 +41,7 @@ export class VnlpFileUploaderComponent {
     const kb = bytes / 1024;
     const mb = bytes / 1024 / 1024;
     const gb = mb / 1024;
-    console.log(bytes / 1024);
+
     if (kb < 100) {
       return kb.toFixed(0) + ' Kb';
     } else if (gb >= 1) {

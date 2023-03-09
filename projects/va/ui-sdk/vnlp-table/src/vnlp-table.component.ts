@@ -165,6 +165,7 @@ export class VnlpTableComponent implements OnInit {
     this.pageOptions.sort = this.pageOptions.sort
       ? this.pageOptions.sort * -1
       : 1;
+
     this.syncPageOptionsWithUrl();
   }
 
