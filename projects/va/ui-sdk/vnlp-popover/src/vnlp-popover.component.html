@@ -5,12 +5,12 @@
   }"
 >
   <span class="more-options-icon" (click)="onShowOptions()">
-    <i class="icon icon-vnlp-icon-more-line txt-xxl"></i>
+    <i class="icon icon-vnlp-icon-more-line text-xxl"></i>
   </span>
   <ul *ngIf="showOptions" [class]="'options ' + position">
     <li
       *ngFor="let option of options"
-      class="txt-sm txt-left p-2 select-none"
+      class="text-sm text-left p-2 select-none"
       (click)="onClickOption(option.key)"
     >
       <i *ngIf="option.icon" [class]="'icon icon-vnlp-icon-' + option.icon"></i>
@@ -19,7 +19,7 @@
 
     <li
       *ngIf="!options.length"
-      class="txt-sm txt-left p-2 select-none empty-option"
+      class="text-sm text-left p-2 select-none empty-option"
     >
       Empty option...
     </li>

@@ -7,7 +7,7 @@
     information: informationText
   }"
 >
-  <label [for]="name" class="inline-block txt-sm mb-2">{{ label }}</label>
+  <label [for]="name" class="inline-block text-sm mb-2">{{ label }}</label>
   <div ngClass="relative inline-block w-full">
     <label [for]="name" *ngIf="icon" class="input-icon">
       <i [class]="'icon icon-vnlp-icon-' + icon"></i>
@@ -34,12 +34,12 @@
       [disabled]="disabled"
       #input="ngModel"
     />
-    <div *ngIf="informationText" class="info-text txt-sm error-msg mt-2">
+    <div *ngIf="informationText" class="info-text text-sm error-msg mt-2">
       {{ informationText }}
     </div>
     <div
       *ngIf="input.touched && input.dirty && !input.value && !informationText"
-      class="txt-sm error-msg mt-2"
+      class="text-sm error-msg mt-2"
     >
       Field required
     </div>

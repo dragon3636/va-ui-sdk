@@ -108,7 +108,7 @@ $font-size: (
   5xl: 28px,
 );
 
-// === Font-weigh ===
+// === Font-weight ===
 $font-weight: (
   thin: 300,
   normal: 400,
@@ -117,4 +117,4 @@ $font-weight: (
   extra: 700,
 );
 
-$font-family-default: 'Inter', 'SFText', 'SFMono', sans-serif;
+$font-family-default: 'Inter', sans-serif;
