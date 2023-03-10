@@ -1,20 +1,20 @@
+@import './../../assets/sass/base/variable';
+
 .main-multiselect-container {
   display: flex;
   flex-wrap: wrap;
-  // flex: auto;
   gap: 5px;
-  border: 1.5px solid #e6e8ec;
+  border: 1.5px solid map-get($color , stroke);
   padding: 12px 14px;
   font-weight: 400;
   line-height: 24px;
   align-items: center;
   cursor: pointer;
   background-color: white;
-  // height: 52px;
   border-radius: 10px;
 
   &.is-invalid {
-    border: 1.5px solid #fb1b3c !important;
+    border: 1.5px solid map-get($color , system-error) !important;
   }
 
   .item {
@@ -23,22 +23,21 @@
     justify-content: center;
     gap: 10px;
     align-items: center;
-    // width: 96px;
     height: 34px;
     padding: 5px 12px;
     font-size: 14px;
     line-height: 24px;
     border-radius: 8px;
-    background-color: #e6e8ec;
-    color: #141416;
+    background-color: map-get($color , neutral-6);
+    color: map-get($color , neutral-1);
   }
 
   &:hover {
-    border: 1.5px solid #99cbfd;
+    border: 1.5px solid map-get($color , primary);
   }
 
-  &:focus {
-    border: 1.5px solid blue;
+  &:focus-within {
+    border: 1.5px solid map-get($color , primary);
   }
 }
 
@@ -48,7 +47,7 @@
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.004em;
-  color: #141416;
+  color: map-get($color , primary);
 }
 
 .helper-text {
@@ -57,9 +56,9 @@
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.004em;
-  color: #777e91;
+  color: map-get($color , neutral-4);
 
   &.is-invalid {
-    color: #fb1b3c !important;
+    color: map-get($color , system-error) !important;
   }
 }

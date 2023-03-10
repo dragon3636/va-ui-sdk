@@ -1,35 +1,38 @@
 module.exports = {
   content: [
-    './projects/va/ui-sdk/**/**/*.{html,ts}',
-    './projects/showcase/**/*.{html,ts}',
+    './projects/va/ui-sdk/**/**/*.{html,ts,scss}',
+    './projects/showcase/**/*.{html,ts,scss}',
   ],
   darkMode: 'class', // or 'media' or 'class'
+  purge: false,
   theme: {
     extend: {
       colors: {
         primary: {
+          DEFAULT: '#007DF9',
           100: '#E6F2FE',
           200: '#CCE5FE',
           300: '#99CBFD',
           400: '#66B1FB',
           500: '#3397FA',
           600: '#007DF9',
-          700: '#007DF9',
+          700: '#0064C7',
           800: '#004B95',
           900: '#003264',
           1000: '#001932',
         },
         secondary: {
+          DEFAULT: '#FF7500',
           100: '#FFF1E6',
           200: '#FFE3CC',
-          300: '#FFC699',
-          400: '#FFAD66',
-          500: '#FF9433',
-          600: '#FF7A00',
-          700: '#FF7A00',
-          800: '#954B00',
-          900: '#4B2600',
-          1000: '#1F1300',
+          300: '#FFC899',
+          400: '#FFAC66',
+          500: '#FF9133',
+          600: '#FF7500',
+          700: '#CC5E00',
+          800: '#994600',
+          900: '#662F00',
+          1000: '#331700',
         },
         'neutral-light': {
           100: '#fff1e6',
@@ -55,7 +58,8 @@ module.exports = {
           900: '#080809',
           1000: '#040404',
         },
-        'system-error': {
+        error: {
+          DEFAULT: '#fb1b3c',
           100: '#ffe8ec',
           200: '#fed1d8',
           300: '#fda4b1',
@@ -67,19 +71,21 @@ module.exports = {
           900: '#640b18',
           1000: '#32050c',
         },
-        'system-success': {
+        success: {
+          DEFAULT: '#65ae29',
           100: '#f0f7ea',
           200: '#e0efd4',
           300: '#c1dfa9',
           400: '#a3ce7f',
           500: '#84be54',
-          123: '#65ae29',
+          600: '#65ae29',
           700: '#65ae29',
           800: '#518b21',
           900: '#284610',
           1000: '#142308',
         },
-        'system-warning': {
+        warning: {
+          DEFAULT: '#fdc12c',
           100: '#fff9ea',
           200: '#fff3d5',
           300: '#fee6ab',
@@ -111,9 +117,8 @@ module.exports = {
       4: '16px',
       5: '24px',
       6: '32px',
-      7: '48px',
+      7: '64px',
     },
-    extend: {},
     spacing: {
       1: '4px',
       2: '8px',
@@ -121,22 +126,16 @@ module.exports = {
       4: '16px',
       5: '24px',
       6: '32px',
-      7: '48px',
+      7: '64px',
     },
     fontSize: {
       xs: ['12px', '12px'],
       sm: ['14px', '24px'],
-      base: '1rem',
-      xl: '1.25rem',
-      '2xl': '1.563rem',
-      '3xl': '1.953rem',
-      '4xl': '2.441rem',
-      '5xl': '3.052rem',
-    }
+    },
   },
   variants: {},
   plugins: [
     // require('@tailwindcss/typography'),
-    require('tailwind-scrollbar')
+    require('tailwind-scrollbar'),
   ],
 };

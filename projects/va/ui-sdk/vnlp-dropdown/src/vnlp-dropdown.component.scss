@@ -1,3 +1,5 @@
+@import './../../assets/sass/base/variable';
+
 .background-dropdown-container {
   position: relative;
   background-color: transparent;
@@ -5,7 +7,7 @@
 
 .main-dropdown-container {
   display: flex;
-  border: 1.5px solid #E6E8EC;
+  border: 1.5px solid map-get($color , neutral-6);
   padding: 12px 14px;
   font-weight: 400;
   line-height: 24px;
@@ -17,11 +19,11 @@
   border-radius: 10px;
 
   &:hover {
-    border: 1.5px solid #99CBFD;
+    border: 1.5px solid map-get($color , primary-300);
   }
 
   &:focus {
-    border: 1.5px solid blue;
+    border: 1.5px solid map-get($color , primary-300);
   }
 }
 
@@ -40,27 +42,23 @@
     justify-content: center;
     gap: 10px;
     align-items: center;
-    // width: 96px;
     height: 34px;
     padding: 5px 12px;
     font-size: 14px;
     line-height: 24px;
     border-radius: 8px;
-    background-color: #E6E8EC;
-    color: #141416;
+    background-color: map-get($color , neutral-6);
+    color:map-get($color , neutral-1);
   }
 }
 
 .selected-item-container {
-  // position: absolute;
-  // top: 50px;
-  padding-top: 6px;
-  padding-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #fff;
+  padding: 6px;
+  border: 1.5px solid map-get($color , stroke);
+  border-radius: 10px;
+  background: white;
   margin-top: 10px;
-  box-shadow: 0 1px 5px #959595;
+  box-shadow: 0px 1px 16px rgba(0, 0, 0, 0.05);
   height: 280px;
   overflow: auto;
 
@@ -77,7 +75,6 @@
     box-shadow: inset 0 0 5px white;
     border-radius: 10px;
   }
-
 }
 
 .search-input {
@@ -87,7 +84,7 @@
   width: 100%;
   height: 47px;
   border-radius: 8px;
-  background-color: #F4F5F6;
+  background-color: map-get($color , neutral-7);
   padding-top: 9px;
   padding-bottom: 9px;
   padding-right: 12px;

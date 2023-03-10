@@ -1,40 +1,67 @@
-<ul *ngIf="((breadcrumbs$ | async)?.length ?? 0) < 5" class="flex gap-[3px]">
-    <li class="flex items-center gap-[3px] text-[#141416] text-sm font-medium"
-        *ngFor="let breadcrumb of (breadcrumbs$ | async); let i = index">
-        <ng-container [ngTemplateOutlet]="i + 1 != (breadcrumbs$ | async)?.length ? element : current">
-        </ng-container>
+<ul *ngIf="((breadcrumbs$ | async)?.length ?? 0) < 5" class="flex gap-[10px]">
+  <li
+    class="flex items-center gap-[3px] text-neutral-1 text-sm font-medium"
+    *ngFor="let breadcrumb of breadcrumbs$ | async; let i = index"
+  >
+    <ng-container
+      [ngTemplateOutlet]="
+        i + 1 != (breadcrumbs$ | async)?.length ? element : current
+      "
+    >
+    </ng-container>
 
-        <ng-template #element>
-            <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
-            <i class="text-[25px] text-[#B1B5C3] font-normal" [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
-            <!-- <div>></div> -->
-        </ng-template>
+    <ng-template #element>
+      <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
+      <i
+        class="text-[25px] text-neutral-1 font-bold"
+        [class]="'icon-vnlp-icon-arrow-right-simple-line'"
+      ></i>
+      <!-- <div>></div> -->
+    </ng-template>
 
-        <ng-template #current>
-            <a class="text-[#B1B5C3]" [routerLink]="breadcrumb.url"> {{ breadcrumb.label }}</a>
-        </ng-template>
-    </li>
+    <ng-template #current>
+      <a class="text-neutral-5 text-sm" [routerLink]="breadcrumb.url">
+        {{ breadcrumb.label }}</a
+      >
+    </ng-template>
+  </li>
 </ul>
 
 <ul *ngIf="((breadcrumbs$ | async)?.length ?? 0) >= 5" class="flex gap-[3px]">
-    <li class="flex gap-[3px] items-center text-[#141416] text-sm font-medium"
-        *ngFor="let breadcrumb of (breadcrumbs$ | async); let i = index">
+  <li
+    class="flex gap-[3px] items-center text-neutral-1 text-sm font-medium"
+    *ngFor="let breadcrumb of breadcrumbs$ | async; let i = index"
+  >
+    <ng-container *ngIf="i === 0">
+      <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
+      <i
+        class="text-[25px] text-neutral-5 font-normal"
+        [class]="'icon-vnlp-icon-arrow-right-simple-line'"
+      ></i>
+      <a>...</a>
+      <i
+        class="text-[25px] text-neutral-5 font-normal"
+        [class]="'icon-vnlp-icon-arrow-right-simple-line'"
+      ></i>
+    </ng-container>
 
-        <ng-container *ngIf="i === 0">
-            <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
-            <i class="text-[25px] text-[#B1B5C3] font-normal" [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
-            <a>...</a>
-            <i class="text-[25px] text-[#B1B5C3] font-normal" [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
-        </ng-container>
+    <ng-container
+      *ngIf="
+        i + 1 != (breadcrumbs$ | async)?.length &&
+        i > ((breadcrumbs$ | async)?.length ?? 0) - 4
+      "
+    >
+      <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
+      <i
+        class="text-[25px] text-neutral-5 font-normal"
+        [class]="'icon-vnlp-icon-arrow-right-simple-line'"
+      ></i>
+    </ng-container>
 
-        <ng-container *ngIf="i + 1 != (breadcrumbs$ | async)?.length && i > ((breadcrumbs$ | async)?.length ?? 0) - 4">
-            <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
-            <i class="text-[25px] text-[#B1B5C3] font-normal" [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
-        </ng-container>
-
-        <ng-container *ngIf="i + 1 === ((breadcrumbs$ | async)?.length ?? 0)">
-            <a class="text-[#23262F]" [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
-        </ng-container>
-
-    </li>
+    <ng-container *ngIf="i + 1 === ((breadcrumbs$ | async)?.length ?? 0)">
+      <a class="text-neutral-5" [routerLink]="breadcrumb.url">{{
+        breadcrumb.label
+      }}</a>
+    </ng-container>
+  </li>
 </ul>

@@ -17,13 +17,13 @@ export class MenuService implements OnDestroy {
     this._pagesMenu$.next(Menu.pages);
 
     //Check router is currently active, handle expand and set to view
-    let sub = this.router.events.subscribe((event) => {
+    let sub = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         //Expand menu base on active route
-        this._pagesMenu$.forEach((menuItem) => {
-          menuItem.forEach((menu) => {
+        this._pagesMenu$.forEach(menuItem => {
+          menuItem.forEach(menu => {
             let activeGroup = false;
-            menu.items.forEach((subMenu) => {
+            menu.items.forEach(subMenu => {
               const active = this.isActive(subMenu.route);
               subMenu.expanded = active;
               subMenu.active = active;
@@ -61,10 +61,10 @@ export class MenuService implements OnDestroy {
   public toggleMenu(menu: SubMenuItem) {
     this.showSideBar = true;
     //Handle close menu expanding when another menu is expanded
-    this._pagesMenu$.forEach((menuItems) => {
-      menuItems.forEach((menuItem) => {
-        menuItem.items.forEach((subMenu) => {
-          if (menu.label !== subMenu.label) subMenu.expanded = false
+    this._pagesMenu$.forEach(menuItems => {
+      menuItems.forEach(menuItem => {
+        menuItem.items.forEach(subMenu => {
+          if (menu.label !== subMenu.label) subMenu.expanded = false;
         });
       });
     });
@@ -78,7 +78,7 @@ export class MenuService implements OnDestroy {
 
   //Handle set expand menu
   private expand(items: Array<SubMenuItem>) {
-    items.forEach((item) => {
+    items.forEach(item => {
       item.expanded = this.isActive(item.route);
       if (item.children) this.expand(item.children);
     });

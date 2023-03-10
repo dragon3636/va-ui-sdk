@@ -20,6 +20,5 @@ export class VnlpSuvNavVerticalComponent implements OnInit {
     this.menuService.toggleSidebar();
   }
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {}
 }

@@ -22,5 +22,7 @@
   >
     {{ title }}
   </span>
-  <i *ngIf="icon" [class]="'icon icon-vnlp-icon-' + icon"></i>
+  <span *ngIf="icon" class="input-icon">
+    <i [class]="'icon icon-vnlp-icon-' + icon"></i>
+  </span>
 </button>

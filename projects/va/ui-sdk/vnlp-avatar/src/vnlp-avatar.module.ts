@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { VnlpAvatarComponent } from './vnlp-avatar.component';
 
 @NgModule({
-  declarations: [ VnlpAvatarComponent ],
-  imports: [ CommonModule ],
-  exports: [ VnlpAvatarComponent, CommonModule ]
+  declarations: [VnlpAvatarComponent],
+  imports: [CommonModule],
+  exports: [VnlpAvatarComponent, CommonModule],
 })
-export class VnlpAvatarModule { }
+export class VnlpAvatarModule {}

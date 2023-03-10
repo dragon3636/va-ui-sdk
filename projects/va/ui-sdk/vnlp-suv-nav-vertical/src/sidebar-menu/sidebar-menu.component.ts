@@ -27,5 +27,5 @@ export class SidebarMenuComponent implements OnInit {
     this.menuService.toggleSidebar();
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

@@ -8,7 +8,6 @@ import {
   HostListener,
   forwardRef,
   ViewChild,
-  TemplateRef
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import {
@@ -27,12 +26,19 @@ import {
   getDay,
   subDays,
   setDay,
-  isAfter, isBefore, addDays, setMonth,
+  isAfter,
+  isBefore,
+  addDays,
+  setMonth,
 } from 'date-fns';
-import vi from 'date-fns/locale/vi'
-import { isSameDate, createDateRange } from './helpers';
-import { DateRange, Day, AddClass, DatepickerOptions } from './models/vnlp-calendar.model';
-
+import vi from 'date-fns/locale/vi';
+import { isSameDate, createDateRange } from './helpers/vnlp-calendar.helper';
+import {
+  DateRange,
+  Day,
+  AddClass,
+  DatepickerOptions,
+} from './models/vnlp-calendar.model';
 
 let counter = 0;
 
@@ -41,10 +47,16 @@ let counter = 0;
   templateUrl: 'vnlp-calendar.component.html',
   styleUrls: ['vnlp-calendar.component.scss'],
   providers: [
-    { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => VnlpCalendarComponent), multi: true }
-  ]
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => VnlpCalendarComponent),
+      multi: true,
+    },
+  ],
 })
-export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnChanges {
+export class VnlpCalendarComponent
+  implements ControlValueAccessor, OnInit, OnChanges
+{
   @ViewChild('calendarContainer') calendarContainerElement?: ElementRef;
   @ViewChild('inputElement') inputElement?: ElementRef;
 
@@ -84,10 +96,10 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
 
   private _range?: DateRange;
 
-  private onTouchedCallback: () => void = () => { };
-  private onChangeCallback: (_: any) => void = () => { };
+  private onTouchedCallback: () => void = () => {};
+  private onChangeCallback: (_: any) => void = () => {};
 
-  //Set default range 
+  //Set default range
   set range(val: DateRange | undefined) {
     this._range = val;
 
@@ -98,9 +110,7 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
     return this._range;
   }
 
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnInit() {
     this.view = 'days';
@@ -110,7 +120,11 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
     };
     this.viewingDate = new Date();
 
-    this.barTitle = format(this.viewingDate as Date, (this.currentOptions.barTitleFormat as string), this.currentOptions.locale);
+    this.barTitle = format(
+      this.viewingDate as Date,
+      this.currentOptions.barTitleFormat as string,
+      this.currentOptions.locale,
+    );
 
     this.initDayNames();
     this.initYears();
@@ -119,7 +133,7 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
 
   ngOnChanges(changes: SimpleChanges) {
     if ('options' in changes) {
-      this.updateOptions(changes["options"].currentValue);
+      this.updateOptions(changes['options'].currentValue);
       this.initDayNames();
       this.initDays();
       this.initYears();
@@ -156,14 +170,22 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
   nextMonth(): void {
     this.viewingDate = addMonths(this.viewingDate as Date, 1);
     this.initDays();
-    this.barTitle = format(this.viewingDate, (this.currentOptions.barTitleFormat as string), this.currentOptions.locale);
+    this.barTitle = format(
+      this.viewingDate,
+      this.currentOptions.barTitleFormat as string,
+      this.currentOptions.locale,
+    );
   }
 
   //Handle prev month in view
   prevMonth(): void {
     this.viewingDate = subMonths(this.viewingDate as Date, 1);
     this.initDays();
-    this.barTitle = format(this.viewingDate, (this.currentOptions.barTitleFormat as string), this.currentOptions.locale);
+    this.barTitle = format(
+      this.viewingDate,
+      this.currentOptions.barTitleFormat as string,
+      this.currentOptions.locale,
+    );
   }
 
   //Init date start and date end
@@ -173,7 +195,11 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
     if (this.currentOptions.selectRange) {
       if (!this.range!.start && !this.range!.end) {
         this.range!.start = date;
-      } else if (this.range!.start && !this.range!.end && isAfter(date, this.range!.start)) {
+      } else if (
+        this.range!.start &&
+        !this.range!.end &&
+        isAfter(date, this.range!.start)
+      ) {
         this.range!.end = date;
       } else {
         this.range!.end = undefined;
@@ -191,11 +217,19 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
     this.displayValue = this.formatDisplay();
 
     if (this.range) {
-      this.barTitle = format(this.viewingDate as Date, (this.currentOptions.barTitleFormat as string), this.currentOptions.locale);
+      this.barTitle = format(
+        this.viewingDate as Date,
+        this.currentOptions.barTitleFormat as string,
+        this.currentOptions.locale,
+      );
     } else {
-      this.barTitle = this.currentOptions.useEmptyBarTitle ?
-        this.currentOptions.barTitleIfEmpty :
-        format(this.viewingDate as Date, (this.currentOptions.barTitleFormat as string), this.currentOptions.locale);
+      this.barTitle = this.currentOptions.useEmptyBarTitle
+        ? this.currentOptions.barTitleIfEmpty
+        : format(
+            this.viewingDate as Date,
+            this.currentOptions.barTitleFormat as string,
+            this.currentOptions.locale,
+          );
     }
 
     //Change and emit value
@@ -210,16 +244,27 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
     this.initDays();
     this.initYears();
     this.view = 'months';
-    this.barTitle = format(this.viewingDate, (this.currentOptions.barTitleFormat as string), this.currentOptions.locale);
+    this.barTitle = format(
+      this.viewingDate,
+      this.currentOptions.barTitleFormat as string,
+      this.currentOptions.locale,
+    );
   }
 
   //User selected month
   setMonth(i: number): void {
-    this.viewingDate = setMonth(this.viewingDate as Date, this.months![i]!.month);
+    this.viewingDate = setMonth(
+      this.viewingDate as Date,
+      this.months![i]!.month,
+    );
     this.initDays();
     this.initMonths();
     this.view = 'days';
-    this.barTitle = format(this.viewingDate, (this.currentOptions.barTitleFormat as string), this.currentOptions.locale);
+    this.barTitle = format(
+      this.viewingDate,
+      this.currentOptions.barTitleFormat as string,
+      this.currentOptions.locale,
+    );
   }
 
   //Create days array from fisrt day and last day of selected month and some of prev and next month
@@ -231,16 +276,30 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
     const start = startOfMonth(this.viewingDate);
     const end = endOfMonth(this.viewingDate);
 
-    this.days = eachDayOfInterval({ start, end }).map((date) => this.formatDay(date));
+    this.days = eachDayOfInterval({ start, end }).map(date =>
+      this.formatDay(date),
+    );
 
-    const firstMonthDay = getDay(start) - (this.currentOptions.firstCalendarDay as number);
-    const prevDays = firstMonthDay < 0 ? 7 - (this.currentOptions.firstCalendarDay as number) : firstMonthDay;
-    let nextDays = (this.currentOptions.firstCalendarDay === 1 ? 7 : 6) - getDay(end);
+    const firstMonthDay =
+      getDay(start) - (this.currentOptions.firstCalendarDay as number);
+    const prevDays =
+      firstMonthDay < 0
+        ? 7 - (this.currentOptions.firstCalendarDay as number)
+        : firstMonthDay;
+    let nextDays =
+      (this.currentOptions.firstCalendarDay === 1 ? 7 : 6) - getDay(end);
 
-    const showPrevMonthDays = this.currentOptions.includeDays === 'all' || this.currentOptions.includeDays === 'previous-month';
-    const showNextMonthDays = this.currentOptions.includeDays === 'all' || this.currentOptions.includeDays === 'next-month';
+    const showPrevMonthDays =
+      this.currentOptions.includeDays === 'all' ||
+      this.currentOptions.includeDays === 'previous-month';
+    const showNextMonthDays =
+      this.currentOptions.includeDays === 'all' ||
+      this.currentOptions.includeDays === 'next-month';
 
-    if (showNextMonthDays && this.currentOptions.includeNextMonthsFirstFullWeek) {
+    if (
+      showNextMonthDays &&
+      this.currentOptions.includeNextMonthsFirstFullWeek
+    ) {
       nextDays += 7;
     }
 
@@ -248,24 +307,41 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
       this.days.unshift(this.formatDay(subDays(start, i), showPrevMonthDays));
     }
 
-    new Array(nextDays).fill(undefined).forEach((_, i) => this.days!.push(this.formatDay(addDays(end, i + 1), showNextMonthDays)));
+    new Array(nextDays)
+      .fill(undefined)
+      .forEach((_, i) =>
+        this.days!.push(this.formatDay(addDays(end, i + 1), showNextMonthDays)),
+      );
   }
 
   //Create years array from maxYear and minYear
   initYears(): void {
-    const range = (this.currentOptions.maxYear as number) - (this.currentOptions.minYear as number);
+    const range =
+      (this.currentOptions.maxYear as number) -
+      (this.currentOptions.minYear as number);
 
-    this.years = Array.from(new Array(range), (x, i) => i + (this.currentOptions.minYear as number)).map((year) => {
-      return { year: year, isThisYear: year === getYear(this.viewingDate as Date) };
+    this.years = Array.from(
+      new Array(range),
+      (x, i) => i + (this.currentOptions.minYear as number),
+    ).map(year => {
+      return {
+        year: year,
+        isThisYear: year === getYear(this.viewingDate as Date),
+      };
     });
   }
 
   //Create months array 1 -> 12
   initMonths(): void {
-    this.months = Array.from(new Array(12), (x, i) => setMonth(new Date(), i + 1))
-      .map((date) => {
-        return { month: date.getMonth(), name: format(date, 'MMM'), isSelected: date.getMonth() === getMonth(this.viewingDate as Date) };
-      });
+    this.months = Array.from(new Array(12), (x, i) =>
+      setMonth(new Date(), i + 1),
+    ).map(date => {
+      return {
+        month: date.getMonth(),
+        name: format(date, 'MMM'),
+        isSelected: date.getMonth() === getMonth(this.viewingDate as Date),
+      };
+    });
   }
 
   //Create dayNames array
@@ -273,10 +349,16 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
     this.dayNames = [];
     const start = this.currentOptions.firstCalendarDay;
 
-    for (let i = (start ?? 1); i <= 6 + (start ?? 1); i++) {
+    for (let i = start ?? 1; i <= 6 + (start ?? 1); i++) {
       const date = setDay(new Date(), i ?? 1);
 
-      this.dayNames.push(format(date, this.currentOptions.dayNamesFormat ?? '', this.currentOptions.locale));
+      this.dayNames.push(
+        format(
+          date,
+          this.currentOptions.dayNamesFormat ?? '',
+          this.currentOptions.locale,
+        ),
+      );
     }
   }
 
@@ -291,7 +373,7 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
 
     //Focus input when calendar open
     if (this.isOpened === true) {
-      this.inputElement?.nativeElement.focus()
+      this.inputElement?.nativeElement.focus();
     }
 
     if (!this.isOpened && this.view === 'years') {
@@ -324,12 +406,13 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
         this.range!.start = this.range!.end = new Date(val);
       } else if (val instanceof Date) {
         this.range!.start = this.range!.end = val;
-      } else if (val.start) { // Checking if it's instance of DateRange
+      } else if (val.start) {
+        // Checking if it's instance of DateRange
         this.range = val;
       } else {
         throw Error('Invalid input data type');
       }
-      
+
       this.viewingDate = this.range!.start || this.viewingDate;
 
       this.initDays();
@@ -359,16 +442,21 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
     }
 
     //Keep show calendar when user click inside input
-    if (e.target === this.inputElement.nativeElement ||
+    if (
+      e.target === this.inputElement.nativeElement ||
       this.inputElement.nativeElement.contains(<Element>e.target) ||
-      ((<Element>e.target).parentElement && (<Element>e.target).parentElement?.classList.contains('day-unit'))
+      ((<Element>e.target).parentElement &&
+        (<Element>e.target).parentElement?.classList.contains('day-unit'))
     ) {
       return;
     }
 
-    //Close calendar when user click outside calendar and input element 
-    if (this.calendarContainerElement?.nativeElement !== e.target &&
-      !this.calendarContainerElement?.nativeElement.contains(<Element>e.target) &&
+    //Close calendar when user click outside calendar and input element
+    if (
+      this.calendarContainerElement?.nativeElement !== e.target &&
+      !this.calendarContainerElement?.nativeElement.contains(
+        <Element>e.target,
+      ) &&
       !(<Element>e.target).classList.contains('year-unit') &&
       !(<Element>e.target).classList.contains('month-unit')
     ) {
@@ -377,27 +465,25 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
   }
 
   //Handle format day
-  formatDay = (date: Date, isVisible: boolean = true): Day => (
-    {
-      date: date,
-      day: getDate(date),
-      month: getMonth(date),
-      year: getYear(date),
-      inThisMonth: isSameMonth(date, this.viewingDate as Date),
-      isToday: isVisible && isToday(date),
-      isSelected: isVisible && this.isDateSelected(date),
-      isInRange: isVisible && this.isInRange(date),
-      isSelectable: isVisible && this.isDateSelectable(date),
-      isStart: isVisible && this.isRangeBoundary(date, 'start'),
-      isEnd: isVisible && this.isRangeBoundary(date, 'end'),
-      isVisible,
-    }
-  )
+  formatDay = (date: Date, isVisible: boolean = true): Day => ({
+    date: date,
+    day: getDate(date),
+    month: getMonth(date),
+    year: getYear(date),
+    inThisMonth: isSameMonth(date, this.viewingDate as Date),
+    isToday: isVisible && isToday(date),
+    isSelected: isVisible && this.isDateSelected(date),
+    isInRange: isVisible && this.isInRange(date),
+    isSelectable: isVisible && this.isDateSelectable(date),
+    isStart: isVisible && this.isRangeBoundary(date, 'start'),
+    isEnd: isVisible && this.isRangeBoundary(date, 'end'),
+    isVisible,
+  });
 
   //Get styles date
   getDayClasses(day: Day): AddClass {
     return {
-      'is-prev-month': !day.inThisMonth,
+      'is-another-month': !day.inThisMonth,
       'is-today': day.isToday,
       'is-selected': day.isSelected,
       'is-in-range': day.isInRange,
@@ -408,39 +494,49 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
     };
   }
 
-
   //Checks if specified date is not later than the last day of this month
   private isDateSelectable(date: Date): boolean {
     const maxDate = endOfMonth(new Date());
     const timestamp = date.valueOf();
 
-    return timestamp < (maxDate).valueOf()
+    return timestamp < maxDate.valueOf();
   }
 
   //Check date is date start or date end
   private isDateSelected(date: Date): boolean {
-    return isSameDate(date, this.range!.start as Date) || isSameDate(date, this.range!.end as Date);
+    return (
+      isSameDate(date, this.range!.start as Date) ||
+      isSameDate(date, this.range!.end as Date)
+    );
   }
 
   //Check date is within date start and date end to styles element
   private isInRange(date: Date): boolean {
-    return this.isDateSelected(date) || (isAfter(date, this.range!.start as Date) && isBefore(date, this.range!.end as Date));
+    return (
+      this.isDateSelected(date) ||
+      (isAfter(date, this.range!.start as Date) &&
+        isBefore(date, this.range!.end as Date))
+    );
   }
 
-  //Format display output 
+  //Format display output
   private formatDisplay(): string {
     if (!this.range) {
       return '';
     }
 
-    const formattedStartDate = format(this.range.start as Date, this.currentOptions.displayFormat ?? '', this.currentOptions.locale);
+    const formattedStartDate = format(
+      this.range.start as Date,
+      this.currentOptions.displayFormat ?? '',
+      this.currentOptions.locale,
+    );
 
     //When calendar is pick range
     if (this.currentOptions.selectRange) {
       const formattedEndDate = format(
-        this.range.end || this.range.start as Date,
+        this.range.end || (this.range.start as Date),
         this.currentOptions.displayFormat ?? '',
-        this.currentOptions.locale
+        this.currentOptions.locale,
       );
 
       return `${formattedStartDate} ${this.currentOptions.rangeSeparator} ${formattedEndDate}`;
@@ -452,7 +548,9 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
 
   //Check date is start or end to styles element
   private isRangeBoundary(date: Date, boundary: 'start' | 'end'): boolean {
-    return !this.range![boundary] || isSameDate(date, this.range![boundary] as Date);
+    return (
+      !this.range![boundary] || isSameDate(date, this.range![boundary] as Date)
+    );
   }
 
   //Get day start and day end and emit output
@@ -467,5 +565,4 @@ export class VnlpCalendarComponent implements ControlValueAccessor, OnInit, OnCh
 
     return createDateRange(range!.start as Date, range!.start as Date);
   }
-
 }

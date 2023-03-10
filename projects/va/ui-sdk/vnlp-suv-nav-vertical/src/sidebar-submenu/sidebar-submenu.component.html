@@ -1,18 +1,33 @@
-<div class="max-h-[0px] overflow-hidden transition-all duration-[500ms]"
-  [ngClass]="{ hidden: !(showSideBar$ | async), 'max-h-[100vh]': submenu.expanded }">
-  <ul class="flex flex-col border-l border-dashed border-gray-200 pl-3">
+<div
+  class="max-h-[0px] overflow-hidden transition-all duration-[500ms]"
+  [ngClass]="{
+    hidden: !(showSideBar$ | async),
+    'max-h-[100vh]': submenu.expanded
+  }"
+>
+  <ul class="flex flex-col pl-[22px]">
     <li *ngFor="let sub of submenu.children">
-      <div class="flex rounded text-sidebar-children-text hover:text-hover-sidebar-text" (click)="toggleMenu(sub)">
+      <div
+        (click)="toggleMenu(sub)"
+      >
         <!-- Condition -->
-        <ng-container [ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
-          [ngTemplateOutletContext]="{ sub: sub }">
+        <ng-container
+          [ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
+          [ngTemplateOutletContext]="{ sub: sub }"
+        >
         </ng-container>
 
         <!-- Parent Menu -->
         <ng-template #parentMenu let-sub="sub">
-          <div class="flex h-[40px] py-[8px] px-[18px] cursor-pointer items-center justify-start gap-[15px]">
-            <a [routerLink]="sub.route" routerLinkActive="text-[#007DF9]" [routerLinkActiveOptions]="{ exact: true }"
-              class="inline-block w-full text-sm font-normal w-[154px] h-[24px] pl-[30px] pr-[24px]">
+          <div
+            class="flex items-center h-[40px] text-neutral-4 border-l-[2px] border-solid border-gray-200 cursor-pointer"
+          >
+            <a
+              [routerLink]="sub.route"
+              routerLinkActive="text-primary"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="inline-block w-full text-sm font-normal pl-[30px] pr-[24px]"
+            >
               {{ sub.label }}
             </a>
           </div>
@@ -20,13 +35,20 @@
 
         <!-- Child Menu -->
         <ng-template #childMenu let-sub="sub">
-          <div class="flex h-[40px] py-[8px] px-[18px] cursor-pointer items-center justify-start gap-[15px]">
+          <div
+            class="flex items-center h-[40px] text-neutral-4 border-l-[2px] border-solid border-gray-200 cursor-pointer"
+          >
             <a class="inline-block w-full cursor-pointer text-sm font-normal">
               {{ sub.label }}
             </a>
           </div>
-          <button [ngClass]="{ hidden: !(showSideBar$ | async), 'rotate-90': sub.expanded }"
-            class="flex items-center p-1 text-gray-400 transition-all duration-500">
+          <button
+            [ngClass]="{
+              hidden: !(showSideBar$ | async),
+              'rotate-90': sub.expanded
+            }"
+            class="flex items-center p-1 text-gray-400 transition-all duration-500"
+          >
             <span>
               <i [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
             </span>

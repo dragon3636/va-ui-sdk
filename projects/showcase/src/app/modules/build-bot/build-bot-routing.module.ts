@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BuildBotComponent } from './build-bot.component';
-import { InitializationsComponent } from './pages/Initializations/initializations.component'
-import { DateRangeComponent } from './pages/datepicker/datepicker.component'
+import { InitializationsComponent } from './pages/Initializations/initializations.component';
+import { DateRangeComponent } from './pages/datepicker/datepicker.component';
 
 const routes: Routes = [
   {
@@ -11,8 +11,16 @@ const routes: Routes = [
     data: { breadcrumb: 'build-bot' },
     children: [
       // { path: '', redirectTo: 'overview', pathMatch: 'full' },
-      { path: 'initializations', component: InitializationsComponent, data: { breadcrumb: 'initializations' }, },
-      { path: 'daterange', component: DateRangeComponent, data: { breadcrumb: 'daterange' }, },
+      {
+        path: 'initializations',
+        component: InitializationsComponent,
+        data: { breadcrumb: 'initializations' },
+      },
+      {
+        path: 'daterange',
+        component: DateRangeComponent,
+        data: { breadcrumb: 'daterange' },
+      },
       { path: '**', redirectTo: 'error/404' },
     ],
   },
@@ -22,4 +30,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class BuildBotRoutingModule { }
+export class BuildBotRoutingModule {}

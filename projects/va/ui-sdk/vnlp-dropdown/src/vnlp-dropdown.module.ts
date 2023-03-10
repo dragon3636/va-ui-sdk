@@ -4,9 +4,8 @@ import { VnlpDropdownComponent } from './vnlp-dropdown.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ VnlpDropdownComponent ],
-  imports: [ CommonModule, FormsModule ],
-  exports: [ VnlpDropdownComponent ]
+  declarations: [VnlpDropdownComponent],
+  imports: [CommonModule, FormsModule],
+  exports: [VnlpDropdownComponent],
 })
-
-export class VnlpDropdownModule { }
+export class VnlpDropdownModule {}

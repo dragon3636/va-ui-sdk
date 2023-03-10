@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { VnlpCalendarComponent } from './vnlp-calendar.component';
 
 @NgModule({
-  declarations: [ VnlpCalendarComponent ],
-  imports: [ CommonModule, FormsModule ],
-  exports: [ VnlpCalendarComponent, CommonModule, FormsModule ]
+  declarations: [VnlpCalendarComponent],
+  imports: [CommonModule, FormsModule],
+  exports: [VnlpCalendarComponent, CommonModule, FormsModule],
 })
-export class VnlpCalendarModule { }
+export class VnlpCalendarModule {}

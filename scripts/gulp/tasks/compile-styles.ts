@@ -22,6 +22,21 @@ task('style:compile-css', () => {
   ]);
 });
 
+// task('scss', cb => {
+//   const postcss = require('gulp-postcss');
+//   src('assets/sass/**/*.scss')
+//     .pipe(
+//       postcss([
+//         require('tailwindcss'),
+//         require('autoprefixer'),
+//         // require('@tailwindcss/forms'),
+//         // require('@tailwindcss/typography')
+//       ]),
+//     )
+//     .pipe(dest(join(buildConfig.componentsDir, 'assets/css')));
+//   cb();
+// });
+
 task(
   'style:compile-tailwind',
   execNodeTask('tailwindcss', 'tailwindcss', [
@@ -31,6 +46,7 @@ task(
     join(buildConfig.componentsDir, 'assets/css/tailwind-output.css'),
   ]),
 );
+
 task('style:concat', function () {
   return pump([
     src(
@@ -70,6 +86,7 @@ task(
   series([
     'style:clean',
     'style:compile-css',
+    // 'scss',
     'style:compile-tailwind',
     'style:concat',
   ]),

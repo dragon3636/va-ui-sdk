@@ -22,5 +22,4 @@ export class SidebarSubmenuComponent implements OnInit {
   public toggleMenu(menu: SubMenuItem) {
     this.menuService.toggleSubMenu(menu);
   }
-
 }

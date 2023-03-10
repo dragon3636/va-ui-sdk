@@ -74,9 +74,7 @@ export function execNodeTask(
   };
 }
 
-export function execShellScript(
-  executable: string[],
-): gulp.TaskFunction {
+export function execShellScript(executable: string[]): gulp.TaskFunction {
   return (done: (err?: Error | null) => void) => {
     // https://github.com/angular/angular-cli/issues/10922
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

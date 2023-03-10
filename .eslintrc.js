@@ -20,6 +20,6 @@ module.exports = {
     'no-new-object': ['error'],
     'object-shorthand': ['error', 'always', { avoidQuotes: true }],
     'quote-props': ['error', 'as-needed'],
-    'no-empty-function': ['warn', { allow: ['arrowFunctions']}]
+    'no-empty-function': ['warn', { allow: ['arrowFunctions'] }],
   },
 };

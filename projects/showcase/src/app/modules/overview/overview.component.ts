@@ -6,38 +6,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss'],
 })
 export class OverviewComponent implements OnInit {
-
-  selectedVal: any = "";
+  selectedVal: any = '';
   listData = [
-    { id: 1, value: "Codecademy" },
-    { id: 2, value: "Coursera" },
-    { id: 3, value: "Khan Academy" },
-    { id: 4, value: "LinkedIn Learning" },
-    { id: 5, value: "Open Culture" },
-    { id: 6 , value: "Sophia" },
-    { id: 7, value: "Teacher Training Videos" },
-    { id: 8, value: "Udemy" },
-    { id: 9, value: "Virtual Nerd Mobile Math" },
-    { id: 10, value: "Techsmith" },
+    { id: 1, value: 'Codecademy' },
+    { id: 2, value: 'Coursera' },
+    { id: 3, value: 'Khan Academy' },
+    { id: 4, value: 'LinkedIn Learning' },
+    { id: 5, value: 'Open Culture' },
+    { id: 6, value: 'Sophia' },
+    { id: 7, value: 'Teacher Training Videos' },
+    { id: 8, value: 'Udemy' },
+    { id: 9, value: 'Virtual Nerd Mobile Math' },
+    { id: 10, value: 'Techsmith' },
   ];
 
   dropdownSettings = {
     singleSelection: false,
     allowSearchFilter: true,
     placeholder: 'select option',
-    dropdownWidth: '321px'
+    dropdownWidth: '321px',
   };
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  getDropdownValue(selectedItems : any) {
-    console.log(selectedItems)
+  getDropdownValue(selectedItems: any) {
+    console.log(selectedItems);
   }
 
-  getMultiselectValue(selectedItems : any) {
-    console.log(selectedItems)
+  getMultiselectValue(selectedItems: any) {
+    console.log(selectedItems);
   }
-
 }

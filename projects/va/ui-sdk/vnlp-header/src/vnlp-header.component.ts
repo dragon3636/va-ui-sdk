@@ -9,5 +9,4 @@ export class VnlpHeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
 }

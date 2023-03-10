@@ -1,123 +1,36 @@
-$white: #ffffff;
-$background: $white;
-$range-background: rgba(1, 134, 255, 0.1);
-$border: #E6E8EC;
-$shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
-$radius: 4px;
-$text: #3D495C;
-$text-secondary: #CBCBCB;
-$hover-background: #ffffff;
-$hover-background-button: #F0F0F0;
-$color: #0186FF;
+@import './../../assets/sass/base/variable';
 
-.ngx-dates-picker-position-bottom-left {
-  top: 40px;
-  right: 0
-}
-
-.ngx-dates-picker-position-bottom-right {
-  top: 40px;
-  left: 0
-}
-
-.ngx-dates-picker-position-top-left {
-  bottom: 40px;
-  right: 0
-}
-
-.ngx-dates-picker-position-top-right {
-  bottom: 40px;
-  left: 0
-}
-
-.ngx-dates-picker-position-static {
-  position: static !important
-}
-
-.ngx-dates-picker-container {
-  position: relative
-}
-
-.ngx-dates-picker-input {
-  padding: 12px 18px;
-  font-size: 16px;
-  line-height: 24px;
-  width: 302px;
-  height: 48px;
-  outline: none;
-  border: 1.5px solid $border;
-  border-radius: 10px
-}
-
-.ngx-dates-picker-input:focus {
-  border: 1.5px solid #007DF9
-}
-
-.ngx-dates-picker-calendar-container {
-  position: absolute;
-  width: 300px;
-  background: $background;
-  box-shadow: $shadow;
-  border: 1px solid $border;
-  border-radius: $radius
-}
-
-.topbar-container {
-  width: 100%;
-  height: 50px;
-  padding: 0 15px;
-  border-bottom: 1px solid $border;
+.main-calendar-input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  user-select: none;
+  background: white;
+  width: 302px;
+  height: 48px;
+  border-radius: 10px;
+  padding: 12px 18px;
+  border: 1.5px solid map-get($color , stroke);
+  cursor: pointer;
 
-  svg {
-    cursor: pointer;
+  &:focus-within {
+    border: 2px solid map-get($color , primary);
   }
-
-  g {
-    fill: #CED0DA
-  }
-
-  div {
-    cursor: pointer
-  }
-}
-
-.topbar-title {
-  color: $text;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer
 }
 
 .main-calendar-container {
-  width: 100%;
-  height: 100%;
-  padding: 15px 10px 0;
-  font-size: 12px;
-  font-weight: 500
-}
-
-.main-calendar-day-names {
-  color: $text-secondary;
-  width: 100%;
-  display: flex;
-  align-items: center
+  position: absolute;
+  width: 350px;
+  height: 371px;
+  border-radius: 8px;
+  background: white;
+  top: 55px;
+  left: 0px;
+  padding: 0px 10px;
 }
 
 .day-name-unit {
   width: calc(100% / 7);
-  text-align: center
-}
-
-.main-calendar-days,
-.main-calendar-years {
-  padding: 15px 0 0 0;
-  width: 100%;
-  display: inline-block;
-  overflow: hidden
+  text-align: center;
 }
 
 .day-unit,
@@ -133,7 +46,7 @@ $color: #0186FF;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  user-select: none
+  user-select: none;
 }
 
 .day-background-upper {
@@ -147,28 +60,28 @@ $color: #0186FF;
   justify-content: center;
 
   &.is-selected {
-    background: $color;
-    color: $white
+    background: map-get($color , primary);
+    color: white;
   }
 
   &:not(.is-visible) {
-    cursor: default
+    cursor: default;
   }
 
   &.is-visible {
     &:hover {
-      background: $hover-background;
-      border: 1px solid blue;
-      color: black
+      border: 1px solid map-get($color , primary);
+      color: map-get($color , neutral-1);
+      background: white;
     }
 
-    &.is-prev-month {
-      color: $text-secondary
+    &.is-another-month {
+      color: map-get($color , neutral-6);
     }
 
     &.is-disabled {
       cursor: not-allowed;
-      color: $text-secondary
+      color: map-get($color , neutral-6);
     }
   }
 }
@@ -185,38 +98,32 @@ $color: #0186FF;
   border-bottom: 2px solid white;
 
   &.is-in-range {
-    background: $range-background
+    background: map-get($color , neutral-6);
   }
 
   &.range-start {
     border-bottom-left-radius: 50%;
     border-top-left-radius: 50%;
     padding-left: 20px;
-    box-shadow: inset 20px 0 0 0 white
+    box-shadow: inset 20px 0 0 0 white;
   }
 
   &.range-end {
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
     padding-right: 20px;
-    box-shadow: inset -20px 0 0 0 white
+    box-shadow: inset -20px 0 0 0 white;
   }
-}
-
-.main-calendar-years {
-  height: 210px;
-  display: block;
-  padding: 0
 }
 
 .month-unit {
   width: 98px;
-  height: 48px
+  height: 48px;
 }
 
 .year-unit {
   width: 98px;
-  height: 48px
+  height: 48px;
 }
 
 .year-unit,
@@ -224,19 +131,73 @@ $color: #0186FF;
   border-radius: 8px;
 
   &.is-selected {
-    background: $color;
-    color: $white
+    background: map-get($color , primary);
+    color: white;
   }
 
   &:hover {
-    background: $hover-background-button;
-    color: #777E91
+    background: map-get($color , primary-100);
+    color: map-get($color , primary);
+  }
+}
+
+.main-calendar-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 225px;
+  color: map-get($color , neutral-4);
+  font-weight: 500;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: map-get($color , neutral-5);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
   }
 }
 
 .main-calendar-months {
   display: flex;
   flex-wrap: wrap;
-  color: #777E91;
-  gap: 12px
+  color: map-get($color , neutral-4);
+  font-weight: 500;
+  gap: 12px;
+}
+
+.btn-cancel {
+  font-size: 14px;
+  line-height: 16px;
+  color: map-get($color , neutral-2);
+  border-radius: 8px;
+  font-weight: 700;
+  background: white;
+  border: 2px solid map-get($color , stroke);
+  padding: 12px 16px;
+
+  &:hover {
+    background: gainsboro;
+  }
+}
+
+.btn-apply {
+  font-size: 14px;
+  line-height: 16px;
+  color: white;
+  border-radius: 8px;
+  font-weight: 700;
+  background: map-get($color , primary);
+  padding: 12px 16px;
+
+  &:hover {
+    background: map-get($color , primary-700);
+  }
 }

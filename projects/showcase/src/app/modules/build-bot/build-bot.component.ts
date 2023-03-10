@@ -5,12 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './build-bot.component.html',
 })
 export class BuildBotComponent implements OnInit {
+  constructor() {}
 
-  constructor() {
-
-  }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

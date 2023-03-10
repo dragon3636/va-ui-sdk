@@ -1,5 +1,5 @@
 <div>
-  <div class="label-text">{{label}}</div>
+  <div class="label-text">{{ label }}</div>
   <div
     [ngClass]="{ 'is-invalid': invalidEmail }"
     class="main-multiselect-container"
@@ -16,9 +16,9 @@
     <input
       (keydown.enter)="addData()"
       [(ngModel)]="data"
-      class="h-full flex-auto w-max outline-none text-sm font-normal bg-transparent text-gray-700"
-      name="email"
-      type="email"
+      class="h-full flex-1 w-auto outline-none text-sm font-normal bg-transparent"
+      name="data"
+      type="text"
     />
   </div>
   <div

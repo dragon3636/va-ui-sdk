@@ -1,10 +1,14 @@
-<ng-container [ngTemplateOutlet]="type === 'Dividers 1x' ? normal : bold">
-</ng-container>
-
-<ng-template #normal>
-    <div class="border-[1px] border-solid border-[#E6E8EC]" [ngStyle]="{'width' : width}"></div>
-</ng-template>
-
-<ng-template #bold>
-    <div class="border-[2px] border-solid border-[#E6E8EC]" [ngStyle]="{'width' : width}"></div>
-</ng-template>
+<div
+  [ngClass]="{ 'rounded-[50%]': secondType !== null }"
+  class="flex items-center justify-center gap-[6px] rounded-[10px] py-[5px] px-[12px]"
+  [ngStyle]="{
+    width: width,
+    height: height,
+    'background-color': backgroundColor,
+    border : border
+  }"
+>
+  <div *ngIf="secondType !== 'icon'" [ngClass]="{ 'order-1': secondType === 'icon text' }" class="text-[14px] font-normal text-primary">Chip</div>
+  <i *ngIf="secondType !== null && secondType !== 'with image'" [class]="'icon-vnlp-icon-calendar-line'"></i>
+  <img *ngIf="secondType === 'with image'" class="h-[20px] w-[20px] rounded-[50%]" src="{{ imgUrl }}" />
+</div>

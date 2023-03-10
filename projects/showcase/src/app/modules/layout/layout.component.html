@@ -6,12 +6,18 @@
     <!-- Header -->
     <div class="relative h-[60px]">
       <vnlp-header class="absolute w-[100%]"></vnlp-header>
-      <vnlp-avatar [imgUrl]="'https://nld.mediacdn.vn/thumb_w/600/2015/anonymous-1447907195159.jpg'" [status]="'online'"
-        class="absolute right-[28px] mt-[10px]"></vnlp-avatar>
+      <vnlp-avatar
+        [imgUrl]="
+          'https://nld.mediacdn.vn/thumb_w/600/2015/anonymous-1447907195159.jpg'
+        "
+        [status]="'online'"
+        class="absolute right-[28px] mt-[10px]"
+      ></vnlp-avatar>
     </div>
     <!-- main content -->
     <div
-      class="scrollbar-thumb-rounded scrollbar-track-rounded overflow-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-100">
+      class="scrollbar-thumb-rounded scrollbar-track-rounded overflow-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-100"
+    >
       <router-outlet></router-outlet>
     </div>
 
@@ -21,5 +27,4 @@
     <!-- Bottom bar -->
     <!-- <app-bottom-navbar></app-bottom-navbar> -->
   </div>
-
 </div>

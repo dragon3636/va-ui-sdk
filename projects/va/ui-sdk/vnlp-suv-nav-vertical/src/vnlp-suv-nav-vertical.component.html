@@ -1,12 +1,19 @@
-<nav [ngClass]="(showSideBar$ | async) ? 'w-[240px]' : 'w-[70px]'"
-  class="relative overflow-auto scrollbar-thumb-rounded scrollbar-track-rounded hidden h-[100%] flex-col justify-between bg-white transition-all duration-300 scrollbar-thin scrollbar-track-white scrollbar-thumb-white lg:flex">
-  <div class="px-[5px] py-[10px]">
+<nav
+  [ngClass]="(showSideBar$ | async) ? 'w-[240px]' : 'w-[70px]'"
+  class="relative overflow-auto scrollbar-thumb-rounded scrollbar-track-rounded hidden h-[100%] flex-col justify-between bg-white transition-all duration-300 scrollbar-thin scrollbar-track-white scrollbar-thumb-white lg:flex"
+>
+  <div class="px-[4px] py-[10px]">
     <!-- Menu Items -->
-    <div class="absolute right-[5px] top-[55px]">
-      <button (click)="toggleSidebar()"
-        class="flex items-center justify-center rounded text-gray-400 transition-all duration-200 focus:outline-none hover:text-gray-500 dark:text-night-400 dark:hover:text-night-300"
-        [ngClass]="{ 'rotate-180': !(showSideBar$ | async) }">
-        <i class="text-[30px]" [class]="'icon-vnlp-icon-arrow-left-square-filled'"></i>
+    <div class="absolute right-[4px] top-[54px]">
+      <button
+        (click)="toggleSidebar()"
+        class="flex items-center justify-center rounded text-gray-400 transition-all duration-200 focus:outline-none hover:text-gray-500"
+        [ngClass]="{ 'rotate-180': !(showSideBar$ | async) }"
+      >
+        <i
+          class="text-[30px]"
+          [class]="'icon-vnlp-icon-arrow-left-square-filled'"
+        ></i>
       </button>
     </div>
 
@@ -16,15 +23,18 @@
   <div class="mx-4 my-4 space-y-1">
     <!-- Sign out -->
     <div
-      class="group flex h-9 cursor-pointer items-center justify-start rounded p-2 hover:bg-gray-200 text-[#777E90] text-[20px]">
+      class="group flex h-[40px] cursor-pointer items-center justify-start rounded-[8px] p-2 hover:bg-gray-200 text-neutral-5 text-[20px]"
+    >
       <span>
         <i [class]="'icon-vnlp-icon-sign-out-line'"></i>
       </span>
 
-      <a routerLink="/auth" class="ml-3 text-sm font-normal tracking-[0.004em] text-[#353945] focus:outline-none">
+      <a
+        routerLink="/auth"
+        class="ml-3 text-sm font-normal tracking-[0.004em] text-neutral-3 focus:outline-none"
+      >
         Log out
       </a>
-
     </div>
   </div>
 </nav>

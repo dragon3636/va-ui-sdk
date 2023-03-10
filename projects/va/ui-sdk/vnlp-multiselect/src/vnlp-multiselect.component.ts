@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { validateEmail } from './helpers';
+import { validateEmail } from './helpers/validate-email';
 
 @Component({
   selector: 'vnlp-multiselect',
@@ -7,9 +7,9 @@ import { validateEmail } from './helpers';
   styleUrls: ['./vnlp-multiselect.component.scss'],
 })
 export class VnlpMultiselectComponent implements OnInit {
-  @Input() multiselectWidth: string = "400px";
+  @Input() multiselectWidth: string = '400px';
   @Input() multiEmail: boolean = true;
-  @Input() label: string = "Label";
+  @Input() label: string = 'Label';
   @Output() valueChange = new EventEmitter();
   data: string = '';
   listData: string[] = [];

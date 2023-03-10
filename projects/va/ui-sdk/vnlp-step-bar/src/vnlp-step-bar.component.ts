@@ -7,34 +7,30 @@ export interface StepList {
 @Component({
   selector: 'vnlp-step-bar',
   templateUrl: './vnlp-step-bar.component.html',
-  styleUrls: ['./vnlp-step-bar.component.scss']
+  styleUrls: ['./vnlp-step-bar.component.scss'],
 })
-
 export class VnlpStepBarComponent implements OnInit {
-
   @Input() currentStep: number = 1;
   @Input() stepList: StepList[] = [
     {
       step: 1,
-      name: "Initialization"
+      name: 'Initialization',
     },
     {
       step: 2,
-      name: "Template"
+      name: 'Template',
     },
     {
       step: 3,
-      name: "Information setting"
+      name: 'Information setting',
     },
     {
       step: 4,
-      name: "abcxyz"
-    }
+      name: 'abcxyz',
+    },
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

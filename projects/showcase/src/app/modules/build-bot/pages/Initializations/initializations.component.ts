@@ -8,24 +8,23 @@ import { DatepickerOptions } from '@em-and-ai/ui-sdk/vnlp-calendar/src/models/vn
   templateUrl: './initializations.component.html',
 })
 export class InitializationsComponent implements OnInit {
-
   date: Date;
   dateRange: Date;
   options: DatepickerOptions = {
     locale: locale,
     selectRange: false,
-    placeholder: 'dd/mm/yyyy'
+    placeholder: 'dd/mm/yyyy',
   };
 
   optionsRange: DatepickerOptions = {
     locale: locale,
     selectRange: true,
-  }
+  };
 
   constructor() {
     this.date = new Date();
     this.dateRange = new Date();
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

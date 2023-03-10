@@ -1,31 +1,54 @@
 <div *ngFor="let menu of pagesMenu$ | async">
-  <ul class="flex flex-col">
+  <ul class="flex flex-col items-center">
     <li class="h-[30px] w-[100%] mt-[88px] px-[10px]">
-      <div class="text-xs font-semibold text-gray-400"
-      [ngClass]="{ 'text-center': !(showSideBar$ | async) }">
+      <div
+        class="text-xs font-semibold text-neutral-5 tracking-[0.015em]"
+        [ngClass]="{ 'text-center': !(showSideBar$ | async) }"
+      >
         {{ menu.group }}
       </div>
     </li>
     <!-- List items -->
-    <li *ngFor="let item of menu.items">
+    <li *ngFor="let item of menu.items" class="text-neutral-3">
       <!-- Menu List -->
-      <div (click)="toggleMenu(item)" routerLinkActive="text-[#007DF9] bg-[#F6F8FA]"
-        class="group relative w-[220px] h-[40px] py-[8px] px-[10px] ml-[6px] cursor-pointer text-neutral-dark-[200] hover:bg-[#F6F8FA] rounded-[8px]"
-        [ngClass]="{ 'text-[#007DF9] bg-[#F6F8FA]': item.expanded, 'px-[3px] ml-[0px] bg-white w-[40px] mb-[10px] hover:bg-white': !(showSideBar$ | async) }">
+      <div
+        (click)="toggleMenu(item)"
+        routerLinkActive="text-primary bg-primary-100"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="group relative w-[220px] h-[44px] py-[8px] px-[10px] cursor-pointer hover:bg-primary-100 rounded-[8px]"
+        [ngClass]="{
+          'text-primary bg-primary-100':
+            item.expanded && (showSideBar$ | async),
+          'flex items-center justify-center max-w-[40px] max-h-[40px] mb-[10px] hover:bg-primary-100':
+            !(showSideBar$ | async),
+          'text-white hover:text-neutral-3 bg-primary-600':
+            item.expanded && !(showSideBar$ | async)
+        }"
+      >
         <!-- Condition -->
-        <ng-container [ngTemplateOutlet]="item.children ? childMenu : parentMenu"
-          [ngTemplateOutletContext]="{ item: item }">
+        <ng-container
+          [ngTemplateOutlet]="item.children ? childMenu : parentMenu"
+          [ngTemplateOutletContext]="{ item: item }"
+        >
         </ng-container>
 
         <!-- Workaround:: Enable routerLink -->
         <ng-template #parentMenu let-item="item">
           <!-- Icon -->
-          <div routerLink="{{ item.route }}" class="flex items-center gap-[15px]">
-            <span
-              [ngClass]="{ 'pl-[10px] pr-[8px] py-[5px] rounded-[8px] hover:bg-[#F6F8FA]' : !(showSideBar$ | async), 'text-white hover:text-gray-700 bg-[#007DF9]' : !(showSideBar$ | async) && item.expanded }">
-              <i class="text-[20px]" [class]="'icon icon-vnlp-icon-' + item.icon"></i>
+          <div
+            routerLink="{{ item.route }}"
+            class="flex items-center gap-[14px]"
+          >
+            <span>
+              <i
+                class="text-[20px]"
+                [class]="'icon icon-vnlp-icon-' + item.icon"
+              ></i>
             </span>
-            <a class="truncate text-sm font-normal tracking-wide focus:outline-none w-[138px] h-[24px]">
+            <a
+              *ngIf="showSideBar$ | async"
+              class="truncate text-sm tracking-[0.0025em] font-normal"
+            >
               {{ item.label }}
             </a>
           </div>
@@ -33,31 +56,38 @@
 
         <!-- Workaround:: Disable routerLink -->
         <ng-template #childMenu let-item="item">
-          <div class="flex items-center justify-between group-hover:text-hover-sidebar-text">
-            <div class="flex items-center gap-[15px]">
-              <span
-                [ngClass]="{ 'pl-[10px] pr-[8px] py-[5px] rounded-[8px] hover:bg-[#F6F8FA]' : !(showSideBar$ | async),'text-white hover:text-gray-700 bg-[#007DF9]' : !(showSideBar$ | async) && item.expanded }">
-                <i class="text-[20px]" [class]="'icon icon-vnlp-icon-' + item.icon"></i>
-              </span>
-              <a class="truncate text-sm font-normal tracking-wide focus:outline-none w-[138px] h-[24px]">
-                {{ item.label }}
-              </a>
-            </div>
-            <div *ngIf="item.children" [ngClass]="{hidden: !(showSideBar$ | async), 'rotate-[-90deg]': item.expanded }"
-              class="pointer-events-none absolute right-[0] top-[0] flex items-center text-gray-400 transition-all duration-[500ms] text-[25px]">
-              <!-- Arrow Icon -->
-              <span>
-                <i [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
-              </span>
-            </div>
+          <div class="flex items-center gap-[14px]">
+            <span>
+              <i
+                class="text-[20px]"
+                [class]="'icon icon-vnlp-icon-' + item.icon"
+              ></i>
+            </span>
+            <a
+              *ngIf="showSideBar$ | async"
+              class="truncate text-sm font-normal tracking-[0.0025em]"
+            >
+              {{ item.label }}
+            </a>
+          </div>
+          <div
+            *ngIf="item.children"
+            [ngClass]="{
+              hidden: !(showSideBar$ | async),
+              'rotate-[-90deg]': item.expanded
+            }"
+            class="flex items-center pointer-events-none absolute right-[0] top-[0] text-[24px] text-neutral-5 transition-all duration-[500ms]"
+          >
+            <!-- Arrow Icon -->
+            <span>
+              <i [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
+            </span>
           </div>
         </ng-template>
-
       </div>
 
       <!-- Submenu items -->
       <app-sidebar-submenu [submenu]="item"></app-sidebar-submenu>
     </li>
   </ul>
-
 </div>

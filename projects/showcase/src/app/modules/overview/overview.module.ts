@@ -5,18 +5,20 @@ import { OverviewRoutingModule } from './overview-routing.module';
 // import { VnlpDropdownModule } from '@em-and-ai/ui-sdk/vnlp-dropdown'
 import { FormsModule } from '@angular/forms';
 import { VnlpDropdownModule } from 'projects/va/ui-sdk/vnlp-dropdown';
+// import { VnlpMultiselectModule } from '@em-and-ai/ui-sdk/vnlp-multiselect';
+import {VnlpChipLabelModule} from 'projects/va/ui-sdk/vnlp-chip-label'
 import { VnlpMultiselectModule } from 'projects/va/ui-sdk/vnlp-multiselect';
 
+
 @NgModule({
-  declarations: [
-    OverviewComponent,
-  ],
+  declarations: [OverviewComponent],
   imports: [
     CommonModule,
     OverviewRoutingModule,
     VnlpDropdownModule,
     VnlpMultiselectModule,
-    FormsModule
+    VnlpChipLabelModule,
+    FormsModule,
   ],
 })
-export class OverviewModule { }
+export class OverviewModule {}

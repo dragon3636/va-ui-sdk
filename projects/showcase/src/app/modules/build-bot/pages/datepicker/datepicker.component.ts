@@ -5,9 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './datepicker.component.html',
 })
 export class DateRangeComponent implements OnInit {
-
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 }

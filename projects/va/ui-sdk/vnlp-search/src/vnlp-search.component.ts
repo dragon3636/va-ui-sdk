@@ -5,17 +5,16 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 @Component({
   selector: 'vnlp-search',
   templateUrl: './vnlp-search.component.html',
-  styleUrls: ['./vnlp-search.component.scss']
+  styleUrls: ['./vnlp-search.component.scss'],
 })
 export class VnlpSearchComponent implements OnInit {
-
   searchText!: string | '';
   searching = false;
   loading = false;
 
   private searchDecouncer$: Subject<string> = new Subject();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.setupSearchDebouncer();
@@ -24,28 +23,29 @@ export class VnlpSearchComponent implements OnInit {
   private setupSearchDebouncer(): void {
     // Subscribe to `searchDecouncer$` values,
     // but pipe through `debounceTime` and `distinctUntilChanged`
-    this.searchDecouncer$.pipe(
-      debounceTime(2000),
-      distinctUntilChanged(),
-      tap(() => this.loading = true)
-    ).subscribe((term: string) => {
-      // Remember value after debouncing
-      this.searching = false
-      // Do the actual search
-      this.loading = true
+    this.searchDecouncer$
+      .pipe(
+        debounceTime(2000),
+        distinctUntilChanged(),
+        tap(() => (this.loading = true)),
+      )
+      .subscribe((term: string) => {
+        // Remember value after debouncing
+        this.searching = false;
+        // Do the actual search
+        this.loading = true;
 
-      setTimeout(() => {
-        this.loading = false
-      }, 2000)
+        setTimeout(() => {
+          this.loading = false;
+        }, 2000);
 
-      // this.loading = false
-      console.log(term)
-    });
+        // this.loading = false
+        console.log(term);
+      });
   }
 
   public onSearchInputChange(term: string): void {
-    // `onSearchInputChange` is called whenever the input is changed.
-    // We have to send the value to debouncing observable
+    //Called whenever the input is changed, send the value to debouncing observable
     if (this.searchText != '') {
       this.searching = true;
       this.searchDecouncer$.next(term);
@@ -63,8 +63,7 @@ export class VnlpSearchComponent implements OnInit {
   }
 
   deleteSearch() {
-    this.searchText = ''
-    this.searching = false
+    this.searchText = '';
+    this.searching = false;
   }
-
 }

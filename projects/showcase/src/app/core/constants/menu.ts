@@ -25,7 +25,10 @@ export class Menu {
           label: 'Advanced settings',
           route: '/advanced-settings',
           children: [
-            { label: 'initializations', route: '/advanced-settings/bot-setting' },
+            {
+              label: 'initializations',
+              route: '/advanced-settings/bot-setting',
+            },
             { label: 'AI Voicebot', route: '/advanced-settings/bot-setting' },
             { label: 'Chatbot', route: '/advanced-settings/bot-setting' },
           ],
@@ -34,8 +37,7 @@ export class Menu {
           icon: 'assets/icons/outline/lock-closed.svg',
           label: 'Auto call',
           route: '/auto-call',
-          children: [
-          ],
+          children: [],
         },
         {
           icon: 'assets/icons/outline/lock-closed.svg',
@@ -56,36 +58,31 @@ export class Menu {
           icon: 'assets/icons/outline/lock-closed.svg',
           label: 'Memebers',
           route: '/build-bot',
-          children: [
-          ],
+          children: [],
         },
         {
           icon: 'assets/icons/outline/lock-closed.svg',
           label: 'Statistical Report',
           route: '/build-bot',
-          children: [
-          ],
+          children: [],
         },
         {
           icon: 'assets/icons/outline/lock-closed.svg',
           label: 'Version',
           route: '/build-bot',
-          children: [
-          ],
+          children: [],
         },
         {
           icon: 'assets/icons/outline/lock-closed.svg',
           label: 'Histories',
           route: '/build-bot',
-          children: [
-          ],
+          children: [],
         },
         {
           icon: 'assets/icons/outline/lock-closed.svg',
           label: 'Integrations',
           route: '/build-bot',
-          children: [
-          ],
+          children: [],
         },
       ],
     },
