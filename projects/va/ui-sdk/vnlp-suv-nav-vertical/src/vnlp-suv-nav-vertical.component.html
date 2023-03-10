@@ -7,7 +7,7 @@
     <div class="absolute right-[4px] top-[54px]">
       <button
         (click)="toggleSidebar()"
-        class="flex items-center justify-center rounded text-gray-400 transition-all duration-200 focus:outline-none hover:text-gray-500"
+        class="flex items-center justify-center rounded text-neutral-4 transition-all duration-200 focus:outline-none hover:text-neutral-4"
         [ngClass]="{ 'rotate-180': !(showSideBar$ | async) }"
       >
         <i
@@ -23,7 +23,7 @@
   <div class="mx-2 my-4 space-y-1">
     <!-- Sign out -->
     <div
-      class="group flex h-[40px] cursor-pointer items-center justify-start rounded-[8px] p-2 hover:bg-gray-200 text-neutral-3 text-[20px]"
+      class="group flex h-[40px] cursor-pointer items-center justify-start rounded-[8px] p-2 hover:bg-neutral-5 text-neutral-3 text-[20px]"
     >
       <span>
         <i class="text-[20px]" [class]="'icon-vnlp-icon-logout-linear'"></i>

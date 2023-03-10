@@ -1,3 +1,4 @@
+
 module.exports = {
   content: [
     './projects/va/ui-sdk/**/**/*.{html,ts,scss}',
@@ -6,6 +7,7 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
       colors: {
+        transparent: "transparent",
         primary: {
           100: '#E6F2FE',
           200: '#CCE5FE',
