@@ -1,0 +1,21 @@
+import { Component, Input } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/common";
+export class VnlpDividersComponent {
+    constructor() {
+        this.type = '';
+        this.width = '200px';
+    }
+    ngOnInit() { }
+}
+VnlpDividersComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.12", ngImport: i0, type: VnlpDividersComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+VnlpDividersComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.12", type: VnlpDividersComponent, selector: "vnlp-dividers", inputs: { type: "type", width: "width" }, ngImport: i0, template: "<ng-container\r\n  [ngTemplateOutlet]=\"type === 'Dividers 1x' ? normal : bold\"\r\n></ng-container>\r\n\r\n<ng-template #normal>\r\n  <div\r\n    class=\"border-[1px] border-solid border-stroke\"\r\n    [ngStyle]=\"{ width: width }\"\r\n  ></div>\r\n</ng-template>\r\n\r\n<ng-template #bold>\r\n  <div\r\n    class=\"border-[2px] border-solid border-stroke\"\r\n    [ngStyle]=\"{ width: width }\"\r\n  ></div>\r\n</ng-template>\r\n", styles: [""], dependencies: [{ kind: "directive", type: i1.NgTemplateOutlet, selector: "[ngTemplateOutlet]", inputs: ["ngTemplateOutletContext", "ngTemplateOutlet", "ngTemplateOutletInjector"] }, { kind: "directive", type: i1.NgStyle, selector: "[ngStyle]", inputs: ["ngStyle"] }] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.12", ngImport: i0, type: VnlpDividersComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'vnlp-dividers', template: "<ng-container\r\n  [ngTemplateOutlet]=\"type === 'Dividers 1x' ? normal : bold\"\r\n></ng-container>\r\n\r\n<ng-template #normal>\r\n  <div\r\n    class=\"border-[1px] border-solid border-stroke\"\r\n    [ngStyle]=\"{ width: width }\"\r\n  ></div>\r\n</ng-template>\r\n\r\n<ng-template #bold>\r\n  <div\r\n    class=\"border-[2px] border-solid border-stroke\"\r\n    [ngStyle]=\"{ width: width }\"\r\n  ></div>\r\n</ng-template>\r\n" }]
+        }], ctorParameters: function () { return []; }, propDecorators: { type: [{
+                type: Input
+            }], width: [{
+                type: Input
+            }] } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidm5scC1kaXZpZGVycy5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy92YS91aS1zZGsvdm5scC1kaXZpZGVycy9zcmMvdm5scC1kaXZpZGVycy5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy92YS91aS1zZGsvdm5scC1kaXZpZGVycy9zcmMvdm5scC1kaXZpZGVycy5jb21wb25lbnQuaHRtbCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFVLEtBQUssRUFBRSxNQUFNLGVBQWUsQ0FBQzs7O0FBT3pELE1BQU0sT0FBTyxxQkFBcUI7SUFJaEM7UUFIUyxTQUFJLEdBQVcsRUFBRSxDQUFDO1FBQ2xCLFVBQUssR0FBVyxPQUFPLENBQUM7SUFFbEIsQ0FBQztJQUVoQixRQUFRLEtBQVUsQ0FBQzs7bUhBTlIscUJBQXFCO3VHQUFyQixxQkFBcUIsK0ZDUGxDLGtiQWlCQTs0RkRWYSxxQkFBcUI7a0JBTGpDLFNBQVM7K0JBQ0UsZUFBZTswRUFLaEIsSUFBSTtzQkFBWixLQUFLO2dCQUNHLEtBQUs7c0JBQWIsS0FBSyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5cclxuQENvbXBvbmVudCh7XHJcbiAgc2VsZWN0b3I6ICd2bmxwLWRpdmlkZXJzJyxcclxuICB0ZW1wbGF0ZVVybDogJy4vdm5scC1kaXZpZGVycy5jb21wb25lbnQuaHRtbCcsXHJcbiAgc3R5bGVVcmxzOiBbJy4vdm5scC1kaXZpZGVycy5jb21wb25lbnQuc2NzcyddLFxyXG59KVxyXG5leHBvcnQgY2xhc3MgVm5scERpdmlkZXJzQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcclxuICBASW5wdXQoKSB0eXBlOiBzdHJpbmcgPSAnJztcclxuICBASW5wdXQoKSB3aWR0aDogc3RyaW5nID0gJzIwMHB4JztcclxuXHJcbiAgY29uc3RydWN0b3IoKSB7fVxyXG5cclxuICBuZ09uSW5pdCgpOiB2b2lkIHt9XHJcbn1cclxuIiwiPG5nLWNvbnRhaW5lclxyXG4gIFtuZ1RlbXBsYXRlT3V0bGV0XT1cInR5cGUgPT09ICdEaXZpZGVycyAxeCcgPyBub3JtYWwgOiBib2xkXCJcclxuPjwvbmctY29udGFpbmVyPlxyXG5cclxuPG5nLXRlbXBsYXRlICNub3JtYWw+XHJcbiAgPGRpdlxyXG4gICAgY2xhc3M9XCJib3JkZXItWzFweF0gYm9yZGVyLXNvbGlkIGJvcmRlci1zdHJva2VcIlxyXG4gICAgW25nU3R5bGVdPVwieyB3aWR0aDogd2lkdGggfVwiXHJcbiAgPjwvZGl2PlxyXG48L25nLXRlbXBsYXRlPlxyXG5cclxuPG5nLXRlbXBsYXRlICNib2xkPlxyXG4gIDxkaXZcclxuICAgIGNsYXNzPVwiYm9yZGVyLVsycHhdIGJvcmRlci1zb2xpZCBib3JkZXItc3Ryb2tlXCJcclxuICAgIFtuZ1N0eWxlXT1cInsgd2lkdGg6IHdpZHRoIH1cIlxyXG4gID48L2Rpdj5cclxuPC9uZy10ZW1wbGF0ZT5cclxuIl19

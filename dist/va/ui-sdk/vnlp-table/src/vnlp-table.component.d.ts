@@ -1,0 +1,52 @@
+import { OnInit, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import * as i0 from "@angular/core";
+export declare class VnlpTableComponent implements OnInit {
+    private router;
+    private route;
+    columns: {
+        title: string;
+        key: string;
+        sortable?: boolean;
+    }[];
+    dataTable: any;
+    dataTableChange: EventEmitter<any>;
+    pageOptions: {
+        currentPage: number;
+        pageSize: number;
+        totalRecord: number;
+        sort?: any;
+        sortField?: string;
+        pagination?: boolean;
+    };
+    editable: boolean;
+    deletable: boolean;
+    selectable: boolean;
+    selectKey: string;
+    key: any;
+    onPageOptionsChange: EventEmitter<any>;
+    onDeleteRecord: EventEmitter<any>;
+    onEditRecord: EventEmitter<any>;
+    lastPage: number;
+    pageStatusSubject: Subject<number>;
+    checkedAllSubject: Subject<any>;
+    checkedAll: boolean;
+    constructor(router: Router, route: ActivatedRoute);
+    ngOnInit(): void;
+    handleCheckedAll(): void;
+    handleShowCheckedAll(): void;
+    syncPageOptionsWithUrl(): void;
+    get pages(): number[];
+    prevPage(): void;
+    nextPage(): void;
+    goToLastPage(): void;
+    goToFirstPage(): void;
+    goToPage(page: number): void;
+    getDisplayText(): string;
+    handleSort(key: any): void;
+    handleDeleteRecord(id: string): void;
+    handleEditRecord(id: string): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<VnlpTableComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<VnlpTableComponent, "vnlp-table", never, { "columns": "columns"; "dataTable": "dataTable"; "pageOptions": "pageOptions"; "editable": "editable"; "deletable": "deletable"; "selectable": "selectable"; "selectKey": "selectKey"; "key": "key"; }, { "dataTableChange": "dataTableChange"; "onPageOptionsChange": "onPageOptionsChange"; "onDeleteRecord": "onDeleteRecord"; "onEditRecord": "onEditRecord"; }, never, never, false>;
+}

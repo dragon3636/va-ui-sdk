@@ -1,0 +1,36 @@
+import { Component, Input } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/common";
+export class VnlpChipLabelComponent {
+    constructor() {
+        this.firstType = 1;
+        this.secondType = 'text icon';
+        this.height = '34px';
+        this.width = '83px';
+        this.backgroundColor = '#007DF9';
+        this.border = '4px solid map-get($color, primary)';
+        this.imgUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&usqp=CAU';
+    }
+    ngOnInit() { }
+}
+VnlpChipLabelComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "14.2.12", ngImport: i0, type: VnlpChipLabelComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+VnlpChipLabelComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "14.2.12", type: VnlpChipLabelComponent, selector: "vnlp-chip-label", inputs: { firstType: "firstType", secondType: "secondType", height: "height", width: "width", backgroundColor: "backgroundColor", border: "border", imgUrl: "imgUrl" }, ngImport: i0, template: "<div\r\n  [ngClass]=\"{ 'rounded-[8px]': secondType !== null }\"\r\n  class=\"flex items-center justify-center gap-[6px] rounded-[10px] py-[5px] px-[12px]\"\r\n  [ngStyle]=\"{\r\n    width: width,\r\n    height: height,\r\n    'background-color': backgroundColor,\r\n    border: border\r\n  }\"\r\n>\r\n  <div\r\n    *ngIf=\"secondType !== 'icon'\"\r\n    [ngClass]=\"{ 'order-1': secondType === 'icon text' }\"\r\n    class=\"text-[14px] font-normal text-neutral-8\"\r\n  >\r\n    Chip\r\n  </div>\r\n  <i\r\n    *ngIf=\"secondType !== null && secondType !== 'with image'\"\r\n    [class]=\"'icon-vnlp-icon-add-circle-linear'\"\r\n  ></i>\r\n  <img\r\n    *ngIf=\"secondType === 'with image'\"\r\n    class=\"h-[20px] w-[20px] rounded-[50%]\"\r\n    src=\"{{ imgUrl }}\"\r\n  />\r\n</div>\r\n", styles: [""], dependencies: [{ kind: "directive", type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "directive", type: i1.NgStyle, selector: "[ngStyle]", inputs: ["ngStyle"] }] });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "14.2.12", ngImport: i0, type: VnlpChipLabelComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'vnlp-chip-label', template: "<div\r\n  [ngClass]=\"{ 'rounded-[8px]': secondType !== null }\"\r\n  class=\"flex items-center justify-center gap-[6px] rounded-[10px] py-[5px] px-[12px]\"\r\n  [ngStyle]=\"{\r\n    width: width,\r\n    height: height,\r\n    'background-color': backgroundColor,\r\n    border: border\r\n  }\"\r\n>\r\n  <div\r\n    *ngIf=\"secondType !== 'icon'\"\r\n    [ngClass]=\"{ 'order-1': secondType === 'icon text' }\"\r\n    class=\"text-[14px] font-normal text-neutral-8\"\r\n  >\r\n    Chip\r\n  </div>\r\n  <i\r\n    *ngIf=\"secondType !== null && secondType !== 'with image'\"\r\n    [class]=\"'icon-vnlp-icon-add-circle-linear'\"\r\n  ></i>\r\n  <img\r\n    *ngIf=\"secondType === 'with image'\"\r\n    class=\"h-[20px] w-[20px] rounded-[50%]\"\r\n    src=\"{{ imgUrl }}\"\r\n  />\r\n</div>\r\n" }]
+        }], ctorParameters: function () { return []; }, propDecorators: { firstType: [{
+                type: Input
+            }], secondType: [{
+                type: Input
+            }], height: [{
+                type: Input
+            }], width: [{
+                type: Input
+            }], backgroundColor: [{
+                type: Input
+            }], border: [{
+                type: Input
+            }], imgUrl: [{
+                type: Input
+            }] } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidm5scC1jaGlwLWxhYmVsLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3ZhL3VpLXNkay92bmxwLWNoaXAtbGFiZWwvc3JjL3ZubHAtY2hpcC1sYWJlbC5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy92YS91aS1zZGsvdm5scC1jaGlwLWxhYmVsL3NyYy92bmxwLWNoaXAtbGFiZWwuY29tcG9uZW50Lmh0bWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxLQUFLLEVBQUUsTUFBTSxlQUFlLENBQUM7OztBQVV6RCxNQUFNLE9BQU8sc0JBQXNCO0lBVWpDO1FBVFMsY0FBUyxHQUFjLENBQUMsQ0FBQztRQUN6QixlQUFVLEdBQWUsV0FBVyxDQUFDO1FBQ3JDLFdBQU0sR0FBVyxNQUFNLENBQUM7UUFDeEIsVUFBSyxHQUFXLE1BQU0sQ0FBQztRQUN2QixvQkFBZSxHQUFXLFNBQVMsQ0FBQztRQUNwQyxXQUFNLEdBQVcsb0NBQW9DLENBQUM7UUFDdEQsV0FBTSxHQUNiLHFHQUFxRyxDQUFDO0lBRXpGLENBQUM7SUFFaEIsUUFBUSxLQUFVLENBQUM7O29IQVpSLHNCQUFzQjt3R0FBdEIsc0JBQXNCLCtOQ1ZuQywyeEJBMkJBOzRGRGpCYSxzQkFBc0I7a0JBTGxDLFNBQVM7K0JBQ0UsaUJBQWlCOzBFQUtsQixTQUFTO3NCQUFqQixLQUFLO2dCQUNHLFVBQVU7c0JBQWxCLEtBQUs7Z0JBQ0csTUFBTTtzQkFBZCxLQUFLO2dCQUNHLEtBQUs7c0JBQWIsS0FBSztnQkFDRyxlQUFlO3NCQUF2QixLQUFLO2dCQUNHLE1BQU07c0JBQWQsS0FBSztnQkFDRyxNQUFNO3NCQUFkLEtBQUsiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIE9uSW5pdCwgSW5wdXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcclxuXHJcbnR5cGUgRmlyc3RUeXBlID0gMSB8IDIgfCAzO1xyXG50eXBlIFNlY29uZFR5cGUgPSBudWxsIHwgJ2ljb24nIHwgJ3RleHQgaWNvbicgfCAnaWNvbiB0ZXh0JyB8ICd3aXRoIGltYWdlJztcclxuXHJcbkBDb21wb25lbnQoe1xyXG4gIHNlbGVjdG9yOiAndm5scC1jaGlwLWxhYmVsJyxcclxuICB0ZW1wbGF0ZVVybDogJy4vdm5scC1jaGlwLWxhYmVsLmNvbXBvbmVudC5odG1sJyxcclxuICBzdHlsZVVybHM6IFsnLi92bmxwLWNoaXAtbGFiZWwuY29tcG9uZW50LnNjc3MnXSxcclxufSlcclxuZXhwb3J0IGNsYXNzIFZubHBDaGlwTGFiZWxDb21wb25lbnQgaW1wbGVtZW50cyBPbkluaXQge1xyXG4gIEBJbnB1dCgpIGZpcnN0VHlwZTogRmlyc3RUeXBlID0gMTtcclxuICBASW5wdXQoKSBzZWNvbmRUeXBlOiBTZWNvbmRUeXBlID0gJ3RleHQgaWNvbic7XHJcbiAgQElucHV0KCkgaGVpZ2h0OiBzdHJpbmcgPSAnMzRweCc7XHJcbiAgQElucHV0KCkgd2lkdGg6IHN0cmluZyA9ICc4M3B4JztcclxuICBASW5wdXQoKSBiYWNrZ3JvdW5kQ29sb3I6IHN0cmluZyA9ICcjMDA3REY5JztcclxuICBASW5wdXQoKSBib3JkZXI6IHN0cmluZyA9ICc0cHggc29saWQgbWFwLWdldCgkY29sb3IsIHByaW1hcnkpJztcclxuICBASW5wdXQoKSBpbWdVcmw6IHN0cmluZyA9XHJcbiAgICAnaHR0cHM6Ly9lbmNyeXB0ZWQtdGJuMC5nc3RhdGljLmNvbS9pbWFnZXM/cT10Ym46QU5kOUdjUU5MX1puT1RwWFN2aGYxVWFLN2JlSGV5MkJYNDJVNnNvbFJBJnVzcXA9Q0FVJztcclxuXHJcbiAgY29uc3RydWN0b3IoKSB7fVxyXG5cclxuICBuZ09uSW5pdCgpOiB2b2lkIHt9XHJcbn1cclxuIiwiPGRpdlxyXG4gIFtuZ0NsYXNzXT1cInsgJ3JvdW5kZWQtWzhweF0nOiBzZWNvbmRUeXBlICE9PSBudWxsIH1cIlxyXG4gIGNsYXNzPVwiZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLVs2cHhdIHJvdW5kZWQtWzEwcHhdIHB5LVs1cHhdIHB4LVsxMnB4XVwiXHJcbiAgW25nU3R5bGVdPVwie1xyXG4gICAgd2lkdGg6IHdpZHRoLFxyXG4gICAgaGVpZ2h0OiBoZWlnaHQsXHJcbiAgICAnYmFja2dyb3VuZC1jb2xvcic6IGJhY2tncm91bmRDb2xvcixcclxuICAgIGJvcmRlcjogYm9yZGVyXHJcbiAgfVwiXHJcbj5cclxuICA8ZGl2XHJcbiAgICAqbmdJZj1cInNlY29uZFR5cGUgIT09ICdpY29uJ1wiXHJcbiAgICBbbmdDbGFzc109XCJ7ICdvcmRlci0xJzogc2Vjb25kVHlwZSA9PT0gJ2ljb24gdGV4dCcgfVwiXHJcbiAgICBjbGFzcz1cInRleHQtWzE0cHhdIGZvbnQtbm9ybWFsIHRleHQtbmV1dHJhbC04XCJcclxuICA+XHJcbiAgICBDaGlwXHJcbiAgPC9kaXY+XHJcbiAgPGlcclxuICAgICpuZ0lmPVwic2Vjb25kVHlwZSAhPT0gbnVsbCAmJiBzZWNvbmRUeXBlICE9PSAnd2l0aCBpbWFnZSdcIlxyXG4gICAgW2NsYXNzXT1cIidpY29uLXZubHAtaWNvbi1hZGQtY2lyY2xlLWxpbmVhcidcIlxyXG4gID48L2k+XHJcbiAgPGltZ1xyXG4gICAgKm5nSWY9XCJzZWNvbmRUeXBlID09PSAnd2l0aCBpbWFnZSdcIlxyXG4gICAgY2xhc3M9XCJoLVsyMHB4XSB3LVsyMHB4XSByb3VuZGVkLVs1MCVdXCJcclxuICAgIHNyYz1cInt7IGltZ1VybCB9fVwiXHJcbiAgLz5cclxuPC9kaXY+XHJcbiJdfQ==
