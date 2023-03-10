@@ -10,11 +10,11 @@
   line-height: 24px;
   align-items: center;
   cursor: pointer;
-  background-color: white;
+  background-color: map-get($color, neutral-8);
   border-radius: 10px;
 
   &.is-invalid {
-    border: 1.5px solid map-get($color, system-error) !important;
+    border: 1.5px solid map-get($color, error) !important;
   }
 
   .item {
@@ -47,7 +47,7 @@
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.004em;
-  color: map-get($color, primary);
+  color: map-get($color, neutral-1);
 }
 
 .helper-text {
@@ -59,6 +59,6 @@
   color: map-get($color, neutral-4);
 
   &.is-invalid {
-    color: map-get($color, system-error) !important;
+    color: map-get($color, error) !important;
   }
 }

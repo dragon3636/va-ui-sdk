@@ -1,15 +1,26 @@
-<div class="relative bg-gray-200 h-[100vh]">
+<div class="relative bg-gray-200 h-[60vh]">
   <vnlp-dropdown
     [dropDownSettings]="dropdownSettings"
+    [label]="'Multiselect with drop'"
     [data]="listData"
     (valueChange)="getDropdownValue($event)"
   ></vnlp-dropdown>
 </div>
 
-<div class="relative bg-gray-200 h-[100vh]">
+<div class="relative bg-gray-200 h-[60vh]">
+  <vnlp-dropdown
+    [dropDownSettings]="dropdownSettings2"
+    [label]="'Dropdown select'"
+    [data]="listData"
+    (valueChange)="getDropdownValue($event)"
+  ></vnlp-dropdown>
+</div>
+
+<div class="relative bg-gray-200 h-[50vh]">
   <vnlp-multiselect
     [multiselectWidth]="'350px'"
-    [multiEmail]="false"
+    [label]="'Multiselect'"
+    [multiEmail]="true"
     (valueChange)="getMultiselectValue($event)"
   ></vnlp-multiselect>
 </div>

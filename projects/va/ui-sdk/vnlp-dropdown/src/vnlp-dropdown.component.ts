@@ -39,7 +39,8 @@ export class VnlpDropdownComponent implements OnInit {
         return x;
       });
     }
-  }
+  };
+  @Input() label: string = "label"
 
   get userData() {
     return this.listData;
@@ -51,16 +52,6 @@ export class VnlpDropdownComponent implements OnInit {
 
   get empty() {
     return this.tempListData.length === 0;
-  }
-
-  //Keep focus input showing calendar container and remove when close calendar container
-  ngAfterViewChecked() {
-    if (this.isShowdataPanel) {
-      console.log('focus');
-      this.inputDropdownElement?.nativeElement.focus();
-    } else {
-      this.inputDropdownElement?.nativeElement.blur();
-    }
   }
 
   //Handle selected option value

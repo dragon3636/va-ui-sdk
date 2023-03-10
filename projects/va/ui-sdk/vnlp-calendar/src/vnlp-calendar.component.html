@@ -11,7 +11,7 @@
       [disabled]="disabled"
     />
     <span class="text-primary text-[20px]">
-      <i [class]="'icon-vnlp-icon-calendar-line'"></i>
+      <i [class]="'icon-vnlp-icon-calendar-1-linear'"></i>
     </span>
   </div>
   <ng-content></ng-content>
@@ -21,8 +21,8 @@
         <div
           class="flex justify-between py-[10px] items-center border-b-[1px] border-solid border-stroke"
         >
-          <div (click)="prevMonth()" class="text-[22px] text-neutral-4">
-            <i [class]="'icon-vnlp-icon-arrow-left-simple-line'"></i>
+          <div (click)="prevMonth()" class="text-[12px] text-neutral-4 font-bold cursor-pointer">
+            <i [class]="'icon-vnlp-icon-arrow-left-2-linear'"></i>
           </div>
           <span
             class="text-sm text-neutral-2 font-bold cursor-pointer"
@@ -30,8 +30,8 @@
           >
             {{ barTitle }}
           </span>
-          <div (click)="nextMonth()" class="text-[22px] text-neutral-4">
-            <i [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
+          <div (click)="nextMonth()" class="text-[12px] text-neutral-4 font-bold cursor-pointer">
+            <i [class]="'icon-vnlp-icon-arrow-right-3-linear'"></i>
           </div>
         </div>
       </div>
