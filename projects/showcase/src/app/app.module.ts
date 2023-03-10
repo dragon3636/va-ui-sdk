@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { VnlpButtonModule } from '@em-and-ai/ui-sdk/vnlp-button';
 import { VnlpSwitchModule } from '@em-and-ai/ui-sdk/vnlp-switch';
 // import { VnlpLabelTagModule } from '@em-and-ai/ui-sdk/vnlp-label-tag';
-import { CardComponent } from '@em-and-ai/ui-sdk/card';
 import { VnlpCreateVirtualAgentModule } from '@em-and-ai/ui-sdk/vnlp-create-virtual-agent';
 import { VnlpTableModule } from '@em-and-ai/ui-sdk/vnlp-table';
 import { VnlpLogoModule } from '@em-and-ai/ui-sdk/vnlp-logo';
