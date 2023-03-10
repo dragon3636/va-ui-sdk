@@ -82,4 +82,17 @@ export class AppComponent {
       sortable: false,
     },
   ];
+
+  switcherList = [
+    { title: 'Section 1', icon: 'design-grid-filled', key: 'key1' },
+    { title: 'Section 2', icon: 'pen-line', key: 'key2' },
+  ];
+
+  handleBindingDataChange(data: any) {
+    console.log(data);
+  }
+
+  handleBindingDataTableChange(data: any) {
+    console.log(data);
+  }
 }

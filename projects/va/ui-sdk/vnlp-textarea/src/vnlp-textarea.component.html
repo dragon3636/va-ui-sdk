@@ -1,25 +1,22 @@
 <div class="vnlp-textarea-container inline-block">
-  <label [for]="name" class="inline-block txt-sm mb-3 font-[600]">{{
-    label
-  }}</label>
-  <div class="relative w-[488px] h-[112px]">
+  <label [for]="name" class="inline-block text-sm mb-2 font-medium">
+    {{ label }}
+  </label>
+  <div class="relative" [style.width.px]="width">
     <textarea
       [name]="name"
       [id]="name"
-      [cols]="cols"
       [rows]="rows"
       class="w-full rounded-lg"
       [(ngModel)]="value"
       (ngModelChange)="handleChange($event)"
-      (blur)="handleBlur($event)"
-      (keyup.enter)="handleBlur($event)"
+      (blur)="handleBlur()"
       [placeholder]="placeholder"
       [disabled]="disabled"
       [maxlength]="maxLength"
-    >
-    </textarea>
-    <span class="counter inline-block text-sm absolute right-2 bottom-2"
-      >{{ value.length }} / {{ maxLength }}</span
-    >
+    ></textarea>
   </div>
+  <span class="counter flex justify-end">
+    {{ value.length }} / {{ maxLength }}
+  </span>
 </div>

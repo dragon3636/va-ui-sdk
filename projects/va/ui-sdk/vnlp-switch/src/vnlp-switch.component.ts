@@ -7,11 +7,14 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class VnlpSwitchComponent implements OnInit {
   @Input() checked: boolean = false;
+  @Output() checkedChange = new EventEmitter();
   @Input() disabled: boolean = false;
   @Input() label: string = 'Label';
-  @Input() name: string = 'Label';
+  @Input() name: string = 'name';
   @Input() labelPosition: 'left' | 'right' = 'right';
-  @Output() checkedChange = new EventEmitter();
+  @Input() size: 'sm' | 'md' = 'sm';
+
+  @Output() onChange = new EventEmitter();
 
   constructor() {}
 
@@ -20,5 +23,8 @@ export class VnlpSwitchComponent implements OnInit {
   handleClick() {
     this.checked = !this.checked;
     this.checkedChange.emit(this.checked);
+    this.onChange.emit({
+      [this.name]: this.checked,
+    });
   }
 }

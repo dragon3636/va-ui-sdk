@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { I18nModule } from '@em-and-ai/ui-sdk/i18n';
 import { VnlpLogoComponent } from './vnlp-logo.component';
 @NgModule({
   declarations: [VnlpLogoComponent],
-  imports: [CommonModule, I18nModule],
+  imports: [CommonModule],
   exports: [VnlpLogoComponent],
 })
 export class VnlpLogoModule {}

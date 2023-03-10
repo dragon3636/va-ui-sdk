@@ -58,9 +58,7 @@
               "projects/showcase/src/favicon.ico",
               "projects/showcase/src/assets"
             ],
-            "styles": [
-              "projects/showcase/src/styles.scss"
-            ],
+            "styles": ["projects/showcase/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -126,9 +124,7 @@
               "projects/showcase/src/favicon.ico",
               "projects/showcase/src/assets"
             ],
-            "styles": [
-              "projects/showcase/src/styles.scss"
-            ],
+            "styles": ["projects/showcase/src/styles.scss"],
             "scripts": []
           }
         }

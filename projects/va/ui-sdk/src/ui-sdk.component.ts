@@ -3,18 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'lib-ui-sdk',
   template: `
-    <p>
-      ui-sdk works!
-    </p>
+    <p>ui-sdk works!</p>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class UiSdkComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

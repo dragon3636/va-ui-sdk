@@ -3,6 +3,7 @@
     <vnlp-checkbox
       [(checked)]="option.checked"
       [label]="option.title"
+      (onChange)="handleCheckboxChange($event)"
     ></vnlp-checkbox>
   </li>
 </ul>

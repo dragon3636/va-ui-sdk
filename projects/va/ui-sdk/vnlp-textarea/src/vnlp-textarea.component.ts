@@ -7,15 +7,17 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class VnlpTextareaComponent implements OnInit {
   @Input() label: string = 'Label';
+  @Output() valueChange = new EventEmitter();
   @Input() name: string = '';
   @Input() value: string = '';
   @Input() error: boolean = false;
   @Input() placeholder: string = 'Placeholder';
   @Input() disabled: boolean = false;
-  @Input() cols: string = '30';
-  @Input() rows: string = '10';
+  @Input() rows: string = '3';
   @Input() maxLength: string = '75';
-  @Output() valueChange = new EventEmitter();
+  @Input() width: string = '320';
+
+  @Output() onChange = new EventEmitter();
   @Output() onBlur = new EventEmitter();
 
   constructor() {}
@@ -24,10 +26,12 @@ export class VnlpTextareaComponent implements OnInit {
 
   handleChange(newValue: any) {
     this.valueChange.emit(newValue);
+    this.onChange.emit({
+      [this.name]: this.value,
+    });
   }
 
-  handleBlur(event: any) {
+  handleBlur() {
     this.onBlur.emit();
-    event.target.blur();
   }
 }

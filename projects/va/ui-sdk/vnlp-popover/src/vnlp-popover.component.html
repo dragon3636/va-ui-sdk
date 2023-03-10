@@ -1,0 +1,27 @@
+<div
+  [ngClass]="{
+    'popover-options-container': true,
+    opened: showOptions
+  }"
+>
+  <span class="more-options-icon" (click)="onShowOptions()">
+    <i class="icon icon-vnlp-icon-more-linear text-xxl"></i>
+  </span>
+  <ul *ngIf="showOptions" [class]="'options ' + position">
+    <li
+      *ngFor="let option of options"
+      class="text-sm text-left p-2 select-none"
+      (click)="onClickOption(option.key)"
+    >
+      <i *ngIf="option.icon" [class]="'icon icon-vnlp-icon-' + option.icon"></i>
+      <span>{{ option.label }}</span>
+    </li>
+
+    <li
+      *ngIf="!options.length"
+      class="text-sm text-left p-2 select-none empty-option"
+    >
+      Empty option...
+    </li>
+  </ul>
+</div>

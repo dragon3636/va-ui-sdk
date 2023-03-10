@@ -7,10 +7,13 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class VnlpTickboxComponent implements OnInit {
   @Input() label: string = '';
+  @Input() name: string = '';
   @Input() checked: boolean = false;
+  @Output() checkedChange = new EventEmitter<boolean>();
   @Input() disabled: boolean = false;
   @Input() labelPosition: 'left' | 'right' = 'right';
-  @Output() checkedChange = new EventEmitter<boolean>();
+
+  @Output() onChange = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}
@@ -19,5 +22,8 @@ export class VnlpTickboxComponent implements OnInit {
     if (this.disabled) return;
     this.checked = !this.checked;
     this.checkedChange.emit(this.checked);
+    this.onChange.emit({
+      [this.name]: this.checked,
+    });
   }
 }

@@ -19,7 +19,7 @@ export function cleanTask(glob: string | string[]): gulp.TaskFunction {
 export function execTask(
   binPath: string,
   args: string[],
-  env = {},
+  env = {}
 ): gulp.TaskFunction {
   return (done: (err?: Error | null) => void) => {
     // https://github.com/angular/angular-cli/issues/10922
@@ -48,7 +48,7 @@ export function execNodeTask(
   packageName: string,
   executable: string | string[],
   args?: string[],
-  env = {},
+  env = {}
 ): gulp.TaskFunction {
   if (!args) {
     // tslint:disable-next-line:no-parameter-reassignment
@@ -67,16 +67,14 @@ export function execNodeTask(
         execTask(
           'node',
           ['--max_old_space_size=4096', binPath].concat(args!),
-          env,
+          env
         )(done);
       }
     });
   };
 }
 
-export function execShellScript(
-  executable: string[],
-): gulp.TaskFunction {
+export function execShellScript(executable: string[]): gulp.TaskFunction {
   return (done: (err?: Error | null) => void) => {
     // https://github.com/angular/angular-cli/issues/10922
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

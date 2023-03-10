@@ -1,0 +1,61 @@
+@import '../../assets/sass/base/variable';
+
+.vnlp-switcher-container {
+  min-width: 532px;
+  border-radius: 12px;
+  background-color: map-get($color, neutral-6);
+  padding: 0 4px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  .slider {
+    position: absolute;
+    top: 4px;
+    z-index: 2;
+    bottom: 4px;
+    left: 0;
+    background-color: map-get($color, neutral-8);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  li {
+    width: fit-content;
+    height: 100%;
+    overflow: hidden;
+    padding: 12px 16px;
+    cursor: pointer;
+    user-select: none;
+    color: map-get($color, neutral-4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0px;
+      width: 1px;
+      height: 50%;
+      background-color: map-get($color, neutral-5);
+    }
+
+    &.selected {
+      color: map-get($color, neutral-1);
+    }
+
+    i,
+    span {
+      z-index: 2;
+    }
+  }
+}
