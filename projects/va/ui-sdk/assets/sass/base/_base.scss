@@ -7,10 +7,8 @@
 
 html,
 body {
-  background: #fff4e5;
-  color: map-get($color, black);
   font-family: $font-family-default;
-  font-size: map-get($font-size, normal);
+  font-size: map-get($font-size, md);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   height: 100%;
   width: 100%;
@@ -27,7 +25,7 @@ h4,
 h5,
 h6 {
   font-family: $font-family-default;
-  color: map-get($color, text);
+  color: map-get($color, neutral-3);
   font-weight: 400;
   padding: 0;
   margin: 0;

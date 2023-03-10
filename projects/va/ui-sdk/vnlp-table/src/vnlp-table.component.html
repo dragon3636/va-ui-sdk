@@ -16,7 +16,7 @@
           <i
             *ngIf="col.sortable"
             [ngClass]="{
-              'cursor-pointer icon icon-vnlp-icon-upanddown-line transition-all ease-in-out duration-200': true,
+              'cursor-pointer icon icon-vnlp-icon-upanddown-line transition-all ease-in-out duration-200 rotate-180': true,
               'icon-vnlp-icon-arrow-up-line': pageOptions.sortField === col.key,
               'rotate-180':
                 pageOptions.sortField === col.key && pageOptions.sort === -1
@@ -58,7 +58,7 @@
           <span>No data</span>
           <p>Create first data now!</p>
           <div class="create-button inline-flex items-center">
-            <i class="icon icon-vnlp-icon-plus-02-line"></i>
+            <i class="icon icon-vnlp-icon-add-linear"></i>
             <span>Create</span>
           </div>
         </td>

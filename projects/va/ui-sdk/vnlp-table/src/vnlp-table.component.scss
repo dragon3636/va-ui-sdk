@@ -1,5 +1,4 @@
 @import './../../assets/sass/base/variable';
-@import './../../assets/sass/base/mixins';
 
 .vnlp-table-container {
   border-radius: 12px;
@@ -134,7 +133,7 @@
         }
 
         &:disabled {
-          cursor: default;
+          cursor: not-allowed;
           border: 1px solid map-get($color, stroke);
         }
       }

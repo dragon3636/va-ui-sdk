@@ -21,8 +21,8 @@ export class VnlpLabelTagComponent implements OnInit {
       bgc: 'secondary-100',
     },
     red: {
-      textColor: 'system-error',
-      bgc: 'system-error-100',
+      textColor: 'error',
+      bgc: 'error-100',
     },
     blue: {
       textColor: 'primary',

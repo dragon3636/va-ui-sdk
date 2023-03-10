@@ -1,8 +1,8 @@
 @import './../../assets/sass/base/variable';
-@import './../../assets/sass/base/mixins';
 
-.checkbox-container {
-  position: relative;
+.vnlp-checkbox-container {
+  height: 18px;
+
   &.show-in-list {
     border-radius: 10px;
     padding: 10px 8px;
@@ -31,41 +31,59 @@
   }
 
   &.disabled {
-    opacity: 0.5;
+    label {
+      color: map-get($color, neutral-5);
+    }
 
     .default-check-box {
+      background-color: map-get($color, neutral-6);
+
       &:hover {
-        background-color: map-get($color, neutral-8);
-        border: 2px solid map-get($color, stroke);
+        border: 1.5px solid map-get($color, neutral-5);
+        box-shadow: none;
       }
     }
 
     .check-box-checked {
-      background-color: map-get($color, neutral-8);
-      border: 2px solid map-get($color, stroke);
+      background-color: map-get($color, neutral-6);
 
       &:hover {
-        border: 2px solid map-get($color, stroke);
+        background-color: map-get($color, neutral-6);
+        border: none;
+      }
+
+      &:active {
+        box-shadow: none;
+      }
+    }
+
+    &.checked {
+      label {
+        color: map-get($color, neutral-5);
       }
     }
   }
 
   .default-check-box {
-    width: 24px;
-    height: 24px;
-    border: 2px solid map-get($color, stroke);
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid map-get($color, neutral-5);
     background-color: map-get($color, neutral-8);
-    border-radius: 6px;
+    border-radius: 5px;
 
     &:hover {
-      border: 2px solid map-get($color, primary-400);
+      border: 1.5px solid map-get($color, neutral-4);
+    }
+
+    &:active {
+      box-shadow: 0 0 1px 4px map-get($color, neutral-6);
     }
   }
 
   .check-box-checked {
-    width: 24px;
-    height: 24px;
-    border: 2px solid map-get($color, primary);
+    width: 18px;
+    height: 18px;
+    border: none;
     background-color: map-get($color, primary);
     border-radius: 6px;
     display: flex;
@@ -77,7 +95,12 @@
     }
 
     &:hover {
-      border: 2px solid map-get($color, primary-400);
+      background-color: map-get($color, primary-500);
+      border: none;
+    }
+
+    &:active {
+      box-shadow: 0 0 1px 4px map-get($color, primary-100);
     }
   }
 }

@@ -1,0 +1,88 @@
+@import './../../assets/sass/base/variable';
+
+.file-uploader-container {
+  border-radius: 10px;
+  padding: 32px;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23B1B5C3FF' stroke-width='2' stroke-dasharray='10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 10px;
+  width: 172px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: map-get($color, neutral-4);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: map-get($color, neutral-8);
+
+  &:hover {
+    box-shadow: 0 0 1px 3px map-get($color, neutral-6);
+  }
+
+  &.on-drag {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23353945FF' stroke-width='1' stroke-dasharray='10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  }
+
+  &.on-error {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23FB1B3CFF' stroke-width='1' stroke-dasharray='10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  }
+
+  .icon-upload-cloud {
+  }
+
+  .file-label-text {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .file-label {
+    font-size: 14px;
+    color: map-get($color, primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+  }
+}
+
+.file-list {
+  min-width: 92px;
+  margin-top: 36px;
+
+  .file-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    padding: 12px 14px;
+    background-color: map-get($color, neutral-8);
+    border-radius: 10px;
+    border: 1px solid map-get($color, stroke);
+
+    .file-icon {
+      color: map-get($color, primary);
+      margin-right: 8px;
+    }
+
+    .file-name {
+      font-size: 14px;
+      color: map-get($color, neutral-1);
+      margin-right: 16px;
+      max-width: 100px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .file-size {
+      font-size: 14px;
+      color: map-get($color, neutral-4);
+      margin-left: auto;
+    }
+
+    .delete-icon {
+      cursor: pointer;
+      color: map-get($color, neutral-4);
+    }
+  }
+}

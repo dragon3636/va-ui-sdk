@@ -65,7 +65,7 @@ export class VnlpTableComponent implements OnInit {
     });
 
     this.lastPage = Math.ceil(
-      this.pageOptions.totalRecord / this.pageOptions.pageSize,
+      this.pageOptions.totalRecord / this.pageOptions.pageSize
     );
   }
 
@@ -165,6 +165,7 @@ export class VnlpTableComponent implements OnInit {
     this.pageOptions.sort = this.pageOptions.sort
       ? this.pageOptions.sort * -1
       : 1;
+
     this.syncPageOptionsWithUrl();
   }
 

@@ -1,21 +1,17 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
-type IconSide = 'left' | 'right';
-type ButtonType = 'primary' | 'light' | 'transparent';
-type TextSize = 'sm' | 'md' | 'lg';
-
 @Component({
   selector: 'vnlp-button',
   templateUrl: './vnlp-button.component.html',
   styleUrls: ['./vnlp-button.component.scss'],
 })
 export class VnlpButtonComponent implements OnInit {
-  @Input() type: ButtonType = 'primary';
+  @Input() type: 'primary' | 'light' | 'transparent' = 'primary';
   @Input() title: string = 'button';
-  @Input() size: TextSize = 'sm';
+  @Input() size: 'sm' | 'lg' = 'sm';
   @Input() disabled: boolean = false;
   @Input() icon: string = 'star-filled';
-  @Input() iconPosition: IconSide = 'left';
+  @Input() iconPosition: 'left' | 'right' = 'left';
   @Output() onClick = new EventEmitter();
   constructor() {}
 

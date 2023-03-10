@@ -6,17 +6,17 @@
 import chart from 'chalk';
 import { parallel, task } from 'gulp';
 
-task('help', done => {
+task('help', (done) => {
   console.log();
   console.log('Please specify a gulp task you want to run.');
   console.log(chart.yellow('start:dev    '), 'Start development.');
   console.log(
     chart.yellow('library:build'),
-    'Build ng-zorro-antd-lib to publish/ directory.',
+    'Build ng-zorro-antd-lib to publish/ directory.'
   );
   console.log(
     chart.yellow('build:preview'),
-    'Build preview site to dist/ directory.',
+    'Build preview site to dist/ directory.'
   );
   console.log(
     chart.yellow('build:release'),

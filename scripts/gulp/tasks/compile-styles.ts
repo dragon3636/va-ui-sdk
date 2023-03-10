@@ -44,16 +44,16 @@ task(
     join(buildConfig.componentsDir, 'assets/css/tailwind-input.css'),
     '-o',
     join(buildConfig.componentsDir, 'assets/css/tailwind-output.css'),
-  ]),
+  ])
 );
 
 task('style:concat', function () {
   return pump([
     src(
-      ['tailwind-output.css', 'styles.css'].map(url =>
-        join(buildConfig.componentsDir, 'assets/css', url),
+      ['tailwind-output.css', 'styles.css'].map((url) =>
+        join(buildConfig.componentsDir, 'assets/css', url)
       ),
-      { allowEmpty: true },
+      { allowEmpty: true }
     ),
     concatCss('style-concat.css'),
     sourcemaps.init(),
@@ -71,11 +71,11 @@ task('style:clean', () => {
         'css/style-concat.css',
         'css/tailwind-output.css',
         'maps/**',
-      ].map(url => join(buildConfig.componentsDir, 'assets', url)),
+      ].map((url) => join(buildConfig.componentsDir, 'assets', url)),
       {
         read: false,
         allowEmpty: true,
-      },
+      }
     ),
     clean(),
   ]);
@@ -89,5 +89,5 @@ task(
     // 'scss',
     'style:compile-tailwind',
     'style:concat',
-  ]),
+  ])
 );
