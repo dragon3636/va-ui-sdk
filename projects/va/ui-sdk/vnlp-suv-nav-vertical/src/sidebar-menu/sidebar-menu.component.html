@@ -29,8 +29,7 @@
         <ng-container
           [ngTemplateOutlet]="item.children ? childMenu : parentMenu"
           [ngTemplateOutletContext]="{ item: item }"
-        >
-        </ng-container>
+        ></ng-container>
 
         <!-- Workaround:: Enable routerLink -->
         <ng-template #parentMenu let-item="item">

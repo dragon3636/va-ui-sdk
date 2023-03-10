@@ -123,7 +123,7 @@ export class VnlpCalendarComponent
     this.barTitle = format(
       this.viewingDate as Date,
       this.currentOptions.barTitleFormat as string,
-      this.currentOptions.locale,
+      this.currentOptions.locale
     );
 
     this.initDayNames();
@@ -173,7 +173,7 @@ export class VnlpCalendarComponent
     this.barTitle = format(
       this.viewingDate,
       this.currentOptions.barTitleFormat as string,
-      this.currentOptions.locale,
+      this.currentOptions.locale
     );
   }
 
@@ -184,7 +184,7 @@ export class VnlpCalendarComponent
     this.barTitle = format(
       this.viewingDate,
       this.currentOptions.barTitleFormat as string,
-      this.currentOptions.locale,
+      this.currentOptions.locale
     );
   }
 
@@ -220,7 +220,7 @@ export class VnlpCalendarComponent
       this.barTitle = format(
         this.viewingDate as Date,
         this.currentOptions.barTitleFormat as string,
-        this.currentOptions.locale,
+        this.currentOptions.locale
       );
     } else {
       this.barTitle = this.currentOptions.useEmptyBarTitle
@@ -228,7 +228,7 @@ export class VnlpCalendarComponent
         : format(
             this.viewingDate as Date,
             this.currentOptions.barTitleFormat as string,
-            this.currentOptions.locale,
+            this.currentOptions.locale
           );
     }
 
@@ -247,7 +247,7 @@ export class VnlpCalendarComponent
     this.barTitle = format(
       this.viewingDate,
       this.currentOptions.barTitleFormat as string,
-      this.currentOptions.locale,
+      this.currentOptions.locale
     );
   }
 
@@ -255,7 +255,7 @@ export class VnlpCalendarComponent
   setMonth(i: number): void {
     this.viewingDate = setMonth(
       this.viewingDate as Date,
-      this.months![i]!.month,
+      this.months![i]!.month
     );
     this.initDays();
     this.initMonths();
@@ -263,7 +263,7 @@ export class VnlpCalendarComponent
     this.barTitle = format(
       this.viewingDate,
       this.currentOptions.barTitleFormat as string,
-      this.currentOptions.locale,
+      this.currentOptions.locale
     );
   }
 
@@ -276,8 +276,8 @@ export class VnlpCalendarComponent
     const start = startOfMonth(this.viewingDate);
     const end = endOfMonth(this.viewingDate);
 
-    this.days = eachDayOfInterval({ start, end }).map(date =>
-      this.formatDay(date),
+    this.days = eachDayOfInterval({ start, end }).map((date) =>
+      this.formatDay(date)
     );
 
     const firstMonthDay =
@@ -310,7 +310,7 @@ export class VnlpCalendarComponent
     new Array(nextDays)
       .fill(undefined)
       .forEach((_, i) =>
-        this.days!.push(this.formatDay(addDays(end, i + 1), showNextMonthDays)),
+        this.days!.push(this.formatDay(addDays(end, i + 1), showNextMonthDays))
       );
   }
 
@@ -322,8 +322,8 @@ export class VnlpCalendarComponent
 
     this.years = Array.from(
       new Array(range),
-      (x, i) => i + (this.currentOptions.minYear as number),
-    ).map(year => {
+      (x, i) => i + (this.currentOptions.minYear as number)
+    ).map((year) => {
       return {
         year: year,
         isThisYear: year === getYear(this.viewingDate as Date),
@@ -334,8 +334,8 @@ export class VnlpCalendarComponent
   //Create months array 1 -> 12
   initMonths(): void {
     this.months = Array.from(new Array(12), (x, i) =>
-      setMonth(new Date(), i + 1),
-    ).map(date => {
+      setMonth(new Date(), i + 1)
+    ).map((date) => {
       return {
         month: date.getMonth(),
         name: format(date, 'MMM'),
@@ -356,8 +356,8 @@ export class VnlpCalendarComponent
         format(
           date,
           this.currentOptions.dayNamesFormat ?? '',
-          this.currentOptions.locale,
-        ),
+          this.currentOptions.locale
+        )
       );
     }
   }
@@ -455,7 +455,7 @@ export class VnlpCalendarComponent
     if (
       this.calendarContainerElement?.nativeElement !== e.target &&
       !this.calendarContainerElement?.nativeElement.contains(
-        <Element>e.target,
+        <Element>e.target
       ) &&
       !(<Element>e.target).classList.contains('year-unit') &&
       !(<Element>e.target).classList.contains('month-unit')
@@ -528,7 +528,7 @@ export class VnlpCalendarComponent
     const formattedStartDate = format(
       this.range.start as Date,
       this.currentOptions.displayFormat ?? '',
-      this.currentOptions.locale,
+      this.currentOptions.locale
     );
 
     //When calendar is pick range
@@ -536,7 +536,7 @@ export class VnlpCalendarComponent
       const formattedEndDate = format(
         this.range.end || (this.range.start as Date),
         this.currentOptions.displayFormat ?? '',
-        this.currentOptions.locale,
+        this.currentOptions.locale
       );
 
       return `${formattedStartDate} ${this.currentOptions.rangeSeparator} ${formattedEndDate}`;

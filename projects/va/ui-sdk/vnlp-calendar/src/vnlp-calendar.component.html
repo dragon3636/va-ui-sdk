@@ -1,8 +1,5 @@
 <div class="relative">
-  <div
-    (click)="toggle()"
-    class="main-calendar-input"
-  >
+  <div (click)="toggle()" class="main-calendar-input">
     <input
       #inputElement
       type="text"
@@ -18,11 +15,7 @@
     </span>
   </div>
   <ng-content></ng-content>
-  <div
-    class="main-calendar-container"
-    *ngIf="isOpened"
-    #calendarContainer
-  >
+  <div class="main-calendar-container" *ngIf="isOpened" #calendarContainer>
     <div class="relative">
       <div class="w-[100%] h-[50px]">
         <div
@@ -34,8 +27,9 @@
           <span
             class="text-sm text-neutral-2 font-bold cursor-pointer"
             (click)="toggleView()"
-            >{{ barTitle }}</span
           >
+            {{ barTitle }}
+          </span>
           <div (click)="nextMonth()" class="text-[22px] text-neutral-4">
             <i [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
           </div>
@@ -46,9 +40,9 @@
           <div
             class="w-[100%] flex items-center text-sm text-neutral-5 font-normal"
           >
-            <span class="day-name-unit" *ngFor="let name of dayNames">{{
-              name
-            }}</span>
+            <span class="day-name-unit" *ngFor="let name of dayNames">
+              {{ name }}
+            </span>
           </div>
           <div class="pt-[15px] w-[100%] inline-block">
             <span
@@ -59,8 +53,9 @@
               <span
                 class="day-background-upper"
                 [ngClass]="this.getDayClasses(day)"
-                >{{ day.isVisible ? day.day : '' }}</span
               >
+                {{ day.isVisible ? day.day : '' }}
+              </span>
               <span
                 class="day-background-lower"
                 [ngClass]="this.getDayClasses(day)"
@@ -68,10 +63,7 @@
             </span>
           </div>
         </ng-container>
-        <div
-          *ngIf="view === 'years'"
-          class="main-calendar-years"
-        >
+        <div *ngIf="view === 'years'" class="main-calendar-years">
           <span
             *ngFor="let year of years; let i = index"
             class="year-unit"
@@ -94,18 +86,8 @@
       </div>
       <div class="absolute w-[100%] top-[320px]">
         <div class="flex items-center justify-between">
-          <button
-            (click)="close()"
-            class="btn-cancel"
-          >
-            Cancel
-          </button>
-          <button
-            (click)="applyChange()"
-            class="btn-apply"
-          >
-            Apply
-          </button>
+          <button (click)="close()" class="btn-cancel">Cancel</button>
+          <button (click)="applyChange()" class="btn-apply">Apply</button>
         </div>
       </div>
     </div>

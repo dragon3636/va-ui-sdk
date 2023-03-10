@@ -30,11 +30,11 @@ export class VnlpDropdownComponent implements OnInit {
   };
   @Input() set data(val: ItemSelected[]) {
     if (val && val.length > 0) {
-      this.listData = val.map(x => {
+      this.listData = val.map((x) => {
         x.isSelected = false;
         return x;
       });
-      this.tempListData = val.map(x => {
+      this.tempListData = val.map((x) => {
         x.isSelected = false;
         return x;
       });
@@ -76,7 +76,7 @@ export class VnlpDropdownComponent implements OnInit {
         this.selectedOptions.push(newSelectedObj);
       } else {
         var dIndex = this.selectedOptions.findIndex(
-          (x: ItemSelected) => x.id == data.id,
+          (x: ItemSelected) => x.id == data.id
         );
         this.selectedOptions.splice(dIndex, 1);
       }

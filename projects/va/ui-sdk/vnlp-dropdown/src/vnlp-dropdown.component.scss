@@ -7,7 +7,7 @@
 
 .main-dropdown-container {
   display: flex;
-  border: 1.5px solid map-get($color , neutral-6);
+  border: 1.5px solid map-get($color, neutral-6);
   padding: 12px 14px;
   font-weight: 400;
   line-height: 24px;
@@ -19,11 +19,11 @@
   border-radius: 10px;
 
   &:hover {
-    border: 1.5px solid map-get($color , primary-300);
+    border: 1.5px solid map-get($color, primary-300);
   }
 
   &:focus {
-    border: 1.5px solid map-get($color , primary-300);
+    border: 1.5px solid map-get($color, primary-300);
   }
 }
 
@@ -47,14 +47,14 @@
     font-size: 14px;
     line-height: 24px;
     border-radius: 8px;
-    background-color: map-get($color , neutral-6);
-    color:map-get($color , neutral-1);
+    background-color: map-get($color, neutral-6);
+    color: map-get($color, neutral-1);
   }
 }
 
 .selected-item-container {
   padding: 6px;
-  border: 1.5px solid map-get($color , stroke);
+  border: 1.5px solid map-get($color, stroke);
   border-radius: 10px;
   background: white;
   margin-top: 10px;
@@ -84,7 +84,7 @@
   width: 100%;
   height: 47px;
   border-radius: 8px;
-  background-color: map-get($color , neutral-7);
+  background-color: map-get($color, neutral-7);
   padding-top: 9px;
   padding-bottom: 9px;
   padding-right: 12px;

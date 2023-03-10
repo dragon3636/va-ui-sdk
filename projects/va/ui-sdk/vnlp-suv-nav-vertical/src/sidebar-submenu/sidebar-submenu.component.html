@@ -7,15 +7,12 @@
 >
   <ul class="flex flex-col pl-[22px]">
     <li *ngFor="let sub of submenu.children">
-      <div
-        (click)="toggleMenu(sub)"
-      >
+      <div (click)="toggleMenu(sub)">
         <!-- Condition -->
         <ng-container
           [ngTemplateOutlet]="sub.children ? childMenu : parentMenu"
           [ngTemplateOutletContext]="{ sub: sub }"
-        >
-        </ng-container>
+        ></ng-container>
 
         <!-- Parent Menu -->
         <ng-template #parentMenu let-sub="sub">

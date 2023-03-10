@@ -27,7 +27,7 @@ export class VnlpSearchComponent implements OnInit {
       .pipe(
         debounceTime(2000),
         distinctUntilChanged(),
-        tap(() => (this.loading = true)),
+        tap(() => (this.loading = true))
       )
       .subscribe((term: string) => {
         // Remember value after debouncing

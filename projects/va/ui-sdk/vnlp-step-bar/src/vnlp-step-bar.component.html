@@ -5,8 +5,7 @@
       <ng-container
         [ngTemplateOutlet]="step.step > 1 ? line : noLine"
         [ngTemplateOutletContext]="{ step: step }"
-      >
-      </ng-container>
+      ></ng-container>
       <ng-template #line>
         <ng-container
           [ngTemplateOutlet]="step.step <= currentStep ? inProcess : unProcess"

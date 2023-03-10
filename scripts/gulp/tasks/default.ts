@@ -20,7 +20,7 @@ task('help', (done) => {
   );
   console.log(
     chart.yellow('build:release'),
-    'Build releaseable library to publish/ directory and deployable site to dist/ directory.',
+    'Build releaseable library to publish/ directory and deployable site to dist/ directory.'
   );
   console.log();
   done();

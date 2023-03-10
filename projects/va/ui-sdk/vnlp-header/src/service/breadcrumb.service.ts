@@ -24,9 +24,9 @@ export class BreadcrumbService {
     this.router.events
       .pipe(
         // Filter the NavigationEnd events as the breadcrumb is updated only when the route reaches its end
-        filter(event => event instanceof NavigationEnd),
+        filter((event) => event instanceof NavigationEnd)
       )
-      .subscribe(event => {
+      .subscribe((event) => {
         // Construct the breadcrumb hierarchy
         const root = this.router.routerState.snapshot.root;
         let breadcrumbs: Breadcrumb[] = [];
@@ -40,11 +40,11 @@ export class BreadcrumbService {
   private addBreadcrumb(
     route: ActivatedRouteSnapshot | null,
     parentUrl: string[],
-    breadcrumbs: Breadcrumb[],
+    breadcrumbs: Breadcrumb[]
   ) {
     if (route) {
       // Construct the route URL
-      const routeUrl = parentUrl.concat(route.url.map(url => url.path));
+      const routeUrl = parentUrl.concat(route.url.map((url) => url.path));
 
       // Add an element for the current route part
       if (route.data['breadcrumb']) {

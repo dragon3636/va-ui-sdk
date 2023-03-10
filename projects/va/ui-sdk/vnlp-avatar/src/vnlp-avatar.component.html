@@ -1,6 +1,7 @@
 <div class="relative cursor-pointer">
-  <ng-container [ngTemplateOutlet]="status === 'online' ? online : offline">
-  </ng-container>
+  <ng-container
+    [ngTemplateOutlet]="status === 'online' ? online : offline"
+  ></ng-container>
 
   <ng-template #online>
     <img class="w-[40px] h-[40px] rounded-full" src="{{ imgUrl }}" />

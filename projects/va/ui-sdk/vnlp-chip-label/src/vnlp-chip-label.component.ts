@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 type FirstType = 1 | 2 | 3;
-type SecondType = null | "icon" | 'text icon' | 'icon text' | 'with image';
+type SecondType = null | 'icon' | 'text icon' | 'icon text' | 'with image';
 
 @Component({
   selector: 'vnlp-chip-label',
