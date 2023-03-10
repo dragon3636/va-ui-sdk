@@ -91,8 +91,9 @@ input {
     color: map-get($color, error);
     font-weight: 500;
   }
+}
 
-  .disabled {
+.disabled {
   input {
     color: map-get($color, neutral-5);
     background-color: map-get($color, neutral-7);
