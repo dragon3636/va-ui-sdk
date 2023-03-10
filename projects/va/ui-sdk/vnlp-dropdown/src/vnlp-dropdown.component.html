@@ -1,4 +1,8 @@
 <div class="background-dropdown-container">
+  <div class="label-text">
+    {{ label }}
+    <i [class]="'icon-vnlp-icon-info-circle-linear'"></i>
+  </div>
   <div
     tabindex="-1"
     class="main-dropdown-container"
@@ -11,12 +15,15 @@
         <span>
           {{ sel.value }}
         </span>
-        <span (click)="removefromselected(sel.value, i)" class="cursor-pointer">
-          x
+        <span
+          (click)="removefromselected(sel.value, i)"
+          class="text-neutral-4 text-[18px] font-bold cursor-pointer"
+        >
+          <i [class]="'icon-vnlp-icon-close-linear'"></i>
         </span>
       </div>
       <div *ngIf="selectedOptions.length < 1">
-        <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">
+        <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1 text-sm text-neutral-5">
           {{ dropDownSettings.placeholder }}
         </span>
       </div>
@@ -26,29 +33,18 @@
         {{ selectedOptions[0].value }}
       </span>
       <div *ngIf="selectedOptions.length < 1">
-        <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">
+        <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1 text-sm text-neutral-5">
           {{ dropDownSettings.placeholder }}
         </span>
       </div>
     </div>
     <div class="flex">
-      <div
-        [ngClass]="{ 'rotate-180': !isShowdataPanel }"
-        class="transition-all duration-500"
+      <span
+        [ngClass]="{ 'rotate-180': isShowdataPanel }"
+        class="text-neutral-4 text-[20px] transition-all duration-500"
       >
-        <svg
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-chevron-up"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-          />
-        </svg>
-      </div>
+        <i [class]="'icon-vnlp-icon-arrow-down-1-linear'"></i>
+      </span>
     </div>
   </div>
   <!---data list panel-->
@@ -63,23 +59,10 @@
     </div>
     <div *ngIf="!empty" class="flex flex-col">
       <div *ngIf="dropDownSettings.allowSearchFilter" class="search-input">
-        <div class="flex items-center gap-[5px]">
-          <div class="text-[#777E91]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-[20px] w-[20px] mr-[4px]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
+        <div class="flex items-center gap-[8px]">
+          <span class="text-neutral-4 text-[20px] font-bold">
+            <i [class]="'icon-vnlp-icon-search-normal-1-linear'"></i>
+          </span>
           <input
             (keyup)="handleSearch(searchPara.value)"
             #searchPara

@@ -1,5 +1,8 @@
 <div>
-  <div class="label-text">{{ label }}</div>
+  <div class="label-text">
+    {{ label }}
+    <i [class]="'icon-vnlp-icon-info-circle-linear'"></i>
+  </div>
   <div
     [ngClass]="{ 'is-invalid': invalidEmail }"
     class="main-multiselect-container"

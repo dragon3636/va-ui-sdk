@@ -4,9 +4,7 @@ module.exports = {
     './projects/showcase/**/*.{html,ts,scss}',
   ],
   darkMode: 'class', // or 'media' or 'class'
-  purge: false,
   theme: {
-    extend: {
       colors: {
         primary: {
           100: '#E6F2FE',
@@ -103,7 +101,6 @@ module.exports = {
           1: '#141416',
         },
         stroke: '#e6e8ec',
-      },
     },
     extend: {},
     spacing: {

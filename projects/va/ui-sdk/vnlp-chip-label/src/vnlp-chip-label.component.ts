@@ -10,11 +10,11 @@ type SecondType = null | 'icon' | 'text icon' | 'icon text' | 'with image';
 })
 export class VnlpChipLabelComponent implements OnInit {
   @Input() firstType: FirstType = 1;
-  @Input() secondType: SecondType = null;
+  @Input() secondType: SecondType = 'text icon';
   @Input() height: string = '34px';
   @Input() width: string = '83px';
-  @Input() backgroundColor: string = '#E6F2FE';
-  @Input() border: string = '10px solid #007DF9';
+  @Input() backgroundColor: string = '#007DF9';
+  @Input() border: string = '4px solid map-get($color, primary)';
   @Input() imgUrl: string =
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNL_ZnOTpXSvhf1UaK7beHey2BX42U6solRA&usqp=CAU';
 

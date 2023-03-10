@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background: map-get($color, neutral-8);
   width: 302px;
   height: 48px;
   border-radius: 10px;
@@ -22,7 +22,7 @@
   width: 350px;
   height: 371px;
   border-radius: 8px;
-  background: white;
+  background: map-get($color, neutral-8);
   top: 55px;
   left: 0px;
   padding: 0px 10px;
@@ -61,7 +61,7 @@
 
   &.is-selected {
     background: map-get($color, primary);
-    color: white;
+    color: map-get($color, neutral-8);
   }
 
   &:not(.is-visible) {
@@ -72,7 +72,7 @@
     &:hover {
       border: 1px solid map-get($color, primary);
       color: map-get($color, neutral-1);
-      background: white;
+      background: map-get($color, neutral-8);
     }
 
     &.is-another-month {
@@ -94,8 +94,8 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid map-get($color, neutral-8);
+  border-bottom: 2px solid map-get($color, neutral-8);
 
   &.is-in-range {
     background: map-get($color, neutral-6);
@@ -105,14 +105,14 @@
     border-bottom-left-radius: 50%;
     border-top-left-radius: 50%;
     padding-left: 20px;
-    box-shadow: inset 20px 0 0 0 white;
+    box-shadow: inset 20px 0 0 0 map-get($color, neutral-8);
   }
 
   &.range-end {
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
     padding-right: 20px;
-    box-shadow: inset -20px 0 0 0 white;
+    box-shadow: inset -20px 0 0 0 map-get($color, neutral-8);
   }
 }
 
@@ -132,7 +132,7 @@
 
   &.is-selected {
     background: map-get($color, primary);
-    color: white;
+    color: map-get($color, neutral-8);
   }
 
   &:hover {
@@ -160,7 +160,7 @@
   }
 
   &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px white;
+    box-shadow: inset 0 0 5px map-get($color, neutral-8);
     border-radius: 10px;
   }
 }
@@ -179,7 +179,7 @@
   color: map-get($color, neutral-2);
   border-radius: 8px;
   font-weight: 700;
-  background: white;
+  background: map-get($color, neutral-8);
   border: 2px solid map-get($color, stroke);
   padding: 12px 16px;
 
@@ -191,7 +191,7 @@
 .btn-apply {
   font-size: 14px;
   line-height: 16px;
-  color: white;
+  color: map-get($color, neutral-8);
   border-radius: 8px;
   font-weight: 700;
   background: map-get($color, primary);
