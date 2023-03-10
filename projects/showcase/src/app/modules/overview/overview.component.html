@@ -1,0 +1,19 @@
+<div class="relative bg-gray-200 h-[100vh]">
+  <vnlp-dropdown
+    [dropDownSettings]="dropdownSettings"
+    [data]="listData"
+    (valueChange)="getDropdownValue($event)"
+  ></vnlp-dropdown>
+</div>
+
+<div class="relative bg-gray-200 h-[100vh]">
+  <vnlp-multiselect
+    [multiselectWidth]="'350px'"
+    [multiEmail]="false"
+    (valueChange)="getMultiselectValue($event)"
+  ></vnlp-multiselect>
+</div>
+
+<div class="relative bg-gray-200 h-[100vh]">
+  <vnlp-chip-label></vnlp-chip-label>
+</div>

@@ -1,0 +1,16 @@
+<div class="relative cursor-pointer">
+  <ng-container
+    [ngTemplateOutlet]="status === 'online' ? online : offline"
+  ></ng-container>
+
+  <ng-template #online>
+    <img class="w-[40px] h-[40px] rounded-full" src="{{ imgUrl }}" />
+    <span
+      class="top-[28px] left-[32px] absolute w-[8px] h-[8px] bg-success border-[1px] border-solid border-white rounded-full"
+    ></span>
+  </ng-template>
+
+  <ng-template #offline>
+    <img class="w-[40px] h-[40px] rounded-full" src="{{ imgUrl }}" />
+  </ng-template>
+</div>

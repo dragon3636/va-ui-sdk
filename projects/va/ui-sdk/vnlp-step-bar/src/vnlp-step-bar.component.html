@@ -1,0 +1,42 @@
+<div class="flex justify-start ml-[24px]">
+  <div class="flex items-center gap-[10px]">
+    <!-- Condition -->
+    <ng-container *ngFor="let step of stepList">
+      <ng-container
+        [ngTemplateOutlet]="step.step > 1 ? line : noLine"
+        [ngTemplateOutletContext]="{ step: step }"
+      ></ng-container>
+      <ng-template #line>
+        <ng-container
+          [ngTemplateOutlet]="step.step <= currentStep ? inProcess : unProcess"
+        ></ng-container>
+        <ng-template #inProcess>
+          <div class="w-[45px] h-[1px] bg-primary rounded-[1px]"></div>
+          <div
+            class="h-[20px] w-[20px] rounded-full bg-primary text-center text-[12px] text-white leading-0 tracking-normal font-bold"
+          >
+            {{ step.step }}
+          </div>
+          <div class="text-sm font-medium text-neutral-2">{{ step.name }}</div>
+        </ng-template>
+        <ng-template #unProcess>
+          <div class="w-[45px] h-[2px] bg-neutral-5 rounded-[1px]"></div>
+          <div
+            class="w-[20px] rounded-full bg-neutral-6 text-center text-[12px] text-white leading-0 tracking-normal font-bold"
+          >
+            {{ step.step }}
+          </div>
+          <div class="text-sm font-medium text-neutral-5">{{ step.name }}</div>
+        </ng-template>
+      </ng-template>
+      <ng-template #noLine>
+        <div
+          class="h-[20px] w-[20px] rounded-full bg-primary text-center text-white text-[12px] leading-0 tracking-normal font-bold"
+        >
+          {{ step.step }}
+        </div>
+        <div class="text-sm font-medium text-neutral-2">{{ step.name }}</div>
+      </ng-template>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+@import './../../assets/sass/base/variable';
+
+.background-dropdown-container {
+  position: relative;
+  background-color: transparent;
+}
+
+.main-dropdown-container {
+  display: flex;
+  border: 1.5px solid map-get($color, neutral-6);
+  padding: 12px 14px;
+  font-weight: 400;
+  line-height: 24px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  // height: 52px;
+  border-radius: 10px;
+
+  &:hover {
+    border: 1.5px solid map-get($color, primary-300);
+  }
+
+  &:focus {
+    border: 1.5px solid map-get($color, primary-300);
+  }
+}
+
+.element-selected {
+  flex: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  white-space: normal;
+  max-width: 80%;
+  gap: 5px;
+
+  .item {
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    height: 34px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 8px;
+    background-color: map-get($color, neutral-6);
+    color: map-get($color, neutral-1);
+  }
+}
+
+.selected-item-container {
+  padding: 6px;
+  border: 1.5px solid map-get($color, stroke);
+  border-radius: 10px;
+  background: white;
+  margin-top: 10px;
+  box-shadow: 0px 1px 16px rgba(0, 0, 0, 0.05);
+  height: 280px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+  }
+}
+
+.search-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 47px;
+  border-radius: 8px;
+  background-color: map-get($color, neutral-7);
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 12px;
+  padding-left: 8px;
+
+  &:hover {
+    border: 2px solid grey;
+    background-color: white;
+  }
+
+  &:focus-within {
+    border: 2px solid blue;
+    background-color: white;
+  }
+}

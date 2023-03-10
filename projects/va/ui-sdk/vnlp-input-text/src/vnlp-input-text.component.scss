@@ -91,11 +91,8 @@ input {
     color: map-get($color, error);
     font-weight: 500;
   }
-}
 
-.disabled {
-  cursor: not-allowed;
-
+  .disabled {
   input {
     color: map-get($color, neutral-5);
     background-color: map-get($color, neutral-7);
@@ -112,12 +109,6 @@ input {
 
     &:hover ~ .input-icon i,
     &:focus ~ .input-icon i {
-      color: map-get($color, neutral-5);
-    }
-  }
-
-  .input-icon {
-    i {
       color: map-get($color, neutral-5);
     }
   }

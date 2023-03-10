@@ -1,0 +1,64 @@
+@import './../../assets/sass/base/variable';
+
+.main-multiselect-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  border: 1.5px solid map-get($color, stroke);
+  padding: 12px 14px;
+  font-weight: 400;
+  line-height: 24px;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 10px;
+
+  &.is-invalid {
+    border: 1.5px solid map-get($color, system-error) !important;
+  }
+
+  .item {
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    height: 34px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 8px;
+    background-color: map-get($color, neutral-6);
+    color: map-get($color, neutral-1);
+  }
+
+  &:hover {
+    border: 1.5px solid map-get($color, primary);
+  }
+
+  &:focus-within {
+    border: 1.5px solid map-get($color, primary);
+  }
+}
+
+.label-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.004em;
+  color: map-get($color, primary);
+}
+
+.helper-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.004em;
+  color: map-get($color, neutral-4);
+
+  &.is-invalid {
+    color: map-get($color, system-error) !important;
+  }
+}

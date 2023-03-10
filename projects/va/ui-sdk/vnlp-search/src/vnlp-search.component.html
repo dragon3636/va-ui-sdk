@@ -1,0 +1,113 @@
+<div
+  class="absolute top-[10px] left-[10px] flex justify-between items-center w-[202px] h-[40px] rounded-[8px] bg-neutral-7 py-[8px] pr-[14px] pl-[8px] hover:border-[1px] hover:bg-white focus-within:border-[1px] focus-within:border-primary focus-within:bg-white"
+>
+  <div class="flex items-center gap-[8px]">
+    <ng-container
+      [ngTemplateOutlet]="loading === true ? iconLoading : iconSearch"
+    ></ng-container>
+
+    <ng-template #iconLoading>
+      <div>
+        <svg
+          class="h-[24px] w-[24px] animate-spin stroke-neutral-4"
+          viewBox="0 0 256 256"
+        >
+          <line
+            x1="128"
+            y1="32"
+            x2="128"
+            y2="64"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="195.9"
+            y1="60.1"
+            x2="173.3"
+            y2="82.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="224"
+            y1="128"
+            x2="192"
+            y2="128"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="195.9"
+            y1="195.9"
+            x2="173.3"
+            y2="173.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="128"
+            y1="224"
+            x2="128"
+            y2="192"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="60.1"
+            y1="195.9"
+            x2="82.7"
+            y2="173.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="32"
+            y1="128"
+            x2="64"
+            y2="128"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="60.1"
+            y1="60.1"
+            x2="82.7"
+            y2="82.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+        </svg>
+      </div>
+    </ng-template>
+
+    <ng-template #iconSearch>
+      <span class="text-neutral-4 text-[18px] font-bold">
+        <i [class]="'icon-vnlp-icon-search-normal-1-linear'"></i>
+      </span>
+    </ng-template>
+
+    <input
+      [(ngModel)]="searchText"
+      (ngModelChange)="onSearchInputChange($event)"
+      class="h-full w-full outline-none text-sm font-normal bg-transparent text-neutral-2"
+      type="text"
+      id="search"
+      placeholder="Search"
+    />
+  </div>
+  <span
+    *ngIf="searchText"
+    (click)="deleteSearch()"
+    class="text-neutral-4 text-[18px] font-bold"
+  >
+    <i [class]="'icon-vnlp-icon-close-linear'"></i>
+  </span>
+</div>

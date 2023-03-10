@@ -1,0 +1,31 @@
+<div>
+  <div class="label-text">{{ label }}</div>
+  <div
+    [ngClass]="{ 'is-invalid': invalidEmail }"
+    class="main-multiselect-container"
+    [ngStyle]="{
+      width: multiselectWidth
+    }"
+  >
+    <div *ngFor="let data of listData; let i = index" class="item">
+      <span>
+        {{ data }}
+      </span>
+      <span (click)="removeDate(data)" class="cursor-pointer">x</span>
+    </div>
+    <input
+      (keydown.enter)="addData()"
+      [(ngModel)]="data"
+      class="h-full flex-1 w-auto outline-none text-sm font-normal bg-transparent"
+      name="data"
+      type="text"
+    />
+  </div>
+  <div
+    *ngIf="invalidEmail"
+    [ngClass]="{ 'is-invalid': invalidEmail }"
+    class="helper-text"
+  >
+    This is not a valid Email!!!
+  </div>
+</div>

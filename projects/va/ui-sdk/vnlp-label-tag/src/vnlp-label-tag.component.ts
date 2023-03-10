@@ -13,8 +13,8 @@ export class VnlpLabelTagComponent implements OnInit {
 
   typeList = {
     gray: {
-      textColor: 'neutral-7',
-      bgc: 'neutral-4',
+      textColor: 'primary',
+      bgc: 'primary-100',
     },
     orange: {
       textColor: 'secondary',

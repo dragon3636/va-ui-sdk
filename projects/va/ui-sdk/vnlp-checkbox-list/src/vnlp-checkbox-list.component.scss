@@ -1,0 +1,10 @@
+.vnlp-checkbox-list-container {
+  display: flex;
+  flex-direction: column;
+
+  &.checkbox-in-list {
+    li {
+      background-color: red;
+    }
+  }
+}
