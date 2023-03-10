@@ -10,7 +10,7 @@ export class VnlpButtonComponent implements OnInit {
   @Input() title: string = 'button';
   @Input() size: 'sm' | 'lg' = 'sm';
   @Input() disabled: boolean = false;
-  @Input() icon: string = 'star-filled';
+  @Input() icon: string = '';
   @Input() iconPosition: 'left' | 'right' = 'left';
   @Output() onClick = new EventEmitter();
   constructor() {}

@@ -91,9 +91,20 @@ input {
     color: map-get($color, error);
     font-weight: 500;
   }
+}
 
-  .disabled {
-    input {
+.disabled {
+  input {
+    color: map-get($color, neutral-5);
+    background-color: map-get($color, neutral-7);
+    cursor: not-allowed;
+
+    &:hover {
+      box-shadow: 0 0 1px 1.5px map-get($color, stroke);
+    }
+
+    &:hover ~ .info-text,
+    &:focus ~ .info-text {
       color: map-get($color, neutral-5);
       background-color: map-get($color, neutral-7);
       cursor: not-allowed;

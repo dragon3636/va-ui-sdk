@@ -1,8 +1,8 @@
 
 module.exports = {
   content: [
-    './projects/va/ui-sdk/**/**/*.{html,ts,scss}',
-    './projects/showcase/**/*.{html,ts,scss}',
+    './projects/va/ui-sdk/**/**/*.{html,ts}',
+    './projects/showcase/**/*.{html,ts}',
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
@@ -110,9 +110,12 @@ module.exports = {
       2: '8px',
       3: '12px',
       4: '16px',
-      5: '24px',
-      6: '32px',
-      7: '64px',
+      5: '20px',
+      6: '24px',
+      7: '28px',
+      8: '32px',
+      9: '36px',
+      10: '40px',
     },
     fontSize: {
       xs: ['12px', '12px'],
@@ -120,8 +123,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [
-    // require('@tailwindcss/typography'),
-    require('tailwind-scrollbar'),
-  ],
+  plugins: [require('tailwind-scrollbar')],
 };
