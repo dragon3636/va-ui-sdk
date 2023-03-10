@@ -29,7 +29,6 @@
     "@angular/router": "^14.2.12",
     "@em-and-ai/ui-sdk": "file:dist/va/ui-sdk",
     "@types/gulp-postcss": "^8.0.2",
-    "cssnano": "^5.1.15",
     "date-fns": "^2.29.3",
     "gulp-postcss": "^9.0.1",
     "rxjs": "~7.5.0",

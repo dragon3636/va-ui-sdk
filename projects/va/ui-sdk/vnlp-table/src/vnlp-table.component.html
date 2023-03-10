@@ -71,7 +71,7 @@
       <button
         [disabled]="pageOptions.currentPage == 1"
         (click)="prevPage()"
-        class="paginator-prev icon icon-vnlp-icon-arrow-left-simple-line"
+        class="paginator-prev icon icon-vnlp-icon-arrow-left-2-linear"
       ></button>
       <ng-container *ngFor="let pageNumber of pages">
         <button
@@ -85,7 +85,7 @@
       <button
         [disabled]="pageOptions.currentPage == lastPage || lastPage === 0"
         (click)="nextPage()"
-        class="paginator-next icon icon-vnlp-icon-arrow-right-simple-line"
+        class="paginator-next icon icon-vnlp-icon-arrow-right-3-linear"
       ></button>
     </div>
   </div>
