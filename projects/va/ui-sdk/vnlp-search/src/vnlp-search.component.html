@@ -1,33 +1,95 @@
 <div
-  class="absolute top-[10px] left-[10px] flex justify-between items-center w-[202px] h-[40px] rounded-[8px] bg-neutral-7 py-[8px] pr-[18px] pl-[8px] hover:border-[1px] hover:bg-white focus-within:border-[1px] focus-within:border-primary focus-within:bg-white"
+  class="absolute top-[10px] left-[10px] flex justify-between items-center w-[202px] h-[40px] rounded-[8px] bg-neutral-7 py-[8px] pr-[14px] pl-[8px] hover:border-[1px] hover:bg-white focus-within:border-[1px] focus-within:border-primary focus-within:bg-white"
 >
-  <div class="flex items-center gap-[5px]">
+  <div class="flex items-center gap-[8px]">
     <ng-container
       [ngTemplateOutlet]="loading === true ? iconLoading : iconSearch"
     >
     </ng-container>
 
     <ng-template #iconLoading>
-      <div class="loader"></div>
+      <div>
+        <svg class="h-[24px] w-[24px] animate-spin stroke-neutral-4" viewBox="0 0 256 256">
+          <line
+            x1="128"
+            y1="32"
+            x2="128"
+            y2="64"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="195.9"
+            y1="60.1"
+            x2="173.3"
+            y2="82.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="224"
+            y1="128"
+            x2="192"
+            y2="128"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="195.9"
+            y1="195.9"
+            x2="173.3"
+            y2="173.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="128"
+            y1="224"
+            x2="128"
+            y2="192"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="60.1"
+            y1="195.9"
+            x2="82.7"
+            y2="173.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="32"
+            y1="128"
+            x2="64"
+            y2="128"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+          <line
+            x1="60.1"
+            y1="60.1"
+            x2="82.7"
+            y2="82.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="24"
+          ></line>
+        </svg>
+      </div>
     </ng-template>
 
     <ng-template #iconSearch>
-      <div class="text-neutral-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-[20px] w-[20px] mr-[4px]"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          />
-        </svg>
-      </div>
+      <span class="text-neutral-4 text-[18px] font-bold">
+        <i [class]="'icon-vnlp-icon-search-normal-1-linear'"></i>
+      </span>
     </ng-template>
 
     <input
@@ -39,21 +101,11 @@
       placeholder="Search"
     />
   </div>
-  <div
+  <span
     *ngIf="searchText"
     (click)="deleteSearch()"
-    class="text-neutral-4 font-thin"
+    class="text-neutral-4 text-[18px] font-bold"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-[20px] w-[20px]"
-      fill="none"
-      viewBox="0 0 15 15"
-      stroke="currentColor"
-    >
-      <path
-        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-      />
-    </svg>
-  </div>
+    <i [class]="'icon-vnlp-icon-close-circle-linear'"></i>
+  </span>
 </div>

@@ -12,7 +12,7 @@
       >
         <i
           class="text-[30px]"
-          [class]="'icon-vnlp-icon-arrow-left-square-filled'"
+          [class]="'icon-vnlp-icon-arrow-circle-right-linear'"
         ></i>
       </button>
     </div>
@@ -20,18 +20,19 @@
     <app-sidebar-menu></app-sidebar-menu>
   </div>
 
-  <div class="mx-4 my-4 space-y-1">
+  <div class="mx-2 my-4 space-y-1">
     <!-- Sign out -->
     <div
-      class="group flex h-[40px] cursor-pointer items-center justify-start rounded-[8px] p-2 hover:bg-gray-200 text-neutral-5 text-[20px]"
+      class="group flex h-[40px] cursor-pointer items-center justify-start rounded-[8px] p-2 hover:bg-gray-200 text-neutral-3 text-[20px]"
     >
       <span>
-        <i [class]="'icon-vnlp-icon-sign-out-line'"></i>
+        <i class="text-[20px]" [class]="'icon-vnlp-icon-logout-linear'"></i>
       </span>
 
       <a
         routerLink="/auth"
-        class="ml-3 text-sm font-normal tracking-[0.004em] text-neutral-3 focus:outline-none"
+        *ngIf="showSideBar$ | async"
+        class="ml-4 text-sm font-normal tracking-[0.004em] focus:outline-none"
       >
         Log out
       </a>

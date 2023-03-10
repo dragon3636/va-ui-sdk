@@ -6,12 +6,12 @@ export class Menu {
       group: 'MAIN',
       items: [
         {
-          icon: 'flip-chart-filled',
+          icon: 'activity-linear',
           label: 'Overview',
           route: '/overview',
         },
         {
-          icon: 'android-filled',
+          icon: 'emoji-normal-linear',
           label: 'Build Bots',
           route: '/build-bot',
           children: [
@@ -21,7 +21,7 @@ export class Menu {
           ],
         },
         {
-          icon: 'settings-01-line',
+          icon: 'setting-4-linear',
           label: 'Advanced settings',
           route: '/advanced-settings',
           children: [
@@ -34,18 +34,18 @@ export class Menu {
           ],
         },
         {
-          icon: 'phone-line',
+          icon: 'microphone-2-linear',
           label: 'Auto call',
           route: '/auto-call',
           children: [],
         },
         {
-          icon: 'flag-line',
+          icon: 'flag-linear',
           label: 'Campaigns',
           route: '/campaign-management/choose-scenario',
         },
         {
-          icon: 'mobile-line',
+          icon: 'call-linear',
           label: 'Make a call',
           route: '/ivr-outbound',
         },
@@ -55,31 +55,31 @@ export class Menu {
       group: 'OTHER',
       items: [
         {
-          icon: 'assets/icon/lock-closed.svg',
+          icon: 'personalcard-linear',
           label: 'Memebers',
           route: '/build-bots',
           children: [],
         },
         {
-          icon: 'assets/icon/lock-closed.svg',
+          icon: 'presention-chart-linear',
           label: 'Statistical Report',
           route: '/build-bots',
           children: [],
         },
         {
-          icon: 'assets/icon/lock-closed.svg',
+          icon: 'info-circle-linear',
           label: 'Version',
           route: '/build-bots',
           children: [],
         },
         {
-          icon: 'assets/icon/lock-closed.svg',
+          icon: 'clock-linear',
           label: 'Histories',
           route: '/build-bots',
           children: [],
         },
         {
-          icon: 'assets/icon/lock-closed.svg',
+          icon: '3dcube-linear',
           label: 'Integrations',
           route: '/build-bots',
           children: [],

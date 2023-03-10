@@ -74,13 +74,13 @@
             *ngIf="item.children"
             [ngClass]="{
               hidden: !(showSideBar$ | async),
-              'rotate-[-90deg]': item.expanded
+              'rotate-[90deg]': item.expanded
             }"
-            class="flex items-center pointer-events-none absolute right-[0] top-[0] text-[24px] text-neutral-5 transition-all duration-[500ms]"
+            class="flex items-center pointer-events-none absolute right-[0] top-[8px] text-[18px] text-neutral-5 transition-all duration-[500ms]"
           >
             <!-- Arrow Icon -->
             <span>
-              <i [class]="'icon-vnlp-icon-arrow-right-simple-line'"></i>
+              <i [class]="'icon-vnlp-icon-arrow-right-3-linear'"></i>
             </span>
           </div>
         </ng-template>

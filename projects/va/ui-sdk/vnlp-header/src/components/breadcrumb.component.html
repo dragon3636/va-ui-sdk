@@ -1,6 +1,6 @@
-<ul *ngIf="((breadcrumbs$ | async)?.length ?? 0) < 5" class="flex gap-[10px]">
+<ul *ngIf="((breadcrumbs$ | async)?.length ?? 0) < 5" class="flex gap-[8px]">
   <li
-    class="flex items-center gap-[3px] text-neutral-1 text-sm font-medium"
+    class="flex items-center gap-[6px] text-neutral-1 text-sm font-medium"
     *ngFor="let breadcrumb of breadcrumbs$ | async; let i = index"
   >
     <ng-container
@@ -13,8 +13,8 @@
     <ng-template #element>
       <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
       <i
-        class="text-[25px] text-neutral-1 font-bold"
-        [class]="'icon-vnlp-icon-arrow-right-simple-line'"
+        class="text-[18px] text-neutral-5 font-bold"
+        [class]="'icon-vnlp-icon-arrow-right-3-linear'"
       ></i>
       <!-- <div>></div> -->
     </ng-template>
@@ -27,21 +27,21 @@
   </li>
 </ul>
 
-<ul *ngIf="((breadcrumbs$ | async)?.length ?? 0) >= 5" class="flex gap-[3px]">
+<ul *ngIf="((breadcrumbs$ | async)?.length ?? 0) >= 5" class="flex gap-[8px]">
   <li
-    class="flex gap-[3px] items-center text-neutral-1 text-sm font-medium"
+    class="flex gap-[6px] items-center text-neutral-1 text-sm font-medium"
     *ngFor="let breadcrumb of breadcrumbs$ | async; let i = index"
   >
     <ng-container *ngIf="i === 0">
       <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
       <i
-        class="text-[25px] text-neutral-5 font-normal"
-        [class]="'icon-vnlp-icon-arrow-right-simple-line'"
+        class="text-[18px] text-neutral-5 font-normal"
+        [class]="'icon-vnlp-icon-arrow-right-3-linear'"
       ></i>
       <a>...</a>
       <i
-        class="text-[25px] text-neutral-5 font-normal"
-        [class]="'icon-vnlp-icon-arrow-right-simple-line'"
+        class="text-[18px] text-neutral-5 font-normal"
+        [class]="'icon-vnlp-icon-arrow-right-3-linear'"
       ></i>
     </ng-container>
 
@@ -53,8 +53,8 @@
     >
       <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
       <i
-        class="text-[25px] text-neutral-5 font-normal"
-        [class]="'icon-vnlp-icon-arrow-right-simple-line'"
+        class="text-[18px] text-neutral-5 font-normal"
+        [class]="'icon-vnlp-icon-arrow-right-3-linear'"
       ></i>
     </ng-container>
 
