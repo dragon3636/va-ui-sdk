@@ -117,31 +117,68 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
 
       .paginator-prev,
       .paginator-next,
       .page-number {
         width: 32px;
         height: 32px;
-        border: 1px solid map-get($color, stroke);
-        border-radius: 4px;
+        color: map-get($color, neutral-3);
+        border-radius: 8px;
         font-size: 14px;
 
         &:hover {
-          border: 1px solid map-get($color, primary);
+          box-shadow: 0 0 1px 1px map-get($color, primary);
         }
 
         &:disabled {
           cursor: not-allowed;
-          border: 1px solid map-get($color, stroke);
+          border: 0 0 1px 1px map-get($color, stroke);
+        }
+      }
+
+      .paginator-prev,
+      .paginator-next {
+        color: map-get($color, neutral-4);
+      }
+
+      .paginator-prev {
+        position: relative;
+        margin-right: 8px;
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 18px;
+          right: -9px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: map-get($color, stroke);
+        }
+      }
+
+      .paginator-next {
+        position: relative;
+        margin-left: 8px;
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 18px;
+          left: -9px;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: map-get($color, stroke);
         }
       }
 
       .page-number {
         &.active {
-          background-color: map-get($color, primary);
-          color: map-get($color, neutral-8);
+          background-color: map-get($color, primary-100);
+          color: map-get($color, primary);
         }
       }
     }

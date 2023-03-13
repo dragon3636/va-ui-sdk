@@ -12,7 +12,7 @@
     <ng-template #element>
       <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
       <i
-        class="text-[18px] text-neutral-5 font-bold"
+        class="text-lg text-neutral-5 font-bold"
         [class]="'icon-vnlp-icon-arrow-right-3-linear'"
       ></i>
       <!-- <div>></div> -->
@@ -34,12 +34,12 @@
     <ng-container *ngIf="i === 0">
       <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
       <i
-        class="text-[18px] text-neutral-5 font-normal"
+        class="text-lg text-neutral-5 font-normal"
         [class]="'icon-vnlp-icon-arrow-right-3-linear'"
       ></i>
       <a>...</a>
       <i
-        class="text-[18px] text-neutral-5 font-normal"
+        class="text-lg text-neutral-5 font-normal"
         [class]="'icon-vnlp-icon-arrow-right-3-linear'"
       ></i>
     </ng-container>
@@ -52,7 +52,7 @@
     >
       <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a>
       <i
-        class="text-[18px] text-neutral-5 font-normal"
+        class="text-lg text-neutral-5 font-normal"
         [class]="'icon-vnlp-icon-arrow-right-3-linear'"
       ></i>
     </ng-container>

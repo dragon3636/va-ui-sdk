@@ -13,7 +13,7 @@
         <ng-template #inProcess>
           <div class="w-[45px] h-[1px] bg-primary rounded-[1px]"></div>
           <div
-            class="flex items-center justify-center h-[20px] w-[20px] rounded-full bg-primary text-[12px] text-neutral-8 font-bold"
+            class="flex items-center justify-center h-[20px] w-[20px] rounded-full bg-primary text-xs text-neutral-8 font-bold"
           >
             {{ step.step }}
           </div>
@@ -22,7 +22,7 @@
         <ng-template #unProcess>
           <div class="w-[45px] h-[1px] bg-neutral-5 rounded-[1px]"></div>
           <div
-            class="flex items-center justify-center h-[20px] w-[20px] rounded-full bg-neutral-6 text-[12px] text-neutral-8 font-bold"
+            class="flex items-center justify-center h-[20px] w-[20px] rounded-full bg-neutral-6 text-xs text-neutral-8 font-bold"
           >
             {{ step.step }}
           </div>
@@ -31,7 +31,7 @@
       </ng-template>
       <ng-template #noLine>
         <div
-          class="flex items-center justify-center h-[20px] w-[20px] rounded-full bg-primary text-neutral-8 text-[12px] leading-0 tracking-normal font-bold"
+          class="flex items-center justify-center h-[20px] w-[20px] rounded-full bg-primary text-neutral-8 text-xs leading-0 tracking-normal font-bold"
         >
           {{ step.step }}
         </div>

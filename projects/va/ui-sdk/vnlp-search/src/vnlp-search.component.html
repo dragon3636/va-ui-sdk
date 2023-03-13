@@ -1,7 +1,4 @@
-
-<div
-  class="main-search-container"
->
+<div class="main-search-container">
   <div class="flex items-center gap-[8px]">
     <ng-container
       [ngTemplateOutlet]="loading === true ? iconLoading : iconSearch"
@@ -90,7 +87,7 @@
     </ng-template>
 
     <ng-template #iconSearch>
-      <span class="text-neutral-4 text-[18px] font-bold">
+      <span class="text-neutral-4 text-lg font-bold">
         <i [class]="'icon-vnlp-icon-search-normal-1-linear'"></i>
       </span>
     </ng-template>
@@ -107,7 +104,7 @@
   <span
     *ngIf="searchText"
     (click)="deleteSearch()"
-    class="text-neutral-4 text-[18px] font-bold"
+    class="text-neutral-4 text-lg font-bold"
   >
     <i [class]="'icon-vnlp-icon-close-linear'"></i>
   </span>
