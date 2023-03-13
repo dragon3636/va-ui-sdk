@@ -1,7 +1,8 @@
-<div class="relative bg-neutral-8">
+<div class="bg-neutral-8">
   <div class="flex items-center justify-between h-[60px] px-[28px]">
     <div class="text-sm font-semibold"><vnlp-breadcrumb></vnlp-breadcrumb></div>
-    <div class="flex gap-[20px] pr-[40px]">
+    <div class="flex gap-[20px] items-center">
+      <vnlp-search></vnlp-search>
       <span class="text-neutral-4 text-[20px]">
         <i [class]="'icon-vnlp-icon-info-circle-linear'"></i>
       </span>
@@ -9,7 +10,7 @@
         <div class="text-xs font-bold">ENG</div>
       </div>
       <div class="cursor-pointer">
-        <!-- <app-avatar></app-avatar> -->
+        <vnlp-avatar></vnlp-avatar>
       </div>
     </div>
   </div>
