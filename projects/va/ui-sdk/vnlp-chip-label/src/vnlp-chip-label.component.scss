@@ -1,71 +1,71 @@
 @import './../../assets/sass/base/variable';
 
 .type1 {
+  background: map-get($color, primary);
+  color: map-get($color, neutral-8);
+  box-sizing: border-box;
+  padding: 5px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background: map-get($color, primary-400);
+  }
+
+  &:focus {
     background: map-get($color, primary);
-    color: map-get($color, neutral-8);
-    box-sizing: border-box;
-    padding: 5px 12px;
-    cursor: pointer;
+    border: 4px solid map-get($color, primary-200);
+    padding: 1px 8px;
+  }
 
-    &:hover {
-        background: map-get($color, primary-400);
-    }
-
-    &:focus {
-        background: map-get($color, primary);
-        border: 4px solid map-get($color, primary-200);
-        padding: 1px 8px;
-    }
-
-    &:active {
-        background: map-get($color, primary);
-        border: 4px solid map-get($color, primary-200);
-        padding: 1px 8px;
-    }
+  &:active {
+    background: map-get($color, primary);
+    border: 4px solid map-get($color, primary-200);
+    padding: 1px 8px;
+  }
 }
 
 .type2 {
-    background: map-get($color, primary-100);
+  background: map-get($color, primary-100);
+  color: map-get($color, primary);
+  box-sizing: border-box;
+  padding: 5px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background: map-get($color, primary-200);
+  }
+
+  &:focus {
+    background: map-get($color, primary);
+    border: 4px solid map-get($color, primary-200);
+    padding: 1px 8px;
+  }
+
+  &:active {
+    background: map-get($color, primary-300);
     color: map-get($color, primary);
-    box-sizing: border-box;
-    padding: 5px 12px;
-    cursor: pointer;
-
-    &:hover {
-        background: map-get($color, primary-200);
-    }
-
-    &:focus {
-        background: map-get($color, primary);
-        border: 4px solid map-get($color, primary-200);
-        padding: 1px 8px;
-    }
-
-    &:active {
-        background: map-get($color, primary-300);
-        color: map-get($color, primary);
-    }
+  }
 }
 
 .type3 {
+  background: map-get($color, neutral-6);
+  color: map-get($color, neutral-1);
+  box-sizing: border-box;
+  padding: 5px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background: map-get($color, neutral-7);
+  }
+
+  &:focus {
+    background: map-get($color, neutral-8);
+    border: 4px solid map-get($color, neutral-6);
+    padding: 1px 8px;
+  }
+
+  &:active {
     background: map-get($color, neutral-6);
-    color: map-get($color, neutral-1);
-    box-sizing: border-box;
-    padding: 5px 12px;
-    cursor: pointer;
-
-    &:hover {
-        background: map-get($color, neutral-7);
-    }
-
-    &:focus {
-        background: map-get($color, neutral-8);
-        border: 4px solid map-get($color, neutral-6);
-        padding: 1px 8px;
-    }
-
-    &:active {
-        background: map-get($color, neutral-6);
-        outline: 1px solid map-get($color, neutral-5);
-    }
+    border: 1px solid map-get($color, neutral-5);
+  }
 }

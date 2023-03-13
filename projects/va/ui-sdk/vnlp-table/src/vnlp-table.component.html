@@ -16,8 +16,9 @@
           <i
             *ngIf="col.sortable"
             [ngClass]="{
-              'cursor-pointer icon icon-vnlp-icon-upanddown-line transition-all ease-in-out duration-200 rotate-180': true,
-              'icon-vnlp-icon-arrow-up-line': pageOptions.sortField === col.key,
+              'inline-block cursor-pointer icon icon-vnlp-icon-arrow-3-linear transition-all ease-in-out duration-200': true,
+              'icon-vnlp-icon-arrow-up-3-linear':
+                pageOptions.sortField === col.key,
               'rotate-180':
                 pageOptions.sortField === col.key && pageOptions.sort === -1
             }"
@@ -71,7 +72,7 @@
       <button
         [disabled]="pageOptions.currentPage == 1"
         (click)="prevPage()"
-        class="paginator-prev icon icon-vnlp-icon-arrow-left-simple-line"
+        class="paginator-prev icon icon-vnlp-icon-arrow-left-2-linear"
       ></button>
       <ng-container *ngFor="let pageNumber of pages">
         <button
@@ -85,7 +86,7 @@
       <button
         [disabled]="pageOptions.currentPage == lastPage || lastPage === 0"
         (click)="nextPage()"
-        class="paginator-next icon icon-vnlp-icon-arrow-right-simple-line"
+        class="paginator-next icon icon-vnlp-icon-arrow-right-3-linear"
       ></button>
     </div>
   </div>

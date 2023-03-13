@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { VnlpCalendarComponent } from './vnlp-calendar.component';
-import { VnlpButtonModule } from 'projects/va/ui-sdk/vnlp-button';
+import { VnlpButtonModule } from '@em-and-ai/ui-sdk/vnlp-button';
 
 @NgModule({
   declarations: [VnlpCalendarComponent],
-  imports: [VnlpButtonModule, CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, VnlpButtonModule],
   exports: [VnlpCalendarComponent, CommonModule, FormsModule],
 })
 export class VnlpCalendarModule {}

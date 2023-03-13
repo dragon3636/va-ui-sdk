@@ -1,25 +1,25 @@
 @import './../../assets/sass/base/variable';
 
 .main-search-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 202px;
-    height: 40px;
-    border-radius: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 8px;
-    padding-right: 14px;
-    background: map-get($color, neutral-7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 202px;
+  height: 40px;
+  border-radius: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 14px;
+  background: map-get($color, neutral-7);
 
-    &:hover {
-        outline: 1px solid map-get($color, stroke);
-        background: map-get($color, neutral-8);
-    }
+  &:hover {
+    border: 1px solid map-get($color, stroke);
+    background: map-get($color, neutral-8);
+  }
 
-    &:focus-within {
-        outline: 1px solid map-get($color, primary);
-        background: map-get($color, neutral-8);
-    }
+  &:focus-within {
+    border: 1px solid map-get($color, primary);
+    background: map-get($color, neutral-8);
+  }
 }
