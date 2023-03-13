@@ -79,7 +79,7 @@ export class AppComponent {
     {
       title: 'Intent',
       key: 'intent',
-      sortable: false,
+      sortable: true,
     },
   ];
 
