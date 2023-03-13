@@ -18,18 +18,18 @@ input {
     box-shadow: 0 0 1px 1.5px map-get($color, primary);
     caret-color: map-get($color, primary);
 
-    & ~ .info-text {
+    &~.info-text {
       color: map-get($color, primary);
     }
 
-    & ~ .input-icon i {
+    &~.input-icon i {
       color: map-get($color, primary);
     }
 
     &:hover {
       box-shadow: 0 0 1px 1.5px map-get($color, primary);
 
-      & ~ .info-text {
+      &~.info-text {
         color: map-get($color, primary);
       }
     }
@@ -38,7 +38,7 @@ input {
   &:hover {
     box-shadow: 0 0 1px 1.5px map-get($color, primary-300);
 
-    & ~ .info-text {
+    &~.info-text {
       color: map-get($color, primary);
     }
   }
@@ -72,13 +72,13 @@ input {
       box-shadow: 0 0 1px 1.5px map-get($color, error);
     }
 
-    &:hover ~ .info-text,
-    &:focus ~ .info-text {
+    &:hover~.info-text,
+    &:focus~.info-text {
       color: map-get($color, error);
     }
 
-    &:hover ~ .input-icon i,
-    &:focus ~ .input-icon i {
+    &:hover~.input-icon i,
+    &:focus~.input-icon i {
       color: map-get($color, error);
     }
   }
@@ -106,11 +106,22 @@ input {
     &:hover ~ .info-text,
     &:focus ~ .info-text {
       color: map-get($color, neutral-5);
-    }
+      background-color: map-get($color, neutral-7);
+      cursor: not-allowed;
 
-    &:hover ~ .input-icon i,
-    &:focus ~ .input-icon i {
-      color: map-get($color, neutral-5);
+      &:hover {
+        box-shadow: 0 0 1px 1.5px map-get($color, stroke);
+      }
+
+      &:hover~.info-text,
+      &:focus~.info-text {
+        color: map-get($color, neutral-5);
+      }
+
+      &:hover~.input-icon i,
+      &:focus~.input-icon i {
+        color: map-get($color, neutral-5);
+      }
     }
   }
 }

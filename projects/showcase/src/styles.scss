@@ -2,3 +2,7 @@
 @import '../../../dist/va/ui-sdk/assets/css/fontello.css';
 @import '../../../dist/va/ui-sdk/assets/css/animation.css';
 @import '../../../dist/va/ui-sdk/assets/css/style-concat.css';
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';

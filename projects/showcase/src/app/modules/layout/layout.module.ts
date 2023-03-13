@@ -8,6 +8,7 @@ import { LayoutComponent } from './layout.component';
 import { VnlpAvatarModule } from '@em-and-ai/ui-sdk/vnlp-avatar';
 import { VnlpSuvNavVerticalModule } from 'projects/va/ui-sdk/vnlp-suv-nav-vertical';
 import { VnlpHeaderModule } from 'projects/va/ui-sdk/vnlp-header';
+import { VnlpSearchModule } from 'projects/va/ui-sdk/vnlp-search';
 
 @NgModule({
   declarations: [LayoutComponent],
@@ -18,6 +19,7 @@ import { VnlpHeaderModule } from 'projects/va/ui-sdk/vnlp-header';
     VnlpAvatarModule,
     VnlpHeaderModule,
     VnlpSuvNavVerticalModule,
+    VnlpSearchModule
   ],
 })
 export class LayoutModule {}

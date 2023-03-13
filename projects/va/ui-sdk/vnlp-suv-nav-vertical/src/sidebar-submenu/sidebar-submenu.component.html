@@ -17,12 +17,12 @@
         <!-- Parent Menu -->
         <ng-template #parentMenu let-sub="sub">
           <div
-            class="flex items-center h-[40px] text-neutral-4 border-l-[2px] border-solid border-gray-200 cursor-pointer"
+            [routerLink]="sub.route"
+            routerLinkActive="text-primary"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="flex items-center h-[40px] text-neutral-4 border-l-[2px] border-solid border-neutral-6 cursor-pointer"
           >
             <a
-              [routerLink]="sub.route"
-              routerLinkActive="text-primary"
-              [routerLinkActiveOptions]="{ exact: true }"
               class="inline-block w-full text-sm font-normal pl-[30px] pr-[24px]"
             >
               {{ sub.label }}
@@ -33,7 +33,7 @@
         <!-- Child Menu -->
         <ng-template #childMenu let-sub="sub">
           <div
-            class="flex items-center h-[40px] text-neutral-4 border-l-[2px] border-solid border-gray-200 cursor-pointer"
+            class="flex items-center h-[40px] text-neutral-4 border-l-[2px] border-solid border-neutral-6 cursor-pointer"
           >
             <a class="inline-block w-full cursor-pointer text-sm font-normal">
               {{ sub.label }}

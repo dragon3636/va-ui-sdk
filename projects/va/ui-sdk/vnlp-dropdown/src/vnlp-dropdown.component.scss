@@ -1,10 +1,5 @@
 @import './../../assets/sass/base/variable';
 
-.background-dropdown-container {
-  position: absolute;
-  // background-color: transparent;
-}
-
 .main-dropdown-container {
   display: flex;
   border: 1.5px solid map-get($color, stroke);
@@ -58,6 +53,8 @@
   border-radius: 10px;
   background: map-get($color, neutral-8);
   margin-top: 10px;
+  font-size: 14px;
+  line-height: 24px;
   box-shadow: 0px 1px 16px rgba(0, 0, 0, 0.05);
   height: 280px;
   overflow: auto;
@@ -91,12 +88,12 @@
   padding-left: 8px;
 
   &:hover {
-    border: 2px solid map-get($color, neutral-5);
+    outline: 2px solid map-get($color, neutral-5);
     background-color: map-get($color, neutral-8);
   }
 
   &:focus-within {
-    border: 2px solid map-get($color, primary);
+    outline: 2px solid map-get($color, primary);
     background-color: map-get($color, neutral-8);
   }
 }

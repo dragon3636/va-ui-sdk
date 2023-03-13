@@ -13,7 +13,7 @@
   cursor: pointer;
 
   &:focus-within {
-    border: 2px solid map-get($color, primary);
+    border: 1.5px solid map-get($color, primary);
   }
 }
 
