@@ -116,8 +116,11 @@ module.exports = {
       10: '40px',
     },
     fontSize: {
-      xs: ['12px', '12px'],
-      sm: ['14px', '24px'],
+      xs: '12px',
+      sm: '14px',
+      md: '16px',
+      lg: '18px',
+      xl: '20px',
     },
   },
   variants: {},
