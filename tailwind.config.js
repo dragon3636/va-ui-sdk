@@ -4,7 +4,7 @@ module.exports = {
     './projects/va/ui-sdk/**/**/*.{html,ts}',
     './projects/showcase/**/*.{html,ts}',
   ],
-  darkMode: 'class', // or 'media' or 'class'
+  important: true,
   theme: {
       colors: {
         transparent: "transparent",

@@ -1,5 +1,6 @@
+
 <div
-  class="absolute top-[10px] left-[10px] flex justify-between items-center w-[202px] h-[40px] rounded-[8px] bg-neutral-7 py-[8px] pr-[14px] pl-[8px] hover:border-[1px] hover:border-solid hover:border-stroke hover:bg-neutral-8 focus-within:border-[1px] focus-within:border-primary focus-within:bg-neutral-8"
+  class="main-search-container"
 >
   <div class="flex items-center gap-[8px]">
     <ng-container
@@ -97,7 +98,7 @@
     <input
       [(ngModel)]="searchText"
       (ngModelChange)="onSearchInputChange($event)"
-      class="h-full w-full outline-none text-sm font-normal bg-transparent text-neutral-2"
+      class="h-full w-full border-none text-sm font-normal bg-transparent outline-none text-neutral-2"
       type="text"
       id="search"
       placeholder="Search"

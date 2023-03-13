@@ -93,12 +93,12 @@
   padding-left: 8px;
 
   &:hover {
-    border: 2px solid map-get($color, neutral-5);
+    outline: 2px solid map-get($color, neutral-5);
     background-color: map-get($color, neutral-8);
   }
 
   &:focus-within {
-    border: 2px solid map-get($color, primary);
+    outline: 2px solid map-get($color, primary);
     background-color: map-get($color, neutral-8);
   }
 }

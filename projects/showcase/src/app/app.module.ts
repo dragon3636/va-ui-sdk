@@ -16,10 +16,11 @@ import { VnlpTextareaModule } from '@em-and-ai/ui-sdk/vnlp-textarea';
 import { VnlpRadioCardModule } from '@em-and-ai/ui-sdk/vnlp-radio-card';
 import { VnlpTickboxModule } from '@em-and-ai/ui-sdk/vnlp-tickbox';
 import { VnlpSwitcherModule } from '@em-and-ai/ui-sdk/vnlp-switcher';
-import { VnlpInputTextModule } from '@em-and-ai/ui-sdk/vnlp-input-text';
+// import { VnlpInputTextModule } from '@em-and-ai/ui-sdk/vnlp-input-text';
 import { VnlpCheckboxModule } from '@em-and-ai/ui-sdk/vnlp-checkbox';
 import { VnlpPopoverModule } from '@em-and-ai/ui-sdk/vnlp-popover';
 import { VnlpFileUploaderModule } from '@em-and-ai/ui-sdk/vnlp-file-uploader';
+import { VnlpInputTextModule } from 'projects/va/ui-sdk/vnlp-input-text';
 
 @NgModule({
   declarations: [AppComponent],
