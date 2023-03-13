@@ -1,10 +1,5 @@
 @import './../../assets/sass/base/variable';
 
-.background-dropdown-container {
-  position: absolute;
-  // background-color: transparent;
-}
-
 .main-dropdown-container {
   display: flex;
   border: 1.5px solid map-get($color, stroke);
