@@ -57,6 +57,7 @@ let counter = 0;
 export class VnlpCalendarComponent
   implements ControlValueAccessor, OnInit, OnChanges
 {
+  @ViewChild('inputCalendarContainer') inputCalendarContainerElement?: ElementRef;
   @ViewChild('calendarContainer') calendarContainerElement?: ElementRef;
   @ViewChild('inputElement') inputElement?: ElementRef;
 
@@ -99,7 +100,10 @@ export class VnlpCalendarComponent
   disabled: boolean = false;
   setFocus: boolean = false;
 
-  private _range?: DateRange;
+  private _range?: DateRange = {
+    start : new Date(),
+    end : new Date()
+  };
 
   private onTouchedCallback: () => void = () => {};
   private onChangeCallback: (_: any) => void = () => {};
@@ -443,14 +447,14 @@ export class VnlpCalendarComponent
       return;
     }
 
-    if (this.inputElement == null) {
+    if (this.inputCalendarContainerElement == null) {
       return;
     }
 
     //Keep show calendar when user click inside input
     if (
-      e.target === this.inputElement.nativeElement ||
-      this.inputElement.nativeElement.contains(<Element>e.target) ||
+      e.target === this.inputCalendarContainerElement.nativeElement ||
+      this.inputCalendarContainerElement.nativeElement.contains(<Element>e.target) ||
       ((<Element>e.target).parentElement &&
         (<Element>e.target).parentElement?.classList.contains('day-unit'))
     ) {
@@ -555,7 +559,7 @@ export class VnlpCalendarComponent
   //Check date is start or end to styles element
   private isRangeBoundary(date: Date, boundary: 'start' | 'end'): boolean {
     return (
-      !this.range![boundary] || isSameDate(date, this.range![boundary] as Date)
+       isSameDate(date, this.range![boundary] as Date)
     );
   }
 

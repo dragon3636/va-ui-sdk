@@ -83,13 +83,9 @@
           (click)="selectOption(i, data, data['isSelected'])"
           class="flex h-[47px] px-[10px] rounded-[8px] cursor-pointer items-center gap-[10px] hover:bg-neutral-7"
         >
-          <input
-            name=""
-            #chkbox
-            type="checkbox"
-            [checked]="data['isSelected']"
-            class="w-[18px] h-[18px]"
-          />
+          <vnlp-checkbox
+            [(checked)]="data['isSelected']"
+          ></vnlp-checkbox>
           <div>{{ data.value }}</div>
         </div>
         <div

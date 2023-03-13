@@ -1,6 +1,7 @@
 <div class="relative">
-  <div #inputElement (click)="toggle()" class="main-calendar-input">
+  <div #inputCalendarContainer (click)="toggle()" class="main-calendar-input">
     <input
+      #inputElement
       type="text"
       class="w-[100%] h-[100%] text-md leading-[24px] outline-none bg-transparent cursor-pointer"
       [(ngModel)]="displayValue"
@@ -9,7 +10,7 @@
       [id]="fieldId"
       [disabled]="disabled"
     />
-    <span class="text-primary text-xl z-10">
+    <span class="text-primary text-[20px]">
       <i [class]="'icon-vnlp-icon-calendar-1-linear'"></i>
     </span>
   </div>
