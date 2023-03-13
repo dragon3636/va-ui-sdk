@@ -7,7 +7,9 @@
     information: informationText
   }"
 >
-  <label [for]="name" class="inline-block text-sm mb-2">{{ label }}</label>
+  <label *ngIf="label" [for]="name" class="inline-block text-sm mb-2">
+    {{ label }}
+  </label>
   <div ngClass="relative inline-block w-full">
     <label [for]="name" *ngIf="icon" class="input-icon">
       <i [class]="'icon icon-vnlp-icon-' + icon"></i>

@@ -6,7 +6,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
   styleUrls: ['./vnlp-input-text.component.scss'],
 })
 export class VnlpInputTextComponent implements OnInit {
-  @Input() label: string = 'Label';
+  @Input() label: string = '';
   @Input() name: string = '';
   @Input() value: string = '';
   @Output() valueChange = new EventEmitter();
