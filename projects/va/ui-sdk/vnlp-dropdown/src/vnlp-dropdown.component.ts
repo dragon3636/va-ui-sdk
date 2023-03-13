@@ -63,6 +63,7 @@ export class VnlpDropdownComponent implements OnInit {
         let newSelectedObj = {
           id: data.id,
           value: data.value,
+          isSelected: true
         };
         this.selectedOptions.push(newSelectedObj);
       } else {
@@ -81,6 +82,7 @@ export class VnlpDropdownComponent implements OnInit {
       let newSelectedObj = {
         id: data.id,
         value: data.value,
+        isSelected: true
       };
       this.selectedOptions.push(newSelectedObj);
       //emit changes

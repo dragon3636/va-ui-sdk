@@ -8,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class OverviewComponent implements OnInit {
   selectedVal: any = '';
   listData = [
-    { id: 1, value: 'Codecademy' },
-    { id: 2, value: 'Coursera' },
-    { id: 3, value: 'Khan Academy' },
-    { id: 4, value: 'LinkedIn Learning' },
-    { id: 5, value: 'Open Culture' },
-    { id: 6, value: 'Sophia' },
-    { id: 7, value: 'Teacher Training Videos' },
-    { id: 8, value: 'Udemy' },
-    { id: 9, value: 'Virtual Nerd Mobile Math' },
-    { id: 10, value: 'Techsmith' },
+    { id: 1, value: 'Codecademy', isSelected: false },
+    { id: 2, value: 'Coursera', isSelected: false },
+    { id: 3, value: 'Khan Academy', isSelected: false },
+    { id: 4, value: 'LinkedIn Learning', isSelected: false },
+    { id: 5, value: 'Open Culture', isSelected: false },
+    { id: 6, value: 'Sophia', isSelected: false },
+    { id: 7, value: 'Teacher Training Videos', isSelected: false },
+    { id: 8, value: 'Udemy', isSelected: false },
+    { id: 9, value: 'Virtual Nerd Mobile Math', isSelected: false },
+    { id: 10, value: 'Techsmith', isSelected: false },
   ];
 
   dropdownSettings = {

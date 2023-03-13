@@ -8,5 +8,5 @@ export interface DropDownSetting {
 export interface ItemSelected {
   id: number;
   value: string;
-  isSelected?: boolean;
+  isSelected: boolean;
 }

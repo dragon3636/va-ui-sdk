@@ -1,6 +1,7 @@
 <div class="relative">
-  <div #inputElement (click)="toggle()" class="main-calendar-input">
+  <div #inputCalendarContainer (click)="toggle()" class="main-calendar-input">
     <input
+      #inputElement
       type="text"
       class="w-[100%] h-[100%] text-[16px] leading-[24px] outline-none bg-transparent cursor-pointer"
       [(ngModel)]="displayValue"
@@ -10,9 +11,7 @@
       [disabled]="disabled"
     />
     <span class="text-primary text-[20px] z-10">
-      <i
-        [class]="'icon-vnlp-icon-calendar-1-linear'"
-      ></i>
+      <i [class]="'icon-vnlp-icon-calendar-1-linear'"></i>
     </span>
   </div>
   <ng-content></ng-content>
@@ -93,8 +92,16 @@
       </div>
       <div class="absolute w-[100%] top-[320px]">
         <div class="flex items-center justify-between">
-          <vnlp-button (click)="close()" type="light" title="Cancel"></vnlp-button>
-          <vnlp-button (click)="applyChange()" type="primary" title="Apply"></vnlp-button>
+          <vnlp-button
+            (click)="close()"
+            type="light"
+            title="Cancel"
+          ></vnlp-button>
+          <vnlp-button
+            (click)="applyChange()"
+            type="primary"
+            title="Apply"
+          ></vnlp-button>
         </div>
       </div>
     </div>
