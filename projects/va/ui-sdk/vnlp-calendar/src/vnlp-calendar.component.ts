@@ -374,6 +374,7 @@ export class VnlpCalendarComponent
 
   //Open, close calendar
   toggle(): void {
+    console.log("co vao day")
     this.isOpened = !this.isOpened;
 
     //Focus input when calendar open
