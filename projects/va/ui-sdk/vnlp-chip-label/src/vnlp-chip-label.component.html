@@ -3,11 +3,13 @@
     'rounded-[50%]': style === 'icon',
     type1: type === 1,
     type2: type === 2,
-    type3: type === 3
+    type3: type === 3,
+    'bg-primary-200 pointer-events-none': disabled === true && type !== 3,
+    'bg-neutral-6 pointer-events-none': disabled === true && type === 3
   }"
-  class="flex items-center justify-center gap-[6px] h-[34px] rounded-[10px] py-[5px] px-[12px] cursor-pointer"
+  class="flex items-center justify-center gap-[6px] h-[34px] rounded-[10px]"
   [ngStyle]="{
-    width: style === 'icon' ? '34px' : style === null ? '56px' : '82px'
+    width: style === 'icon' && '34px'
   }"
 >
   <div
@@ -15,7 +17,7 @@
     [ngClass]="{ 'order-1': style === 'icon text' }"
     class="text-[14px] font-normal"
   >
-    Chip
+    {{ label }}
   </div>
   <i
     *ngIf="style !== null && style !== 'with image'"

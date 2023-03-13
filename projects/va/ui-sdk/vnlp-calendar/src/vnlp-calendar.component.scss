@@ -9,6 +9,7 @@
   height: 48px;
   border-radius: 10px;
   padding: 12px 18px;
+  z-index: 1;
   border: 1.5px solid map-get($color, stroke);
   cursor: pointer;
 

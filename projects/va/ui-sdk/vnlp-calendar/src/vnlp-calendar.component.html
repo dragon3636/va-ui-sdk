@@ -1,7 +1,6 @@
 <div class="relative">
-  <div (click)="toggle()" class="main-calendar-input">
+  <div #inputElement (click)="toggle()" class="main-calendar-input">
     <input
-      #inputElement
       type="text"
       class="w-[100%] h-[100%] text-[16px] leading-[24px] outline-none bg-transparent cursor-pointer"
       [(ngModel)]="displayValue"
@@ -10,8 +9,10 @@
       [id]="fieldId"
       [disabled]="disabled"
     />
-    <span class="text-primary text-[20px]">
-      <i [class]="'icon-vnlp-icon-calendar-1-linear'"></i>
+    <span class="text-primary text-[20px] z-10">
+      <i
+        [class]="'icon-vnlp-icon-calendar-1-linear'"
+      ></i>
     </span>
   </div>
   <ng-content></ng-content>
@@ -21,7 +22,10 @@
         <div
           class="flex justify-between py-[10px] items-center border-b-[1px] border-solid border-stroke"
         >
-          <div (click)="prevMonth()" class="text-[12px] text-neutral-4 font-bold cursor-pointer">
+          <div
+            (click)="prevMonth()"
+            class="text-[12px] text-neutral-4 font-bold cursor-pointer"
+          >
             <i [class]="'icon-vnlp-icon-arrow-left-2-linear'"></i>
           </div>
           <span
@@ -30,7 +34,10 @@
           >
             {{ barTitle }}
           </span>
-          <div (click)="nextMonth()" class="text-[12px] text-neutral-4 font-bold cursor-pointer">
+          <div
+            (click)="nextMonth()"
+            class="text-[12px] text-neutral-4 font-bold cursor-pointer"
+          >
             <i [class]="'icon-vnlp-icon-arrow-right-3-linear'"></i>
           </div>
         </div>
@@ -86,8 +93,8 @@
       </div>
       <div class="absolute w-[100%] top-[320px]">
         <div class="flex items-center justify-between">
-          <button (click)="close()" class="btn-cancel">Cancel</button>
-          <button (click)="applyChange()" class="btn-apply">Apply</button>
+          <vnlp-button (click)="close()" type="light" title="Cancel"></vnlp-button>
+          <vnlp-button (click)="applyChange()" type="primary" title="Apply"></vnlp-button>
         </div>
       </div>
     </div>
