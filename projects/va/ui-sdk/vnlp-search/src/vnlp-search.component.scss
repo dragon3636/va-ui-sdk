@@ -14,12 +14,12 @@
     background: map-get($color, neutral-7);
 
     &:hover {
-        outline: 1.5px solid map-get($color, stroke);
+        outline: 1px solid map-get($color, stroke);
         background: map-get($color, neutral-8);
     }
 
     &:focus-within {
-        outline: 1.5px solid map-get($color, primary);
+        outline: 1px solid map-get($color, primary);
         background: map-get($color, neutral-8);
     }
 }

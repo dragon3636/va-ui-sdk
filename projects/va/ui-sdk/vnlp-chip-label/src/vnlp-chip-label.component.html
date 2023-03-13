@@ -1,26 +1,28 @@
 <div
-  [ngClass]="{ 'rounded-[8px]': secondType !== null }"
-  class="flex items-center justify-center gap-[6px] rounded-[10px] py-[5px] px-[12px]"
+  [ngClass]="{
+    'rounded-[50%]': style === 'icon',
+    type1: type === 1,
+    type2: type === 2,
+    type3: type === 3
+  }"
+  class="flex items-center justify-center gap-[6px] h-[34px] rounded-[10px] py-[5px] px-[12px] cursor-pointer"
   [ngStyle]="{
-    width: width,
-    height: height,
-    'background-color': backgroundColor,
-    border: border
+    width: style === 'icon' ? '34px' : style === null ? '56px' : '82px'
   }"
 >
   <div
-    *ngIf="secondType !== 'icon'"
-    [ngClass]="{ 'order-1': secondType === 'icon text' }"
-    class="text-[14px] font-normal text-neutral-8"
+    *ngIf="style !== 'icon'"
+    [ngClass]="{ 'order-1': style === 'icon text' }"
+    class="text-[14px] font-normal"
   >
     Chip
   </div>
   <i
-    *ngIf="secondType !== null && secondType !== 'with image'"
+    *ngIf="style !== null && style !== 'with image'"
     [class]="'icon-vnlp-icon-add-circle-linear'"
   ></i>
   <img
-    *ngIf="secondType === 'with image'"
+    *ngIf="style === 'with image'"
     class="h-[20px] w-[20px] rounded-[50%]"
     src="{{ imgUrl }}"
   />
