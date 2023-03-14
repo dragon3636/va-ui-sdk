@@ -13,7 +13,10 @@
       class="text-sm text-left p-2 select-none"
       (click)="onClickOption(option.key)"
     >
-      <i *ngIf="option.icon" [class]="'icon icon-vnlp-icon-' + option.icon"></i>
+      <i
+        *ngIf="option.icon"
+        [class]="'mr-3 icon icon-vnlp-icon-' + option.icon"
+      ></i>
       <span>{{ option.label }}</span>
     </li>
 
