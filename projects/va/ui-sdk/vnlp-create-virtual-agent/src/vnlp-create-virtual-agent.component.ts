@@ -37,8 +37,6 @@ export class VnlpCreateVirtualAgentComponent implements OnInit {
   @Output() onClick = new EventEmitter();
   @Output() onOptionClick = new EventEmitter();
 
-  showOptions: boolean = false;
-
   constructor() {}
 
   ngOnInit() {}
