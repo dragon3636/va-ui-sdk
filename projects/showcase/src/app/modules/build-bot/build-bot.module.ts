@@ -10,7 +10,7 @@ import { InitializationsComponent } from './pages/Initializations/initialization
 import { DateRangeComponent } from './pages/datepicker/datepicker.component';
 import { VnlpSearchModule } from 'projects/va/ui-sdk/vnlp-search';
 import { VnlpDividersModule } from '@em-and-ai/ui-sdk/vnlp-dividers';
-import { VnlpCalendarModule } from '@em-and-ai/ui-sdk/vnlp-calendar';
+import { VnlpCalendarModule } from 'projects/va/ui-sdk/vnlp-calendar';
 
 @NgModule({
   declarations: [
