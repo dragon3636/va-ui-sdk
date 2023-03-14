@@ -7,7 +7,6 @@
     tabindex="-1"
     class="main-dropdown-container"
     (click)="toggleDataPanel()"
-    [ngStyle]="{ width: dropDownSettings.dropdownWidth }"
     #inputDropdown
   >
     <div *ngIf="!dropDownSettings.singleSelection" class="element-selected">
@@ -55,7 +54,6 @@
   <div
     *ngIf="isShowdataPanel"
     class="selected-item-container"
-    [ngStyle]="{ width: dropDownSettings.dropdownWidth }"
     #dropdownContainer
   >
     <div *ngIf="empty" class="flex justify-center items-center p-[20px]">
