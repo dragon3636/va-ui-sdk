@@ -19,11 +19,11 @@
 <div class="file-list">
   <div *ngFor="let file of fileList" class="file-item">
     <span class="file-icon">
-      <i class="icon-vnlp-icon-file-erase-line"></i>
+      <i class="icon-vnlp-icon-folder-2-linear"></i>
     </span>
     <span class="file-name">{{ file.name }}</span>
     <span class="file-size">{{ formatSize(file.size) }}</span>
-    <span (click)="deleteFile(file)" class="delete-icon">
+    <span (click)="deleteFile(file)" class="delete-icon ml-2">
       <i class="icon icon-vnlp-icon-close-circle-linear"></i>
     </span>
   </div>
