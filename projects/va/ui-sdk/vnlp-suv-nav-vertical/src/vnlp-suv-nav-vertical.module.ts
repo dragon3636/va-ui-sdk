@@ -4,6 +4,7 @@ import { VnlpSuvNavVerticalComponent } from './vnlp-suv-nav-vertical.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { SidebarSubmenuComponent } from './sidebar-submenu/sidebar-submenu.component';
 import { Routes, RouterModule } from '@angular/router';
+import { VnlpLogoModule } from 'projects/va/ui-sdk/vnlp-logo';
 
 const routes: Routes = [];
 
@@ -13,7 +14,7 @@ const routes: Routes = [];
     SidebarMenuComponent,
     SidebarSubmenuComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [VnlpLogoModule, CommonModule, RouterModule.forChild(routes)],
   exports: [
     VnlpSuvNavVerticalComponent,
     SidebarMenuComponent,

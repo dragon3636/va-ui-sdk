@@ -32,14 +32,8 @@ export class VnlpDropdownComponent implements OnInit {
   };
   @Input() set data(val: ItemSelected[]) {
     if (val && val.length > 0) {
-      this.listData = val.map((x) => {
-        x.isSelected = false;
-        return x;
-      });
-      this.tempListData = val.map((x) => {
-        x.isSelected = false;
-        return x;
-      });
+      this.listData = val
+      this.tempListData = val
     }
   }
   @Input() label: string = 'label';
@@ -51,6 +45,10 @@ export class VnlpDropdownComponent implements OnInit {
   selectedOptions: ItemSelected[] = [];
 
   constructor(private ele: ElementRef) {}
+
+  ngOnInit(): void {
+    this.selectedOptions = this.listData.filter(d => d.isSelected === true)
+  }
 
   get empty() {
     return this.tempListData.length === 0;
@@ -132,8 +130,6 @@ export class VnlpDropdownComponent implements OnInit {
   toggleDataPanel() {
     this.isShowdataPanel = !this.isShowdataPanel;
   }
-
-  ngOnInit(): void {}
 
   closeDropdown() {
     if (this.isShowdataPanel) {
