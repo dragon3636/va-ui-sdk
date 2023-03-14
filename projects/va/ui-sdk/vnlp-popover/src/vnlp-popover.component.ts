@@ -26,6 +26,7 @@ export class VnlpPopoverComponent implements OnInit {
     | 'bottom left'
     | 'bottom right'
     | 'bottom center' = 'bottom center';
+  @Input() disabled: boolean = false;
   @Output() onOptionClick = new EventEmitter();
 
   showOptions: boolean = false;
@@ -35,6 +36,7 @@ export class VnlpPopoverComponent implements OnInit {
   ngOnInit() {}
 
   onShowOptions() {
+    if (this.disabled) return;
     this.showOptions = !this.showOptions;
   }
 

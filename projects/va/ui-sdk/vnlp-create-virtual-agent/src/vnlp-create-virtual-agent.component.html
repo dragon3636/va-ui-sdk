@@ -30,25 +30,13 @@
       {{ description }}
     </div>
     <div class="divider"></div>
-    <div class="pt-xs flex justify-between items-center">
+    <div class="pt-3 flex justify-between items-center">
       <vnlp-label-tag [type]="labelType" [text]="labelText"></vnlp-label-tag>
       <vnlp-popover
         (onOptionClick)="onClickOption($event)"
-        [options]="[
-          {
-            label: 'option 1',
-            key: 'option 1'
-          },
-          {
-            label: 'option 2',
-            key: 'option 2'
-          },
-          {
-            label: 'option 3',
-            key: 'option 3'
-          }
-        ]"
+        [options]="options"
         position="bottom left"
+        [disabled]="disabled"
       ></vnlp-popover>
     </div>
   </div>
