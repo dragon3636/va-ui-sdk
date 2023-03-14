@@ -70,6 +70,7 @@
     border: 1.5px solid map-get($color, neutral-5);
     background-color: map-get($color, neutral-8);
     border-radius: 5px;
+    overflow: hidden;
 
     &:hover {
       border: 1.5px solid map-get($color, neutral-4);
@@ -77,6 +78,11 @@
 
     &:active {
       box-shadow: 0 0 1px 4px map-get($color, neutral-6);
+    }
+
+    .icon {
+      font-size: 24px;
+      transform: translateY(1px);
     }
   }
 
