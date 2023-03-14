@@ -19,6 +19,8 @@ import { DropDownSetting, ItemSelected } from './models/vnlp-dropdown.model';
 export class VnlpDropdownComponent implements OnInit {
   @ViewChild('dropdownContainer') dropdownContainerElement?: ElementRef;
   @ViewChild('inputDropdown') inputDropdownElement?: ElementRef;
+  @ViewChild('searchPara') searchParaElement?: ElementRef;
+  @ViewChild('searchContainer') searchContainerElement?: ElementRef;
   @Output() valueChange = new EventEmitter();
   tempListData: ItemSelected[] = [];
   listData: ItemSelected[] = [];
@@ -39,8 +41,8 @@ export class VnlpDropdownComponent implements OnInit {
         return x;
       });
     }
-  };
-  @Input() label: string = "label"
+  }
+  @Input() label: string = 'label';
 
   get userData() {
     return this.listData;
@@ -63,7 +65,7 @@ export class VnlpDropdownComponent implements OnInit {
         let newSelectedObj = {
           id: data.id,
           value: data.value,
-          isSelected: true
+          isSelected: true,
         };
         this.selectedOptions.push(newSelectedObj);
       } else {
@@ -82,7 +84,7 @@ export class VnlpDropdownComponent implements OnInit {
       let newSelectedObj = {
         id: data.id,
         value: data.value,
-        isSelected: true
+        isSelected: true,
       };
       this.selectedOptions.push(newSelectedObj);
       //emit changes
@@ -153,6 +155,13 @@ export class VnlpDropdownComponent implements OnInit {
       !this.dropdownContainerElement?.nativeElement.contains(e.target)
     ) {
       this.closeDropdown();
+    }
+
+    if (
+      e.target === this.searchContainerElement?.nativeElement ||
+      this.searchContainerElement?.nativeElement.contains(e.target)
+    ) {
+      this.searchParaElement?.nativeElement.focus();
     }
   }
 }

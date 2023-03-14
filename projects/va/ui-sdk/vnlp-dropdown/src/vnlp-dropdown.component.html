@@ -60,7 +60,7 @@
       <span>No Record Found</span>
     </div>
     <div *ngIf="!empty" class="flex flex-col">
-      <div *ngIf="dropDownSettings.allowSearchFilter" class="search-input">
+      <div *ngIf="dropDownSettings.allowSearchFilter" #searchContainer class="search-input">
         <div class="flex items-center gap-[8px]">
           <span class="text-neutral-4 text-xl font-bold">
             <i [class]="'icon-vnlp-icon-search-normal-1-linear'"></i>
