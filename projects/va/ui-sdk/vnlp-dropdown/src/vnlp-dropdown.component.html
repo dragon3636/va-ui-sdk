@@ -8,6 +8,7 @@
     class="main-dropdown-container"
     (click)="toggleDataPanel()"
     #inputDropdown
+    [ngStyle]="{ width: dropDownSettings.dropdownWidth }"
   >
     <div *ngIf="!dropDownSettings.singleSelection" class="element-selected">
       <div *ngFor="let sel of selectedOptions; let i = index" class="item">
@@ -55,6 +56,7 @@
     *ngIf="isShowdataPanel"
     class="selected-item-container"
     #dropdownContainer
+    [ngStyle]="{ width: dropDownSettings.dropdownWidth }"
   >
     <div *ngIf="empty" class="flex justify-center items-center p-[20px]">
       <span>No Record Found</span>
