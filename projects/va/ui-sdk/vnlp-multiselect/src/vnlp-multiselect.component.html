@@ -6,6 +6,7 @@
   <div
     [ngClass]="{ 'is-invalid': invalidEmail }"
     class="main-multiselect-container"
+    [ngStyle]="{ width: multiselectWidth }"
   >
     <div *ngFor="let data of listData; let i = index" class="item">
       <span>

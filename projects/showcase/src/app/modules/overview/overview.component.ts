@@ -24,7 +24,7 @@ export class OverviewComponent implements OnInit {
     singleSelection: false,
     allowSearchFilter: true,
     placeholder: 'Placeholder',
-    dropdownWidth: '321px',
+    dropdownWidth: '100%',
   };
 
   dropdownSettings2= {

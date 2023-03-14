@@ -7,7 +7,7 @@ import { validateEmail } from './helpers/validate-email';
   styleUrls: ['./vnlp-multiselect.component.scss'],
 })
 export class VnlpMultiselectComponent implements OnInit {
-  @Input() multiselectWidth: string = '400px';
+  @Input() multiselectWidth: string = '100%';
   @Input() multiEmail: boolean = true;
   @Input() label: string = 'Label';
   @Output() valueChange = new EventEmitter();
