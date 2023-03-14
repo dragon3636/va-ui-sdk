@@ -17,6 +17,23 @@ export class VnlpCreateVirtualAgentComponent implements OnInit {
   @Input() labelText: string = 'label';
   @Input() labelType: LabelType = 'gray';
   @Input() type: string = 'voice';
+  @Input() options = [
+    {
+      icon: '3d-rotate-linear',
+      label: 'option 1',
+      key: 'option 1',
+    },
+    {
+      icon: 'bluetooth-2-linear',
+      label: 'option 2',
+      key: 'option 2',
+    },
+    {
+      icon: 'car-linear',
+      label: 'option 3',
+      key: 'option 3',
+    },
+  ];
   @Output() onClick = new EventEmitter();
   @Output() onOptionClick = new EventEmitter();
 

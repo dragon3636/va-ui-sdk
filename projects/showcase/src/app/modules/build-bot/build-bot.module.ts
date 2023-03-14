@@ -8,9 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { VnlpStepBarModule } from '@em-and-ai/ui-sdk/vnlp-step-bar';
 import { InitializationsComponent } from './pages/Initializations/initializations.component';
 import { DateRangeComponent } from './pages/datepicker/datepicker.component';
-import { VnlpSearchModule } from 'projects/va/ui-sdk/vnlp-search';
 import { VnlpDividersModule } from '@em-and-ai/ui-sdk/vnlp-dividers';
 import { VnlpCalendarModule } from '@em-and-ai/ui-sdk/vnlp-calendar';
+import { VnlpSearchModule } from '@em-and-ai/ui-sdk/vnlp-search';
 
 @NgModule({
   declarations: [
