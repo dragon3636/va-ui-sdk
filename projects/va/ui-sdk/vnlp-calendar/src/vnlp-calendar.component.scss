@@ -106,16 +106,19 @@
   }
 
   &.range-start {
+    background: map-get($color, neutral-6);
     border-bottom-left-radius: 50%;
     border-top-left-radius: 50%;
     box-shadow: inset 20px 0 0 0 map-get($color, neutral-8);
   }
 
   &.range-end {
+    background: map-get($color, neutral-6);
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
     box-shadow: inset -20px 0 0 0 map-get($color, neutral-8);
   }
+
 }
 
 .month-unit {

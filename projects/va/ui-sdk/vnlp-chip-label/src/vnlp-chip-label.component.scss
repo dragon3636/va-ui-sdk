@@ -66,6 +66,6 @@
 
   &:active {
     background: map-get($color, neutral-6);
-    border: 1px solid map-get($color, neutral-5);
+    outline: 1px solid map-get($color, neutral-5);
   }
 }

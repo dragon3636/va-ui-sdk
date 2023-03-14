@@ -1,4 +1,4 @@
-import { VnlpSearchModule } from '@em-and-ai/ui-sdk/vnlp-search';
+import { VnlpSearchModule } from 'projects/va/ui-sdk/vnlp-search';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';

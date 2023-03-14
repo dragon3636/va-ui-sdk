@@ -16,6 +16,8 @@ export interface Day {
   isStart: boolean;
   isEnd: boolean;
   isVisible: boolean;
+  // isPreviousStart: boolean;
+  // isPreviousEnd: boolean
 }
 
 export interface DatepickerOptions {

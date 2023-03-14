@@ -225,6 +225,9 @@ export class VnlpCalendarComponent
   applyChange(): void {
     this.displayValue = this.formatDisplay();
 
+    console.log("start", this.range?.start)
+    console.log("end", this.range?.end)
+
     if (this.range) {
       this.barTitle = format(
         this.viewingDate as Date,
@@ -378,7 +381,6 @@ export class VnlpCalendarComponent
 
   //Open, close calendar
   toggle(): void {
-    console.log("co vao day")
     this.isOpened = !this.isOpened;
 
     //Focus input when calendar open
@@ -484,9 +486,9 @@ export class VnlpCalendarComponent
     isToday: isVisible && isToday(date),
     isSelected: isVisible && this.isDateSelected(date),
     isInRange: isVisible && this.isInRange(date),
-    isSelectable: isVisible && this.isDateSelectable(date),
-    isStart: isVisible && this.isRangeBoundary(date, 'start'),
-    isEnd: isVisible && this.isRangeBoundary(date, 'end'),
+    isSelectable: isVisible && this.isDateSelectable(date), 
+    isStart: isVisible && this.isRangeBoundary(date, 'start') && this.range?.end !== undefined && this.range?.end !== this.range.start, 
+    isEnd: isVisible && this.isRangeBoundary(date, 'end') && this.range?.end !== undefined && this.range?.end !== this.range.start,
     isVisible,
   });
 
