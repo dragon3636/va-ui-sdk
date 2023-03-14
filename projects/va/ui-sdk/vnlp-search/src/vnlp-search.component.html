@@ -93,6 +93,7 @@
     </ng-template>
 
     <input
+      #inputSearch
       [(ngModel)]="searchText"
       (ngModelChange)="onSearchInputChange($event)"
       class="h-full w-full border-none text-sm font-normal bg-transparent outline-none text-neutral-2"

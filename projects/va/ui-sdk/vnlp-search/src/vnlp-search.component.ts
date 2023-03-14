@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  HostListener,
+} from '@angular/core';
 import { Subject, tap } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
@@ -8,13 +14,14 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
   styleUrls: ['./vnlp-search.component.scss'],
 })
 export class VnlpSearchComponent implements OnInit {
+  @ViewChild('inputSearch') inputSearchElement?: ElementRef;
   searchText!: string | '';
   searching = false;
   loading = false;
 
   private searchDecouncer$: Subject<string> = new Subject();
 
-  constructor() {}
+  constructor(private _elementRef: ElementRef) {}
 
   ngOnInit(): void {
     this.setupSearchDebouncer();
@@ -38,9 +45,6 @@ export class VnlpSearchComponent implements OnInit {
         setTimeout(() => {
           this.loading = false;
         }, 2000);
-
-        // this.loading = false
-        console.log(term);
       });
   }
 
@@ -65,5 +69,11 @@ export class VnlpSearchComponent implements OnInit {
   deleteSearch() {
     this.searchText = '';
     this.searching = false;
+  }
+
+  @HostListener('document:click', ['$event']) onBlur(e: MouseEvent) {
+    if (this._elementRef?.nativeElement.contains(e.target)) {
+      this.inputSearchElement?.nativeElement.focus();
+    }
   }
 }
