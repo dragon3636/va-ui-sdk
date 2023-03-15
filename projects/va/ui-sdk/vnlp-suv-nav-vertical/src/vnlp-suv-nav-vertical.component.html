@@ -1,29 +1,28 @@
 <nav
   [ngClass]="(showSideBar$ | async) ? 'w-[240px]' : 'w-[70px]'"
-  class="relative overflow-auto hidden h-[100%] flex-col justify-between bg-neutral-8 transition-all duration-300 scrollbar-hide lg:flex"
+  class="relative overflow-auto hidden h-[100%] flex-col items-center bg-neutral-8 transition-all duration-300 scrollbar-hide lg:flex"
 >
-  <div class="flex flex-col items-center px-[30px] py-[10px]">
-    <vnlp-logo [type]="(showSideBar$ | async) ? 'horizontal' : 'normal'" class="fixed top-[35px] z-10 px-[20px]"></vnlp-logo>
+  <div class="sticky top-[0px] w-[100%] pt-[35px] text-center z-10 bg-neutral-8 transition-all duration-300">
+    <vnlp-logo
+      [type]="(showSideBar$ | async) ? 'horizontal' : 'normal'"
+      class="w-[80%] h-auto"
+    ></vnlp-logo>
     <!-- Menu Items -->
     <div
-      class="fixed top-[75px] left-[224px] flex items-center justify-center transition-all duration-300 w-[28px] bg-neutral-8 rounded-[10px] z-10"
-      [ngClass]="{ 'left-[54px]': !(showSideBar$ | async) }"
+      class="absolute top-[80px] right-[0px] flex items-center bg-neutral-8 justify-center w-[28px] rounded-[10px]"
       (click)="toggleSidebar()"
     >
       <i
-        class="text-[28px] text-neutral-4 transition-all duration-300 cursor-pointer"
+        class="text-[28px] text-neutral-4 cursor-pointer"
         [ngClass]="{ 'rotate-180': !(showSideBar$ | async) }"
         [class]="'icon-vnlp-icon-arrow-right-linear'"
       ></i>
     </div>
-
-    <app-sidebar-menu></app-sidebar-menu>
   </div>
-
-  <div class="mx-2 my-4 space-y-1">
-    <!-- Sign out -->
+  <div class="absolute flex flex-col items-center gap-[80px] top-[90px]">
+    <app-sidebar-menu></app-sidebar-menu>
     <div
-      class="group flex h-[40px] cursor-pointer items-center justify-start rounded-[8px] p-2 hover:bg-neutral-5 text-neutral-3 text-xl"
+      class="flex w-[220px] h-[40px] cursor-pointer items-center rounded-[8px] p-2 hover:bg-neutral-5 text-neutral-3 text-xl mb-[30px]"
     >
       <span>
         <i class="text-xl" [class]="'icon-vnlp-icon-logout-linear'"></i>
