@@ -25,7 +25,10 @@
   <div class="absolute flex flex-col items-center gap-[80px] top-[90px]">
     <app-sidebar-menu></app-sidebar-menu>
     <div
-      class="flex w-[220px] h-[40px] cursor-pointer items-center rounded-[8px] p-2 hover:bg-neutral-5 text-neutral-3 text-xl mb-[30px]"
+      class="flex items-center gap-[14px] w-[220px] h-[44px] py-[8px] px-[10px] cursor-pointer rounded-[8px] hover:bg-primary-100 text-neutral-3 text-xl mb-[30px]"
+      [ngClass]="{
+        'justify-center max-w-[40px] max-h-[40px]': !(showSideBar$ | async)
+      }"
     >
       <span>
         <i class="text-xl" [class]="'icon-vnlp-icon-logout-linear'"></i>
@@ -34,7 +37,7 @@
       <a
         routerLink="/auth"
         *ngIf="showSideBar$ | async"
-        class="ml-4 text-sm font-normal tracking-[0.004em] focus:outline-none"
+        class="text-sm font-normal focus:outline-none"
       >
         Log out
       </a>
