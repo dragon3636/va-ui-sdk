@@ -1,28 +1,26 @@
 <nav
   [ngClass]="(showSideBar$ | async) ? 'w-[240px]' : 'w-[70px]'"
-  class="relative overflow-auto hidden h-[100%] flex-col items-center bg-neutral-8 transition-all duration-300 scrollbar-hide lg:flex"
+  class="relative hidden h-[100%] flex-col items-center bg-neutral-8 transition-all duration-300 scrollbar-hide lg:flex"
 >
   <div
-    class="sticky top-[0px] w-[100%] pt-[35px] text-center z-10 bg-neutral-8 transition-all duration-300"
+    class="absolute top-[0px] w-[100%] h-[60px] p-[12px] text-center z-10 bg-neutral-8 transition-all duration-300"
   >
-    <div class="px-[12px]">
-      <vnlp-logo
-        [type]="(showSideBar$ | async) ? 'horizontal' : 'normal'"
-      ></vnlp-logo>
-    </div>
+    <vnlp-logo
+      [type]="(showSideBar$ | async) ? 'horizontal' : 'normal'"
+    ></vnlp-logo>
     <!-- Menu Items -->
-    <div
-      class="absolute top-[80px] right-[0px] flex items-center bg-neutral-8 justify-center w-[28px] rounded-[10px]"
-      (click)="toggleSidebar()"
-    >
-      <i
-        class="text-[28px] text-neutral-4 cursor-pointer"
-        [ngClass]="{ 'rotate-180': !(showSideBar$ | async) }"
-        [class]="'icon-vnlp-icon-arrow-right-linear'"
-      ></i>
-    </div>
   </div>
-  <div class="absolute flex flex-col items-center gap-[80px] top-[90px]">
+  <div
+    class="absolute top-[70px] right-[-18px] flex items-center bg-neutral-8 justify-center w-[28px] rounded-[10px]"
+    (click)="toggleSidebar()"
+  >
+    <i
+      class="text-[28px] text-neutral-4 cursor-pointer"
+      [ngClass]="{ 'rotate-180': (showSideBar$ | async) }"
+      [class]="'icon-vnlp-icon-arrow-right-linear'"
+    ></i>
+  </div>
+  <div class="absolute h-full overflow-y-auto scrollbar-hide flex flex-col items-center gap-[80px] top-0 left-0 pt-[64px]">
     <app-sidebar-menu></app-sidebar-menu>
     <div
       class="flex items-center gap-[14px] w-[220px] h-[44px] py-[8px] px-[10px] cursor-pointer rounded-[8px] hover:bg-primary-100 text-neutral-3 text-xl mb-[30px]"

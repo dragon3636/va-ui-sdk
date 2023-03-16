@@ -6,7 +6,7 @@ import { LayoutComponent } from './layout.component';
 import { VnlpHeaderModule } from '@em-and-ai/ui-sdk/vnlp-header';
 import { VnlpAvatarModule } from '@em-and-ai/ui-sdk/vnlp-avatar';
 import { VnlpSearchModule } from '@em-and-ai/ui-sdk/vnlp-search';
-import { VnlpSuvNavVerticalModule } from 'projects/va/ui-sdk/vnlp-suv-nav-vertical';
+import { VnlpSuvNavVerticalModule } from '@em-and-ai/ui-sdk/vnlp-suv-nav-vertical';
 
 @NgModule({
   declarations: [LayoutComponent],
