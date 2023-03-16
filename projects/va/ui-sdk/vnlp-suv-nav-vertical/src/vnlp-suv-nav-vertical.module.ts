@@ -4,7 +4,7 @@ import { VnlpSuvNavVerticalComponent } from './vnlp-suv-nav-vertical.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { SidebarSubmenuComponent } from './sidebar-submenu/sidebar-submenu.component';
 import { Routes, RouterModule } from '@angular/router';
-import { VnlpLogoModule } from '@em-and-ai/ui-sdk/vnlp-logo';
+import { VnlpLogoModule } from 'projects/va/ui-sdk/vnlp-logo';
 
 const routes: Routes = [];
 

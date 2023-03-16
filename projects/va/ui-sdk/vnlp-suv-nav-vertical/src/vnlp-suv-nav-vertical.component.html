@@ -2,11 +2,14 @@
   [ngClass]="(showSideBar$ | async) ? 'w-[240px]' : 'w-[70px]'"
   class="relative overflow-auto hidden h-[100%] flex-col items-center bg-neutral-8 transition-all duration-300 scrollbar-hide lg:flex"
 >
-  <div class="sticky top-[0px] w-[100%] pt-[35px] text-center z-10 bg-neutral-8 transition-all duration-300">
-    <vnlp-logo
-      [type]="(showSideBar$ | async) ? 'horizontal' : 'normal'"
-      class="w-[80%] h-auto"
-    ></vnlp-logo>
+  <div
+    class="sticky top-[0px] w-[100%] pt-[35px] text-center z-10 bg-neutral-8 transition-all duration-300"
+  >
+    <div class="px-[12px]">
+      <vnlp-logo
+        [type]="(showSideBar$ | async) ? 'horizontal' : 'normal'"
+      ></vnlp-logo>
+    </div>
     <!-- Menu Items -->
     <div
       class="absolute top-[80px] right-[0px] flex items-center bg-neutral-8 justify-center w-[28px] rounded-[10px]"
